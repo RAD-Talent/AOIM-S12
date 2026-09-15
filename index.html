@@ -120,11 +120,24 @@ a:hover{color:var(--ink)}
 .tldr p{margin:13px 0 0;color:var(--ink-3);font-size:14px}
 
 /* ===== pocket bosses ===== */
-.pb{border-top:1px solid var(--rule-soft);padding:14px 0}
+.pb{border-top:1px solid var(--rule-soft)}
 #pblist .pb:last-child{border-bottom:1px solid var(--rule-soft)}
-.pb-head{display:flex;flex-wrap:wrap;gap:9px;align-items:baseline}
-.pb-name{font-family:var(--f-d);font-weight:600;font-size:17px}
-.pb-meta{font-family:var(--f-m);font-size:12.5px;color:var(--ink-2);margin-top:3px}
+.pb>summary{
+  cursor:pointer;list-style:none;padding:9px 0;
+  display:flex;flex-wrap:wrap;gap:9px;align-items:baseline;
+}
+.pb>summary::-webkit-details-marker{display:none}
+.pb>summary::before{
+  content:"+";font-family:var(--f-m);font-size:13px;color:var(--notum);
+  width:13px;flex:none;font-weight:600;
+}
+.pb[open]>summary::before{content:"\2212"}
+.pb>summary:hover .pb-name{color:var(--notum)}
+.pb-name{font-family:var(--f-d);font-weight:600;font-size:16px}
+.pb-zone{font-family:var(--f-m);font-size:12px;color:var(--ink-3)}
+.pb-n{font-family:var(--f-m);font-size:11px;color:var(--ink-3);margin-left:auto}
+.pb-body{padding:2px 0 15px 22px}
+.pb-meta{font-family:var(--f-m);font-size:12.5px;color:var(--ink-2)}
 .pb-pat{font-family:var(--f-m);font-size:12.5px;color:var(--ink);margin-top:5px}
 .pb-pat span{color:var(--rust);text-transform:uppercase;letter-spacing:.1em;font-size:10px;margin-right:6px}
 .pb-drops{margin-top:9px;display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule-soft)}
@@ -138,6 +151,8 @@ a:hover{color:var(--ink)}
 .pb-fam{color:var(--go)}
 .pb-sym{color:var(--ink-2);overflow-wrap:anywhere}
 @media (max-width:700px){
+  .pb-n{margin-left:0}
+  .pb-body{padding-left:0}
   .pb-d{grid-template-columns:1fr 1fr;gap:2px 10px}
   .pb-sym{grid-column:1/-1}
 }
@@ -302,8 +317,8 @@ summary{
   list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
 }
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--f-m);color:var(--notum);font-size:16px;flex:none}
-details[open] summary::after{content:"\2212"}
+details:not(.pb)>summary::after{content:"+";font-family:var(--f-m);color:var(--notum);font-size:16px;flex:none}
+details:not(.pb)[open]>summary::after{content:"\2212"}
 details .body{padding-bottom:16px}
 details ul{margin:0 0 12px;padding-left:20px;max-width:70ch}
 details li{margin-bottom:6px;color:var(--ink-2)}
@@ -829,11 +844,10 @@ function renderStatus(){
 var pbFam="all";
 function renderPB(){
   var q=(document.getElementById("pbq").value||"").toLowerCase();
+  var open=!!q||pbFam!=="all";   /* auto-expand once you're actually looking for something */
   var shown=0,sym=0;
   var html=PB.map(function(b){
-    var drops=b.drops.filter(function(d){
-      return pbFam==="all"||d.fam===pbFam;
-    });
+    var drops=b.drops.filter(function(d){return pbFam==="all"||d.fam===pbFam});
     if(!drops.length)return "";
     var bossHit=!q||((b.n+" "+b.pf+" "+b.loc+" "+b.mobs.join(" ")).toLowerCase().indexOf(q)>=0);
     var matched=drops.filter(function(d){
@@ -842,24 +856,30 @@ function renderPB(){
     if(!matched.length)return "";
     shown++;sym+=matched.length;
     var qls=matched.map(function(d){return d.ql}).filter(function(n){return n});
-    var range=qls.length?(Math.min.apply(null,qls)===Math.max.apply(null,qls)?("QL "+qls[0]):("QL "+Math.min.apply(null,qls)+"–"+Math.max.apply(null,qls))):"";
-    return '<div class="pb">'+
-      '<div class="pb-head">'+
+    var range=qls.length?(Math.min.apply(null,qls)===Math.max.apply(null,qls)?("QL "+qls[0]):("QL "+Math.min.apply(null,qls)+"\u2013"+Math.max.apply(null,qls))):"";
+    return '<details class="pb"'+(open?" open":"")+'>'+
+      '<summary>'+
         '<span class="pb-name">'+esc(b.n)+'</span>'+
         '<span class="tagp crew">lvl '+b.lvl+'</span>'+
         (range?'<span class="tagp coin">'+range+'</span>':'')+
+        '<span class="pb-zone">'+esc(b.pf)+'</span>'+
+        '<span class="pb-n">'+matched.length+' sym</span>'+
+      '</summary>'+
+      '<div class="pb-body">'+
+        '<div class="pb-meta">'+esc(b.pf)+(b.loc&&b.loc!==b.pf?" \u00b7 "+esc(b.loc):"")+'</div>'+
+        '<div class="pb-pat"><span>Patterns from</span> '+esc(b.mobs.join(", "))+'</div>'+
+        '<div class="pb-drops">'+matched.map(function(d){
+          return '<div class="pb-d"><span class="pb-slot">'+esc(d.slot)+'</span>'+
+            '<span class="pb-ql">QL '+(d.ql||"?")+'</span>'+
+            '<span class="pb-fam">'+esc(d.fam||"")+'</span>'+
+            '<span class="pb-sym">'+esc(d.name||"")+'</span></div>';
+        }).join("")+'</div>'+
       '</div>'+
-      '<div class="pb-meta">'+esc(b.pf)+(b.loc&&b.loc!==b.pf?' &middot; '+esc(b.loc):'')+'</div>'+
-      '<div class="pb-pat"><span>Patterns from</span> '+esc(b.mobs.join(", "))+'</div>'+
-      '<div class="pb-drops">'+matched.map(function(d){
-        return '<div class="pb-d"><span class="pb-slot">'+esc(d.slot)+'</span>'+
-          '<span class="pb-ql">QL '+(d.ql||"?")+'</span>'+
-          '<span class="pb-fam">'+esc(d.fam||"")+'</span>'+
-          '<span class="pb-sym">'+esc(d.name||"")+'</span></div>';
-      }).join("")+'</div>'+
-    '</div>';
+    '</details>';
   }).join("");
-  document.getElementById("pbcount").textContent=shown+" boss"+(shown===1?"":"es")+" · "+sym+" symbiant"+(sym===1?"":"s");
+  document.getElementById("pbcount").textContent=
+    shown+" boss"+(shown===1?"":"es")+" \u00b7 "+sym+" symbiant"+(sym===1?"":"s")+
+    (open?"":" \u00b7 click a boss to see its drops");
   document.getElementById("pblist").innerHTML=html||'<div class="empty">Nothing matches that.</div>';
 }
 
