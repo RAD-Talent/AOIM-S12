@@ -1,0 +1,5 @@
+{
+  "_comment": "Buffs the org has unlocked. Add an entry when someone posts the execution text in #unlocked-buffs and it's confirmed. A buff counts as unlocked only when a challenger casts it WITHOUT a wrangle or umbral wrangler. Agents cannot unlock other professions' buffs. Set onBot true once it's loaded on the Borealis buff bots.",
+  "updated": "9/15/2026",
+  "unlocked": []
+}
