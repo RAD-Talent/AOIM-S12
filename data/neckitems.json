@@ -8,7 +8,7 @@
    "n": "All-Match Augmented Bow Tie",
    "req": "High Psychology",
    "src": "Tradeskilled — Biomare",
-   "d": "Variable QL. More health and nano than the SoltoyZ, but the Psychology requirement means it's realistic only for Engineer, Trader, Bureaucrat, Soldier and Enforcer.",
+   "d": "LOCKED OUT AT 100 — it's built from Biomare parts and Biomare closes to you above level 100. Variable QL. More health and nano than the SoltoyZ, but the Psychology requirement means it's realistic only for Engineer, Trader, Bureaucrat, Soldier and Enforcer.",
    "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"
   },
   {
@@ -22,16 +22,16 @@
   },
   {
    "l": 41,
-   "band": "80–120",
+   "band": "get by 100",
    "n": "Collar of Amplification",
    "req": "Computer Literacy 400",
    "src": "Biomare / Foreman's quest chain — The Longest Road",
-   "d": "QL100. +15 Max NCU, +7 Treatment, +7 First Aid, and one nano skill +10 that you right-click to swap between all six. Neutrals may start with either Ace Starr (Clan, open Longest Road) or Dr. Hercules Lincoln (Omni, Outpost 10-3) — both paths end in the collar. Ace Starr is the easier approach for us. Quest range 41–100, +125k XP.",
+   "d": "LOCKED OUT AT 100 — the Biomare / Foreman's chain closes above level 100, so this has to be done inside Cap 3. QL100. +15 Max NCU, +7 Treatment, +7 First Aid, and one nano skill +10 that you right-click to swap between all six. Neutrals may start with either Ace Starr (Clan, open Longest Road) or Dr. Hercules Lincoln (Omni, Outpost 10-3) — both paths end in the collar. Ace Starr is the easier approach for us. Quest range 41–100, +125k XP. Still worth wearing well past 100 once you have it.",
    "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"
   },
   {
    "l": 50,
-   "band": "50–200",
+   "band": "get by 110",
    "n": "Collar Casero de la Cripta — the COH collar",
    "req": "Biological Metamorphosis 470",
    "src": "Crypt of Home — Broken Shores, 355 x 2215",
