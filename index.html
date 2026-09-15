@@ -290,6 +290,12 @@ td.n,th.n{font-family:var(--f-m);font-variant-numeric:tabular-nums;white-space:n
 tr.hit td{background:var(--go-bg)}
 tr.hit td:first-child{box-shadow:inset 3px 0 0 var(--go)}
 .lv{font-family:var(--f-m);font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.zone{font-family:var(--f-m);font-size:12px;color:var(--ink-3);white-space:nowrap}
+.side{display:inline-block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:3px;margin-left:7px;vertical-align:1px;font-weight:600}
+.side.red{color:var(--go);background:var(--go-bg);border:1px solid var(--go)}
+.side.unred{color:var(--rust);background:var(--rust-bg);border:1px solid var(--rust)}
+#questbody a{color:var(--notum);text-decoration:none;border-bottom:1px solid var(--rule)}
+#questbody a:hover{border-bottom-color:var(--notum)}
 .lv b{color:var(--go);background:var(--go-bg);padding:1px 5px;border-radius:2px;font-weight:600}
 
 /* ===== status board ===== */
@@ -424,22 +430,26 @@ footer a{color:var(--ink-3)}
 
 <section id="quests">
   <h2>Quests by level</h2>
-  <p class="deck">Tempzz's start-level list, plus Code's progression-quest notes. Both were written for earlier seasons, so treat them as a route rather than gospel &mdash; but the level gates and farm targets still hold.</p>
+  <p class="deck">Every quest name below links to its guide on ao-universe.com. Start levels come from Tempzz's list and Code's progression notes; zone, faction side and requirements were checked against ao-universe, so where the old Discord lists were wrong this is the corrected version.</p>
   <div class="note cy">
-    <p><b>We're neutral, so both Shadowlands faction sides are open to us.</b> Redeemed and Unredeemed start-up quests, and both gardens in each zone &mdash; Aban and Thrak, Shere and Enel, and the Scheol and Adonis pairs. Where the old lists named one side, run the pair.</p>
+    <p><b>We're neutral, so both Shadowlands faction sides are open to us.</b> Every garden and sanctuary has a Redeemed and an Unredeemed version &mdash; Aban/Thrak in Nascence, Enel/Shere in Elysium, Ocra/Roch in Scheol, Gilthar/Dalja in Adonis, Cama/Vanya in Penumbra, Galahad/Lord Mordeth in Inferno. Both sides are listed and both are worth running.</p>
     <p>Start-up quests: use the neutral route, not the Omni one the old notes pointed at.</p>
   </div>
 
   <div class="controls">
     <input class="search" id="questq" type="search" placeholder="Search quest, zone or reward&hellip;" aria-label="Search quests">
     <button class="chip" id="questonly" aria-pressed="false">Only what I can start now</button>
+    <button class="chip" data-qf="all" aria-pressed="true">All sides</button>
+    <button class="chip" data-qf="Redeemed" aria-pressed="false">Redeemed</button>
+    <button class="chip" data-qf="Unredeemed" aria-pressed="false">Unredeemed</button>
   </div>
   <div class="scroll">
     <table>
-      <thead><tr><th class="n">Level</th><th>Quest</th><th>Notes</th></tr></thead>
+      <thead><tr><th class="n">Level</th><th>Quest</th><th>Zone</th><th>Notes</th></tr></thead>
       <tbody id="questbody"></tbody>
     </table>
   </div>
+  <p id="questcount" style="font-size:13px;color:var(--ink-3);margin-top:10px"></p>
 
   <h3>Progression quests &mdash; the keys into each zone</h3>
   <div class="scroll">
@@ -722,22 +732,31 @@ function renderRolls(){
 }
 
 /* ---------- quests ---------- */
+var questSide="all";
 function renderQuests(){
   var q=(document.getElementById("questq").value||"").toLowerCase();
   var only=document.getElementById("questonly").getAttribute("aria-pressed")==="true";
   var lv=state.level;
   var rows=QUESTS.filter(function(x){
     if(only&&x.l>lv)return false;
+    if(questSide!=="all"&&x.f&&x.f!==questSide)return false;
     if(!q)return true;
-    return (x.n+" "+x.d).toLowerCase().indexOf(q)>=0;
+    return (x.n+" "+x.z+" "+(x.f||"")+" "+x.d).toLowerCase().indexOf(q)>=0;
   });
   var b=document.getElementById("questbody");
-  if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">Nothing matches.</td></tr>';return}
+  var c=document.getElementById("questcount");
+  if(!rows.length){b.innerHTML='<tr><td colspan="4" class="empty">Nothing matches.</td></tr>';c.textContent="";return}
+  var openN=rows.filter(function(x){return x.l<=lv}).length;
+  c.innerHTML="Showing <b>"+rows.length+"</b> quest"+(rows.length===1?"":"s")+" &middot; <b>"+openN+"</b> you can start at level "+lv+
+    ". Quest names link to the ao-universe guide.";
   b.innerHTML=rows.map(function(x){
     var open=x.l<=lv;
+    var name=x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.n)+'</a>':esc(x.n);
+    var side=x.f?' <span class="side '+(x.f==="Redeemed"?"red":"unred")+'">'+esc(x.f)+'</span>':'';
     return '<tr class="'+(open?"hit":"")+'">'+
-      '<td class="n">'+(x.nolvl?'&mdash;':x.l+"+")+'</td>'+
-      '<td><b>'+esc(x.n)+'</b></td>'+
+      '<td class="n">'+x.l+"+"+'</td>'+
+      '<td><b>'+name+'</b>'+side+'</td>'+
+      '<td class="zone">'+esc(x.z)+'</td>'+
       '<td style="color:var(--ink-2)">'+esc(x.d)+'</td></tr>';
   }).join("");
 }
@@ -884,6 +903,12 @@ document.getElementById("rollonly").addEventListener("click",function(){
 });
 document.getElementById("questonly").addEventListener("click",function(){
   var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderQuests();
+});
+document.querySelectorAll('.chip[data-qf]').forEach(function(c){
+  c.addEventListener("click",function(){
+    document.querySelectorAll('.chip[data-qf]').forEach(function(x){x.setAttribute("aria-pressed","false")});
+    c.setAttribute("aria-pressed","true");questSide=c.getAttribute("data-qf");renderQuests();
+  });
 });
 
 boot();
