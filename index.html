@@ -474,7 +474,9 @@ footer a{color:var(--ink-3)}
   <p class="deck" id="neckrule"></p>
 
   <div class="note">
-    <p><b>The one with a deadline: the COH collar.</b> Crypt of Home hard-locks above level 110 and there's no solo way back in. Farm the Collar Casero de la Cripta during Cap 3 &mdash; ceiling 140 &mdash; and make sure you have it before you cross 111. It's a common first-room drop, so it's a short trip, not a dungeon clear.</p>
+    <p><b>Two of these have deadlines. Both land inside Cap 3.</b> Cap 3's ceiling is 140, so this is the window where you can level straight past both of them without noticing.</p>
+    <p><b>Biomare / Foreman's locks out at 100.</b> That's <b>two</b> items, not one &mdash; the Collar of Amplification and the All-Match Augmented Bow Tie both come out of Biomare. Get them before you hit 101; you can't go back for either afterwards. Beo's call on this one.</p>
+    <p><b>Crypt of Home hard-locks above 110.</b> No solo way back in. Grab the Collar Casero de la Cripta before you cross 111. It's a common first-room drop, so it's a short trip, not a dungeon clear.</p>
   </div>
 
   <div class="controls">
@@ -800,8 +802,9 @@ function renderNeck(){
     var open=x.l<=lv;
     var name=x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.n)+'</a>':esc(x.n);
     var req=x.req&&x.req!=="—"?'<div class="zone" style="margin-top:3px">'+esc(x.req)+'</div>':'';
+    var dl=x.band.indexOf("get by")===0;
     return '<tr class="'+(open?"hit":"")+'">'+
-      '<td class="n">'+esc(x.band)+'</td>'+
+      '<td class="n"'+(dl?' style="color:var(--crit);font-weight:600"':'')+'>'+esc(x.band)+'</td>'+
       '<td><b>'+name+'</b>'+req+'</td>'+
       '<td class="zone">'+esc(x.src)+'</td>'+
       '<td style="color:var(--ink-2)">'+esc(x.d)+'</td></tr>';
