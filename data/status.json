@@ -1,5 +1,5 @@
 {
-  "_comment": "Season state. Edit this file to update the site — no HTML changes needed. 'state' must be one of: offline, error, open.",
+  "_comment": "Season state. Edit this file to update the site - no HTML changes needed. 'state' must be one of: offline, error, open.",
   "updated": "9/12/2026",
   "currentCap": 1,
   "capCeiling": 40,
@@ -8,57 +8,144 @@
     {
       "name": "Whompah network",
       "rows": [
-        { "label": "ICC → Newland · Tir · Omni-Trade", "state": "offline" },
-        { "label": "Neutral / Omni-Tek / Clan rings", "state": "offline" },
-        { "label": "Jobe → ICC · Rome · Old Athens", "state": "offline" }
+        {
+          "label": "ICC → Newland · Tir · Omni-Trade",
+          "state": "offline"
+        },
+        {
+          "label": "Neutral / Omni-Tek / Clan rings",
+          "state": "offline"
+        },
+        {
+          "label": "Jobe → ICC · Rome · Old Athens",
+          "state": "offline"
+        }
       ]
     },
     {
       "name": "Grid",
       "rows": [
-        { "label": "Floor 1", "state": "offline" },
-        { "label": "Floor 2", "state": "offline" },
-        { "label": "Floor 3", "state": "offline" }
+        {
+          "label": "Floor 1",
+          "state": "offline"
+        },
+        {
+          "label": "Floor 2",
+          "state": "offline"
+        },
+        {
+          "label": "Floor 3",
+          "state": "offline"
+        }
       ]
     },
     {
       "name": "Shadowlands",
       "rows": [
-        { "label": "Rubi-Ka → Nascence portal", "state": "error" },
-        { "label": "Nascence → Elysium → Pandemonium", "state": "offline" },
-        { "label": "Sub-orbital Battle Station", "state": "offline" }
+        {
+          "label": "Rubi-Ka → Nascence portal",
+          "state": "error"
+        },
+        {
+          "label": "Nascence → Elysium → Pandemonium",
+          "state": "offline"
+        },
+        {
+          "label": "Sub-orbital Battle Station",
+          "state": "offline"
+        }
       ]
     },
     {
       "name": "Commerce & missions",
       "rows": [
-        { "label": "Commerce grid · nano crystal · implant terminals", "state": "offline" },
-        { "label": "Mission grid", "state": "offline" },
-        { "label": "Freelancer offices · Doja offices", "state": "error" }
+        {
+          "label": "Commerce grid · nano crystal · implant terminals",
+          "state": "offline"
+        },
+        {
+          "label": "Mission grid",
+          "state": "offline"
+        },
+        {
+          "label": "Freelancer offices · Doja offices",
+          "state": "error"
+        }
       ]
     },
     {
       "name": "Bots",
       "rows": [
-        { "label": "Buff bots", "state": "offline" },
-        { "label": "Warp bots", "state": "offline" }
+        {
+          "label": "Buff bots",
+          "state": "offline"
+        },
+        {
+          "label": "Warp bots",
+          "state": "offline"
+        }
       ]
     },
     {
       "name": "Open from the start",
       "rows": [
-        { "label": "All Rubi-Ka zones", "state": "open" },
-        { "label": "Nascence", "state": "open" },
-        { "label": "NPC traders — backyard trader, Sundance Smith, tailors, bartenders", "state": "open" }
+        {
+          "label": "All Rubi-Ka zones",
+          "state": "open"
+        },
+        {
+          "label": "Nascence",
+          "state": "open"
+        },
+        {
+          "label": "NPC traders — backyard trader, Sundance Smith, tailors, bartenders",
+          "state": "open"
+        }
       ]
     }
   ],
   "caps": [
-    { "cap": 1, "ceiling": 40,  "opens": "9/19/2026",  "opensTBC": false, "raid": "10/3/2026",  "target": "Morgan Le Fey — twist: No Tired Limbs" },
-    { "cap": 2, "ceiling": 80,  "opens": "10/3/2026",  "opensTBC": true,  "raid": "10/17/2026", "target": "Not announced" },
-    { "cap": 3, "ceiling": 140, "opens": "10/17/2026", "opensTBC": true,  "raid": "10/31/2026", "target": "Not announced" },
-    { "cap": 4, "ceiling": 190, "opens": "10/31/2026", "opensTBC": true,  "raid": "11/14/2026", "target": "Not announced" },
-    { "cap": 5, "ceiling": 205, "opens": "11/14/2026", "opensTBC": true,  "raid": "11/28/2026", "target": "Not announced" },
-    { "cap": 6, "ceiling": 220, "opens": "11/28/2026", "opensTBC": true,  "raid": "12/12/2026", "target": "Not announced" }
+    {
+      "cap": 1,
+      "ceiling": 40,
+      "opens": "9/19/2026",
+      "opensTBC": false,
+      "raid": "10/3/2026"
+    },
+    {
+      "cap": 2,
+      "ceiling": 80,
+      "opens": "10/3/2026",
+      "opensTBC": true,
+      "raid": "10/17/2026"
+    },
+    {
+      "cap": 3,
+      "ceiling": 140,
+      "opens": "10/17/2026",
+      "opensTBC": true,
+      "raid": "10/31/2026"
+    },
+    {
+      "cap": 4,
+      "ceiling": 190,
+      "opens": "10/31/2026",
+      "opensTBC": true,
+      "raid": "11/14/2026"
+    },
+    {
+      "cap": 5,
+      "ceiling": 205,
+      "opens": "11/14/2026",
+      "opensTBC": true,
+      "raid": "11/28/2026"
+    },
+    {
+      "cap": 6,
+      "ceiling": 220,
+      "opens": "11/28/2026",
+      "opensTBC": true,
+      "raid": "12/12/2026"
+    }
   ]
 }
