@@ -119,6 +119,29 @@ a:hover{color:var(--ink)}
 .tldr li b{color:var(--ink)}
 .tldr p{margin:13px 0 0;color:var(--ink-3);font-size:14px}
 
+/* ===== pocket bosses ===== */
+.pb{border-top:1px solid var(--rule-soft);padding:14px 0}
+#pblist .pb:last-child{border-bottom:1px solid var(--rule-soft)}
+.pb-head{display:flex;flex-wrap:wrap;gap:9px;align-items:baseline}
+.pb-name{font-family:var(--f-d);font-weight:600;font-size:17px}
+.pb-meta{font-family:var(--f-m);font-size:12.5px;color:var(--ink-2);margin-top:3px}
+.pb-pat{font-family:var(--f-m);font-size:12.5px;color:var(--ink);margin-top:5px}
+.pb-pat span{color:var(--rust);text-transform:uppercase;letter-spacing:.1em;font-size:10px;margin-right:6px}
+.pb-drops{margin-top:9px;display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule-soft)}
+.pb-d{
+  background:var(--card);display:grid;
+  grid-template-columns:96px 66px 112px minmax(0,1fr);gap:10px;
+  padding:6px 11px;font-family:var(--f-m);font-size:12.5px;align-items:baseline;
+}
+.pb-slot{color:var(--notum);font-weight:600}
+.pb-ql{color:var(--ink);font-variant-numeric:tabular-nums}
+.pb-fam{color:var(--go)}
+.pb-sym{color:var(--ink-2);overflow-wrap:anywhere}
+@media (max-width:700px){
+  .pb-d{grid-template-columns:1fr 1fr;gap:2px 10px}
+  .pb-sym{grid-column:1/-1}
+}
+
 .hud{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;
   background:var(--rule);border:1px solid var(--rule);
@@ -343,8 +366,8 @@ footer a{color:var(--ink-3)}
     <a href="#rolls">Rolls</a>
     <a href="#quests">Quests</a>
     <a href="#missions">Missions</a>
+    <a href="#pockets">Pocket bosses</a>
     <a href="#locked">Locked</a>
-    <a href="#buffs">Buffs</a>
     <a href="#caps">Caps</a>
     <a href="#rules">Rules</a>
     <a href="#ref">Reference</a>
@@ -446,31 +469,34 @@ footer a{color:var(--ink-3)}
   </div>
 </section>
 
+<section id="pockets">
+  <h2>Pocket bosses and symbiants</h2>
+  <p class="deck">Which boss drops the symbiant you want, where it spawns, and which mobs drop the pattern pieces you need to call it. Search a slot, a family, a boss or a symbiant name.</p>
+
+  <div class="controls">
+    <input class="search" id="pbq" type="search" placeholder="Search symbiant, slot, boss, playfield&hellip; (try &ldquo;ocular&rdquo; or &ldquo;Scheol&rdquo;)" aria-label="Search pocket bosses">
+    <button class="chip" data-fam="all" aria-pressed="true">All</button>
+    <button class="chip" data-fam="Artillery" aria-pressed="false">Artillery</button>
+    <button class="chip" data-fam="Control" aria-pressed="false">Control</button>
+    <button class="chip" data-fam="Extermination" aria-pressed="false">Extermination</button>
+    <button class="chip" data-fam="Infantry" aria-pressed="false">Infantry</button>
+    <button class="chip" data-fam="Support" aria-pressed="false">Support</button>
+  </div>
+  <p id="pbcount" style="font-family:var(--f-m);font-size:12px;color:var(--ink-3);margin:-6px 0 14px"></p>
+  <div id="pblist"></div>
+
+  <div class="note cy">
+    <p><b>How pocket bosses work.</b> You don't find them in the world &mdash; you build them. Farm the three pattern pieces from the mobs listed on each boss, tradeskill them together, and use the result to summon the boss wherever you like.</p>
+    <p>Tradeskilling patterns is gated: <b>Requisition: Interdimensional Flux</b> unlocks pocket boss crafting for the org (loot 2000 Pattern Pieces, or get an Ancient Novictum Refiner).</p>
+    <p>Boss data from <a href="https://ao.tinkeringidiot.com/pocket" target="_blank" rel="noopener">TinkerTools</a>. Planning a full build around these? <a href="https://aosetups.com/" target="_blank" rel="noopener">aosetups.com</a> lets you lay out every slot before you farm it.</p>
+  </div>
+</section>
+
 <section id="locked">
   <h2>What's locked at the drop</h2>
   <p class="deck">The board from #season-information, last updated <span id="boardDate">9/12/2026</span>. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
   <div class="board" id="board"></div>
   <p style="margin-top:16px"><b>Tradeskills are at <span id="tsCap">0</span></b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
-</section>
-
-<section id="buffs">
-  <h2>Unlocked buffs</h2>
-  <p class="deck">The running list of what the org has unlocked. If it isn't here, you can only use it if your own character can cast it &mdash; and you should cancel it if a passer-by lands it on you.</p>
-
-  <div class="prog" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-    <div class="p"><span class="k">Buffs unlocked</span><span class="n cy" id="bCount">0</span></div>
-    <div class="p"><span class="k">Loaded on the bots</span><span class="n go" id="bBot">0</span></div>
-    <div class="p"><span class="k">List updated</span><span class="n" style="font-size:16px" id="bDate">&mdash;</span></div>
-  </div>
-
-  <div class="controls"><input class="search" id="bq" type="search" placeholder="Search buff or profession&hellip;" aria-label="Search unlocked buffs"></div>
-  <div id="bufflist"></div>
-
-  <div class="note cy">
-    <p><b>How a buff gets unlocked.</b> A challenger has to cast it <i>without</i> a wrangle or umbral wrangler, then post the full nano name and execution text in #unlocked-buffs. Once it's confirmed it goes on the Borealis buff bots.</p>
-    <p>Agents can't unlock other professions' buffs. You may still use a buff you can only land with a wrangle on yourself or others &mdash; it just can't go on the bots.</p>
-    <p>Only the Borealis bots follow challenge restrictions. The OA bots don't &mdash; don't use them.</p>
-  </div>
 </section>
 
 <section id="caps">
@@ -625,7 +651,7 @@ footer a{color:var(--ink-3)}
    All content lives in data/*.json so it can be edited without touching this file.
    Add or change a mission, roll, quest, shop row or status line there and the page picks it up.
 */
-var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,BUFFS=null,sigCount={};
+var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,PB=[],sigCount={};
 
 /* ---------- storage ---------- */
 var KEY="aoim-s12-v1";
@@ -799,41 +825,52 @@ function renderStatus(){
   }
 }
 
-/* ---------- unlocked buffs ---------- */
-function renderBuffs(){
-  if(!BUFFS)return;
-  var list=BUFFS.unlocked||[];
-  var q=(document.getElementById("bq").value||"").toLowerCase();
-  document.getElementById("bCount").textContent=list.length;
-  document.getElementById("bBot").textContent=list.filter(function(b){return b.onBot}).length;
-  document.getElementById("bDate").textContent=BUFFS.updated||"—";
-  var rows=list.filter(function(b){
-    return !q||((b.nano||"")+" "+(b.profession||"")+" "+(b.by||"")).toLowerCase().indexOf(q)>=0;
-  });
-  var host=document.getElementById("bufflist");
-  if(!list.length){
-    host.innerHTML='<div class="empty">Nothing unlocked yet. #unlocked-buffs is empty &mdash; until something lands there, assume every buff is locked unless your own character can cast it.</div>';
-    return;
-  }
-  if(!rows.length){host.innerHTML='<div class="empty">Nothing matches.</div>';return}
-  rows.sort(function(a,b){return (a.profession||"").localeCompare(b.profession||"")||(a.nano||"").localeCompare(b.nano||"")});
-  host.innerHTML=rows.map(function(b){
-    var tag=b.onBot?'<span class="tagp coin">on the bots</span>':'<span class="tagp crew">not on bots yet</span>';
-    return '<div class="mrow" style="grid-template-columns:1fr auto">'+
-      '<span class="nm">'+esc(b.nano||"")+'</span>'+tag+
-      '<div class="gl" style="grid-column:1/-1">'+esc(b.profession||"")+(b.by?' &middot; unlocked by '+esc(b.by):'')+'</div>'+
+/* ---------- pocket bosses ---------- */
+var pbFam="all";
+function renderPB(){
+  var q=(document.getElementById("pbq").value||"").toLowerCase();
+  var shown=0,sym=0;
+  var html=PB.map(function(b){
+    var drops=b.drops.filter(function(d){
+      return pbFam==="all"||d.fam===pbFam;
+    });
+    if(!drops.length)return "";
+    var bossHit=!q||((b.n+" "+b.pf+" "+b.loc+" "+b.mobs.join(" ")).toLowerCase().indexOf(q)>=0);
+    var matched=drops.filter(function(d){
+      return !q||bossHit||((d.name+" "+d.slot+" "+d.fam+" ql"+d.ql).toLowerCase().indexOf(q)>=0);
+    });
+    if(!matched.length)return "";
+    shown++;sym+=matched.length;
+    var qls=matched.map(function(d){return d.ql}).filter(function(n){return n});
+    var range=qls.length?(Math.min.apply(null,qls)===Math.max.apply(null,qls)?("QL "+qls[0]):("QL "+Math.min.apply(null,qls)+"–"+Math.max.apply(null,qls))):"";
+    return '<div class="pb">'+
+      '<div class="pb-head">'+
+        '<span class="pb-name">'+esc(b.n)+'</span>'+
+        '<span class="tagp crew">lvl '+b.lvl+'</span>'+
+        (range?'<span class="tagp coin">'+range+'</span>':'')+
+      '</div>'+
+      '<div class="pb-meta">'+esc(b.pf)+(b.loc&&b.loc!==b.pf?' &middot; '+esc(b.loc):'')+'</div>'+
+      '<div class="pb-pat"><span>Patterns from</span> '+esc(b.mobs.join(", "))+'</div>'+
+      '<div class="pb-drops">'+matched.map(function(d){
+        return '<div class="pb-d"><span class="pb-slot">'+esc(d.slot)+'</span>'+
+          '<span class="pb-ql">QL '+(d.ql||"?")+'</span>'+
+          '<span class="pb-fam">'+esc(d.fam||"")+'</span>'+
+          '<span class="pb-sym">'+esc(d.name||"")+'</span></div>';
+      }).join("")+'</div>'+
     '</div>';
   }).join("");
+  document.getElementById("pbcount").textContent=shown+" boss"+(shown===1?"":"es")+" · "+sym+" symbiant"+(sym===1?"":"s");
+  document.getElementById("pblist").innerHTML=html||'<div class="empty">Nothing matches that.</div>';
 }
 
 /* ---------- boot: load data/*.json ---------- */
-var FILES=["rolls","quests","missions","equipment","shop","status","buffs"];
+var FILES=["rolls","quests","missions","equipment","shop","status","pocketbosses"];
 function loadFail(err){
   var msg='<div class="note" style="border-left-color:var(--crit);background:var(--crit-bg)">'+
     '<p><b>Couldn\'t load the season data.</b> '+esc(String(err && err.message || err))+'</p>'+
     '<p>This page reads its content from the <code>data/</code> folder next to it. If you opened the file directly from your computer, '+
     'your browser blocks that read &mdash; use the hosted page instead.</p></div>';
-  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist","bufflist"].forEach(function(id){
+  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist","pblist"].forEach(function(id){
     var el=document.getElementById(id);if(el)el.innerHTML=(el.tagName==="TBODY"?'<tr><td colspan="5">':'')+msg;
   });
 }
@@ -844,9 +881,9 @@ function boot(){
       return r.json();
     });
   })).then(function(res){
-    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];BUFFS=res[6];
+    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];PB=(res[6]&&res[6].bosses)||[];
     ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
-    renderStatus();renderBuffs();
+    renderStatus();renderPB();
     setLevel(state.level);
     renderMissions();updateProgress();renderEquip();renderShop();
   }).catch(loadFail);
@@ -860,7 +897,13 @@ document.getElementById("questq").addEventListener("input",renderQuests);
 document.getElementById("mq").addEventListener("input",renderMissions);
 document.getElementById("eq").addEventListener("input",renderEquip);
 document.getElementById("shopq").addEventListener("input",renderShop);
-document.getElementById("bq").addEventListener("input",renderBuffs);
+document.getElementById("pbq").addEventListener("input",renderPB);
+document.querySelectorAll('.chip[data-fam]').forEach(function(c){
+  c.addEventListener("click",function(){
+    document.querySelectorAll('.chip[data-fam]').forEach(function(x){x.setAttribute("aria-pressed","false")});
+    c.setAttribute("aria-pressed","true");pbFam=c.getAttribute("data-fam");renderPB();
+  });
+});
 document.getElementById("rollonly").addEventListener("click",function(){
   var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderRolls();
 });
