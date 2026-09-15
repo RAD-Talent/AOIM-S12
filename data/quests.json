@@ -11,13 +11,13 @@
  },
  {
   "l": 1,
-  "n": "Thrak Garden Key Quest",
-  "d": "Nascence — farm 4 insignias"
+  "n": "Nascence Garden Key Quest — Aban / Thrak",
+  "d": "Farm 4 insignias. Neutral can run both sides, so do the pair."
  },
  {
   "l": 1,
-  "n": "Unredeemed Start-up quest",
-  "d": "Gives Spec 1"
+  "n": "Start-up quest — Redeemed or Unredeemed",
+  "d": "Gives Spec 1. Neutral can run either, or both."
  },
  {
   "l": 40,
@@ -36,13 +36,13 @@
  },
  {
   "l": 50,
-  "n": "Shere Garden Key Quest",
-  "d": "8 of 9 insignias"
+  "n": "Elysium Garden Key Quest — Shere / Enel",
+  "d": "8 of 9 insignias. Both sides are open to us."
  },
  {
   "l": 50,
-  "n": "Shere Sanctuary Garden Key Quest",
-  "d": ""
+  "n": "Elysium Sanctuary Garden Key Quest",
+  "d": "Both faction sides available."
  },
  {
   "l": 60,
@@ -66,20 +66,20 @@
  },
  {
   "l": 60,
-  "n": "Roch Garden Key Quest",
-  "d": "Start level not stated in the source",
+  "n": "Scheol Garden Key Quest — Roch and its pair",
+  "d": "Start level not stated in the source. Both sides available to neutral.",
   "nolvl": 1
  },
  {
   "l": 60,
-  "n": "Roch Sanctuary Garden Key Quest",
-  "d": "Start level not stated in the source",
+  "n": "Scheol Sanctuary Garden Key Quest",
+  "d": "Start level not stated in the source. Both sides available.",
   "nolvl": 1
  },
  {
   "l": 80,
-  "n": "Knowledge of the Yuttos",
-  "d": ""
+  "n": "Knowledge of the Yuttos (Elysium cata)",
+  "d": "Beo's tip: pull it at 199 and run it at 201–203."
  },
  {
   "l": 80,
@@ -103,8 +103,8 @@
  },
  {
   "l": 130,
-  "n": "Dalja Garden Key Quest",
-  "d": "Loot the note early"
+  "n": "Adonis Garden Key Quest — Dalja / Vanya",
+  "d": "Loot the note early. Both sides available to neutral."
  },
  {
   "l": 130,
@@ -113,14 +113,14 @@
  },
  {
   "l": 130,
-  "n": "Vanya Garden Key Quest",
-  "d": "35 soul fragments, 6 insignias — start level not stated",
+  "n": "Adonis Garden Key Quest — Vanya side",
+  "d": "35 soul fragments, 6 insignias — start level not stated.",
   "nolvl": 1
  },
  {
   "l": 130,
-  "n": "Vanya Sanctuary Garden Key Quest",
-  "d": "6 cama insignias — start level not stated",
+  "n": "Adonis Sanctuary Garden Key Quest — Vanya side",
+  "d": "6 cama insignias — start level not stated.",
   "nolvl": 1
  },
  {
@@ -140,8 +140,8 @@
  },
  {
   "l": 150,
-  "n": "Dalja Sanctuary Garden Key Quest",
-  "d": "Infernal demon pattern, per team"
+  "n": "Adonis Sanctuary Garden Key Quest — Dalja side",
+  "d": "Infernal demon pattern, per team."
  },
  {
   "l": 150,
