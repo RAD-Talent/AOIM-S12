@@ -344,6 +344,7 @@ footer a{color:var(--ink-3)}
     <a href="#quests">Quests</a>
     <a href="#missions">Missions</a>
     <a href="#locked">Locked</a>
+    <a href="#buffs">Buffs</a>
     <a href="#caps">Caps</a>
     <a href="#rules">Rules</a>
     <a href="#ref">Reference</a>
@@ -450,6 +451,26 @@ footer a{color:var(--ink-3)}
   <p class="deck">The board from #season-information, last updated <span id="boardDate">9/12/2026</span>. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
   <div class="board" id="board"></div>
   <p style="margin-top:16px"><b>Tradeskills are at <span id="tsCap">0</span></b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
+</section>
+
+<section id="buffs">
+  <h2>Unlocked buffs</h2>
+  <p class="deck">The running list of what the org has unlocked. If it isn't here, you can only use it if your own character can cast it &mdash; and you should cancel it if a passer-by lands it on you.</p>
+
+  <div class="prog" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+    <div class="p"><span class="k">Buffs unlocked</span><span class="n cy" id="bCount">0</span></div>
+    <div class="p"><span class="k">Loaded on the bots</span><span class="n go" id="bBot">0</span></div>
+    <div class="p"><span class="k">List updated</span><span class="n" style="font-size:16px" id="bDate">&mdash;</span></div>
+  </div>
+
+  <div class="controls"><input class="search" id="bq" type="search" placeholder="Search buff or profession&hellip;" aria-label="Search unlocked buffs"></div>
+  <div id="bufflist"></div>
+
+  <div class="note cy">
+    <p><b>How a buff gets unlocked.</b> A challenger has to cast it <i>without</i> a wrangle or umbral wrangler, then post the full nano name and execution text in #unlocked-buffs. Once it's confirmed it goes on the Borealis buff bots.</p>
+    <p>Agents can't unlock other professions' buffs. You may still use a buff you can only land with a wrangle on yourself or others &mdash; it just can't go on the bots.</p>
+    <p>Only the Borealis bots follow challenge restrictions. The OA bots don't &mdash; don't use them.</p>
+  </div>
 </section>
 
 <section id="caps">
@@ -604,7 +625,7 @@ footer a{color:var(--ink-3)}
    All content lives in data/*.json so it can be edited without touching this file.
    Add or change a mission, roll, quest, shop row or status line there and the page picks it up.
 */
-var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,sigCount={};
+var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,BUFFS=null,sigCount={};
 
 /* ---------- storage ---------- */
 var KEY="aoim-s12-v1";
@@ -778,14 +799,41 @@ function renderStatus(){
   }
 }
 
+/* ---------- unlocked buffs ---------- */
+function renderBuffs(){
+  if(!BUFFS)return;
+  var list=BUFFS.unlocked||[];
+  var q=(document.getElementById("bq").value||"").toLowerCase();
+  document.getElementById("bCount").textContent=list.length;
+  document.getElementById("bBot").textContent=list.filter(function(b){return b.onBot}).length;
+  document.getElementById("bDate").textContent=BUFFS.updated||"—";
+  var rows=list.filter(function(b){
+    return !q||((b.nano||"")+" "+(b.profession||"")+" "+(b.by||"")).toLowerCase().indexOf(q)>=0;
+  });
+  var host=document.getElementById("bufflist");
+  if(!list.length){
+    host.innerHTML='<div class="empty">Nothing unlocked yet. #unlocked-buffs is empty &mdash; until something lands there, assume every buff is locked unless your own character can cast it.</div>';
+    return;
+  }
+  if(!rows.length){host.innerHTML='<div class="empty">Nothing matches.</div>';return}
+  rows.sort(function(a,b){return (a.profession||"").localeCompare(b.profession||"")||(a.nano||"").localeCompare(b.nano||"")});
+  host.innerHTML=rows.map(function(b){
+    var tag=b.onBot?'<span class="tagp coin">on the bots</span>':'<span class="tagp crew">not on bots yet</span>';
+    return '<div class="mrow" style="grid-template-columns:1fr auto">'+
+      '<span class="nm">'+esc(b.nano||"")+'</span>'+tag+
+      '<div class="gl" style="grid-column:1/-1">'+esc(b.profession||"")+(b.by?' &middot; unlocked by '+esc(b.by):'')+'</div>'+
+    '</div>';
+  }).join("");
+}
+
 /* ---------- boot: load data/*.json ---------- */
-var FILES=["rolls","quests","missions","equipment","shop","status"];
+var FILES=["rolls","quests","missions","equipment","shop","status","buffs"];
 function loadFail(err){
   var msg='<div class="note" style="border-left-color:var(--crit);background:var(--crit-bg)">'+
     '<p><b>Couldn\'t load the season data.</b> '+esc(String(err && err.message || err))+'</p>'+
     '<p>This page reads its content from the <code>data/</code> folder next to it. If you opened the file directly from your computer, '+
     'your browser blocks that read &mdash; use the hosted page instead.</p></div>';
-  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist"].forEach(function(id){
+  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist","bufflist"].forEach(function(id){
     var el=document.getElementById(id);if(el)el.innerHTML=(el.tagName==="TBODY"?'<tr><td colspan="5">':'')+msg;
   });
 }
@@ -796,9 +844,9 @@ function boot(){
       return r.json();
     });
   })).then(function(res){
-    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];
+    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];BUFFS=res[6];
     ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
-    renderStatus();
+    renderStatus();renderBuffs();
     setLevel(state.level);
     renderMissions();updateProgress();renderEquip();renderShop();
   }).catch(loadFail);
@@ -812,6 +860,7 @@ document.getElementById("questq").addEventListener("input",renderQuests);
 document.getElementById("mq").addEventListener("input",renderMissions);
 document.getElementById("eq").addEventListener("input",renderEquip);
 document.getElementById("shopq").addEventListener("input",renderShop);
+document.getElementById("bq").addEventListener("input",renderBuffs);
 document.getElementById("rollonly").addEventListener("click",function(){
   var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderRolls();
 });
