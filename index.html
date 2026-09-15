@@ -305,7 +305,7 @@ footer a{color:var(--ink-3)}
     <div class="cell"><span class="k">Deployment</span><span class="v cy" id="dep">9/19/2026<small>14:00 GMT</small></span></div>
     <div class="cell"><span class="k">Countdown</span><span class="v" id="cd">&mdash;<small>until drop</small></span></div>
     <div class="cell"><span class="k">Side</span><span class="v">Neutral<small>RK19 &middot; one char, no alts</small></span></div>
-    <div class="cell"><span class="k">Cap 1 ceiling</span><span class="v">Level 40<small>raise raid 10/3/2026</small></span></div>
+    <div class="cell"><span class="k" id="hudCapK">Cap 1 ceiling</span><span class="v" id="hudCap">Level 40<small>raise raid 10/3/2026</small></span></div>
     <div class="cell"><span class="k">Infrastructure</span><span class="v ru">Offline<small>travel, terminals, bots</small></span></div>
   </div>
 </header>
@@ -423,31 +423,9 @@ footer a{color:var(--ink-3)}
 
 <section id="locked">
   <h2>What's locked at the drop</h2>
-  <p class="deck">The board from #season-information, last updated 9/12/2026. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
-  <div class="board">
-    <div class="grp">Whompah network</div>
-    <div class="r"><span class="n2">ICC &rarr; Newland &middot; Tir &middot; Omni-Trade</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Neutral / Omni-Tek / Clan rings</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Jobe &rarr; ICC &middot; Rome &middot; Old Athens</span><span class="st off">Offline</span></div>
-    <div class="grp">Grid</div>
-    <div class="r"><span class="n2">Floors 1, 2 and 3</span><span class="st off">Offline</span></div>
-    <div class="grp">Shadowlands</div>
-    <div class="r"><span class="n2">Rubi-Ka &rarr; Nascence portal</span><span class="st err">Error</span></div>
-    <div class="r"><span class="n2">Nascence &rarr; Elysium &rarr; Pandemonium</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Sub-orbital Battle Station</span><span class="st off">Offline</span></div>
-    <div class="grp">Commerce &amp; missions</div>
-    <div class="r"><span class="n2">Commerce grid &middot; nano crystal &middot; implant terminals</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Mission grid</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Freelancer offices &middot; Doja offices</span><span class="st err">Error</span></div>
-    <div class="grp">Bots</div>
-    <div class="r"><span class="n2">Buff bots</span><span class="st off">Offline</span></div>
-    <div class="r"><span class="n2">Warp bots</span><span class="st off">Offline</span></div>
-    <div class="grp">Open from the start</div>
-    <div class="r"><span class="n2">All Rubi-Ka zones</span><span class="st ok">Open</span></div>
-    <div class="r"><span class="n2">Nascence</span><span class="st ok">Open</span></div>
-    <div class="r"><span class="n2">NPC traders &mdash; backyard trader, Sundance Smith, tailors, bartenders</span><span class="st ok">Open</span></div>
-  </div>
-  <p style="margin-top:16px"><b>Tradeskills start at 0</b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
+  <p class="deck">The board from #season-information, last updated <span id="boardDate">9/12/2026</span>. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
+  <div class="board" id="board"></div>
+  <p style="margin-top:16px"><b>Tradeskills are at <span id="tsCap">0</span></b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
 </section>
 
 <section id="caps">
@@ -456,15 +434,8 @@ footer a{color:var(--ink-3)}
   <div class="scroll">
     <table>
       <thead><tr><th>Cap</th><th class="n">Ceiling</th><th class="n">Opens</th><th class="n">Raise raid</th><th>Raid target</th></tr></thead>
-      <tbody>
-        <tr><td>Cap 1</td><td class="n">40</td><td class="n">9/19/2026</td><td class="n">10/3/2026</td><td>Morgan Le Fey &mdash; twist: No Tired Limbs</td></tr>
-        <tr><td>Cap 2</td><td class="n">80</td><td class="n">10/3/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">10/17/2026</td><td>Not announced</td></tr>
-        <tr><td>Cap 3</td><td class="n">140</td><td class="n">10/17/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">10/31/2026</td><td>Not announced</td></tr>
-        <tr><td>Cap 4</td><td class="n">190</td><td class="n">10/31/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">11/14/2026</td><td>Not announced</td></tr>
-        <tr><td>Cap 5</td><td class="n">205</td><td class="n">11/14/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">11/28/2026</td><td>Not announced</td></tr>
-        <tr><td>Cap 6</td><td class="n">220</td><td class="n">11/28/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">12/12/2026</td><td>Not announced</td></tr>
-      </tbody>
-    </table>
+        <tbody id="capbody"></tbody>
+      </table>
   </div>
   <p style="margin-top:14px">Raid dates come from the primer and are fixed. Opening dates are derived from those raids landing on schedule, which is why they carry TBC. The season goes into <b>After Party</b> once Sector 42 is done, or once there aren't the people to finish it &mdash; Ironman rules still apply, but play is free and raids are self-organised. Unlike past seasons it does not start after The Beast.</p>
 </section>
@@ -605,169 +576,11 @@ footer a{color:var(--ink-3)}
 </div>
 
 <script>
-/* ---------- data ---------- */
-var L100=[56,67,77,84,91,100,112,118,125,126,134,143,144];
-var L160=[107,134,146,160,178,189,200,201,214];
-var L180=[101,120,139,150,164,180,200,201,212];
-var L200=[112,154,167,182,200];
-var ROLLS=[
- {ql:5,n:"Second Hand Old English Trading Co.",q:2,lv:[3,4,5,6,7,8]},
- {ql:10,n:"Concrete Cushion",q:2,lv:[6,7,8,9,10,12,13,14,15]},
- {ql:22,n:"Windchaser Quartz",q:1,lv:[15,17,19,20,22,25,26,27,28,30,32]},
- {ql:30,n:"ICC Arms 2Q2C Gun Bag",q:1,lv:[17,20,25,28,30,34,36,38,40,41,43,44]},
- {ql:40,n:"Tsakachumi PTO-HV.2 Counter-Sniper Rifle",q:1,lv:[27,31,34,37,40,45,48,50,51,54,58]},
- {ql:40,n:"Manex SD 4004 (Mist Reception Sorrow)",q:1,lv:[27,31,34,37,40,45,48,50,51,54,58]},
- {ql:44,n:"Galahad Inc T70 Beyer",q:2,lv:[25,34,37,40,44,49,52,55,56,59,63,64]},
- {ql:77,n:"Galahad Inc T70 Zig Zag",q:2,lv:[43,70,77,86,91,97,103,110,111]},
- {ql:80,n:"ICC Arms 2Q2C (u) Gun Bag",q:1,lv:[45,62,67,73,80,89,95,100,101,107,115]},
- {ql:80,n:"Tsakachumi PTO-HV Counter-Sniper Rifle",q:1,lv:[45,62,67,73,80,89,95,100,101,107,115]},
- {ql:96,n:"Uncle Bazzit Rusty 22mm",q:2,lv:[54,64,74,80,88,96,107,113,114,120,121,128,129,138]},
- {ql:100,n:"O.E.T. Co. Jess",q:2,lv:L100},
- {ql:100,n:"BigBurger Inc. Chapman",q:2,lv:L100},
- {ql:100,n:"HSR Arms N.M.",q:2,lv:L100},
- {ql:160,n:"MTI VP300 Silver s. Caseless",q:2,lv:L160},
- {ql:160,n:"Excellent Concrete Cushion",q:2,lv:L160},
- {ql:180,n:"MTI VP300 Red s. Caseless",q:2,lv:L180},
- {ql:180,n:"MTI SW500 Geyser",q:2,lv:L180},
- {ql:180,n:"V-five Breathing Space",q:2,lv:L180},
- {ql:192,n:"O.E.T Co. Urban Sniper Kaiser",q:2,lv:[128,148,160,175,192,214]},
- {ql:200,n:"O.E.T. Co. Maharanee",q:2,lv:L200},
- {ql:200,n:"Master G-Staff",q:1,lv:L200},
- {ql:200,n:"Augmented Biomech Armor Helmet",q:1,lv:L200},
- {ql:200,n:"Augmented Biomech Armor Boots",q:1,lv:L200},
- {ql:200,n:"Augmented Biomech Armor Cloak",q:1,lv:L200}
-];
-
-var QUESTS=[
- {l:1,n:"Serpentine Helm",d:"Subway"},
- {l:1,n:"Shoulder Pad quest",d:"Collect all parts twice, early — gets you an Omnifier"},
- {l:1,n:"Thrak Garden Key Quest",d:"Nascence — farm 4 insignias"},
- {l:1,n:"Unredeemed Start-up quest",d:"Gives Spec 1"},
- {l:40,n:"Serpentine Boots",d:"Azzy kill"},
- {l:41,n:"Foreman's Quest",d:"Levels 41–100"},
- {l:50,n:"Serpentine Legs",d:"TIM kill"},
- {l:50,n:"Shere Garden Key Quest",d:"8 of 9 insignias"},
- {l:50,n:"Shere Sanctuary Garden Key Quest",d:""},
- {l:60,n:"One Who Has Achieved Glory",d:"About 750k credits"},
- {l:60,n:"One Who Has Taken Vow of Truth",d:"About 1.5m credits"},
- {l:60,n:"One Who Overcomes Enemies",d:"Save for the 110–170 cap — each of the 7 missions is worth a daily's XP, so 7 dailies total"},
- {l:60,n:"The One Loved by the Sun",d:"About 300k credits"},
- {l:60,n:"Roch Garden Key Quest",d:"Start level not stated in the source",nolvl:1},
- {l:60,n:"Roch Sanctuary Garden Key Quest",d:"Start level not stated in the source",nolvl:1},
- {l:80,n:"Knowledge of the Yuttos",d:""},
- {l:80,n:"Jobe Scientists",d:""},
- {l:120,n:"Sergeant Marion Sweet",d:"12 treat / 5 intel neck item, TL4 — about 1m credits"},
- {l:120,n:"Corporal Ashley Winstead",d:"NT absorb — run it alongside Marion Sweet"},
- {l:125,n:"Serpentine Chest",d:"Hezek kill, IS"},
- {l:130,n:"Dalja Garden Key Quest",d:"Loot the note early"},
- {l:130,n:"Xan Civilization Quest (Adonis)",d:"Pull up a guide and pre-farm — gives Spec 3 and the Syndicate brain"},
- {l:130,n:"Vanya Garden Key Quest",d:"35 soul fragments, 6 insignias — start level not stated",nolvl:1},
- {l:130,n:"Vanya Sanctuary Garden Key Quest",d:"6 cama insignias — start level not stated",nolvl:1},
- {l:130,n:"Serpentine Gloves",d:"Mantis Queen"},
- {l:130,n:"Serpentine Pads",d:"Ian Warr"},
- {l:150,n:"PvP token board upgrade",d:""},
- {l:150,n:"Dalja Sanctuary Garden Key Quest",d:"Infernal demon pattern, per team"},
- {l:150,n:"Dark Ruins solo",d:""},
- {l:150,n:"Dark Ruins team",d:"Daily"},
- {l:150,n:"Xan Civilization Quest (Penumbra)",d:"Spec 4 and a nano"}
-];
-
-var M=[
-/* personals */
- {s:"personal",f:"personal",n:"Orientation I",g:"Stand at the Statue, the Map and the Neutral Door; target the Old Lady and the Geezer",c:5},
- {s:"personal",f:"personal",n:"Orientation II",g:"Kill 10 each — Contagious Rollerrat, Clawfinger Ruffian, Biofreak Carcass, 34-I Helper, Eleet",c:5},
- {s:"personal",f:"personal",n:"Logistics: Cogito, Ergo Sum",g:"Loot Copper Wire, Burned Out NCU, Melted Circuit Board, Small Power Supply; get an Insipid Ring",c:5},
- {s:"personal",f:"personal",n:"Logistics: Required Reading I",g:"Get The Mariner's Father",c:5},
- {s:"personal",f:"personal",n:"Logistics: Loadout Check I",g:"Equip 7 pieces of OFAB armor",c:5},
- {s:"personal",f:"personal",n:"Logistics: RAM Rods",g:"Loot Morphing Memory, 5 Dark Memories or Dark Dreams, and a Guardian Circuit Board or Dream Mesh Circuit",c:5},
- {s:"personal",f:"personal",n:"Objective: Instant Rehab",g:"Kill 20 Violent Vagabond, 10 Looter, 5 Deranged Shopper, 50 Stim Fiend",c:5},
- {s:"personal",f:"personal",n:"Patrol: Newland Desert",g:"Seven points — Stolt's Trading Outpost, Newland Desert ×3, Rhinoman Valley, Newland Desert, Meetmedere",c:15},
- {s:"personal",f:"personal",n:"Patrol: Sandboxes and Toasters",g:"The big Mort Crater loop",c:30},
- {s:"personal",f:"personal",n:"Logistics: Memory Lane",g:"Loot and equip 5 Memory Loop; get and equip Belt Component Platform 6K-X",c:30},
- {s:"personal",f:"personal",n:"Scout: Jobe Recon",g:"Target nine Jobe NPCs — Yorick Kjarval, IPS Exchange Officer, Prof. Dedlock, Arul Saba, Portal Technician, Christen Thorwaldsen, Ira Atlin, Yasuhiro Yamashita, Lady Keldara",c:5},
- {s:"personal",f:"personal",n:"Scout: Jobe Recon, Special",g:"Target Drake Rodriguez, Sundance Smith (JAME Depot), Celeth-El, El-Domo; loot a Delicate Metal Device",c:10},
- {s:"personal",f:"personal",n:"Scout: Nascence",g:"Twelve-point sweep — Frontier Bridge through Misty Dreams",c:25},
- {s:"personal",f:"personal",n:"Scout: Elysium",g:"Route not yet published",c:25},
- {s:"personal",f:"personal",n:"Logistics: Pop Psychology",g:"Get Mortiig's Heart, Eremites Vibrissa, Haithilin's Spine, Imp's Wing, Caliginous Ring",c:5},
- {s:"personal",f:"personal",n:"Logistics: Poison Garden",g:"Get the Key to the Garden of Shere or of Enel",c:5},
- {s:"personal",f:"personal",n:"Logistics: The Nascence Connection",g:"Get the Keys to the Gardens of Aban and Thrak",c:10},
- {s:"personal",f:"personal",n:"Logistics: Out of Uniforms",g:"Get at least 2 parts of the Miir Cameo or Camouflage Outfit of 3305 Local",c:10},
- {s:"personal",f:"personal",n:"Logistics: The Quiet Place",g:"Get the key to either Elysium sanctuary",c:20},
- {s:"personal",f:"personal",n:"Objective: Take me to Church",g:"Kill 20 Hoathlan, 10 Brisk Hoathlan, 20 Malah, 10 Malah-Ana, Hiathlin Lookout",c:5},
- {s:"personal",f:"personal",n:"Objective: Nascence Leadership",g:"Kill 15 each Cur-Beat, Or-Jerad, Sun-Len, Calan-Cur plus six named Aban and Thrak",c:10},
- {s:"personal",f:"personal",n:"Objective: Involuntary Kinetic Deprograming",g:"Kill 50 Cultists",c:10},
- {s:"personal",f:"personal",n:"Objective: Linear Accelerated Laicization",g:"Kill 25 each Acolytes, Novice, Reverend, Windcaller, Exarch; kill Uklesh the Frozen and Aztur the Immortal",c:10},
- {s:"personal",f:"personal",n:"Sponsored: Transmolecular Metaphysics",g:"Target Zyvania Bagh; kill 50 Figment of Imagination and 10 each Fragment of Sanity, Suppressed Emotion, Roving Eye, Nebulous Feeling, Guardian of Thought",c:10},
- {s:"personal",f:"personal",n:"Objective: Elysium Leadership",g:"Kill Ocra Lum, Empath Aurea, Redeemed Enel, Dom Roch, Omega Yuan Chi, Unredeemed Shere",c:20},
- {s:"personal",f:"personal",n:"Objective: Disrupt Kyr'ozch Communications",g:"Kill 80 Hacker'Uri, 10 General",c:20},
- {s:"personal",f:"personal",n:"Objective: Disrupt Kyr'ozch Transportation",g:"Kill 15 Fighter Pilot, 15 Fleet Admiral",c:20},
- {s:"personal",f:"personal",n:"Objective: Know Thy Enemy I",g:"Kill 50 each — Ankari, Xoch, Ilari, Rimah, Cha, Jaax",c:20},
- {s:"personal",f:"personal",n:"Objective: Big Red",g:"Solo kill Aztur the Immortal",c:30},
-/* dailies */
- {s:"daily",f:"daily",n:"Objective: Fishing Bait",g:"Kill 8 Hacker'Uri",ch:10},
- {s:"daily",f:"daily",n:"Objective: Gravel Pit",g:"Kill 8 Heckler of Stone, 8 Heckler of Metal",ch:10},
- {s:"daily",f:"daily",n:"Patrol: Newland Perimeter",g:"Six points — West Gate, the alien guy, Southern Guard Post, Eastern Guard Post, Divenchy, North Gate",ch:10},
- {s:"daily",f:"daily",n:"Patrol: Andromeda Settlements",g:"Seven points — ICC Statue, wasteland village and mine, northern village, walled village, northwest farm, Terra, crater tent camp",ch:25},
- {s:"daily",f:"daily",n:"Logistics: Scrapmetal, Scrapmeat",g:"Loot 20 Robot Junk, 20 Monster Parts",ch:10},
- {s:"daily",f:"daily",n:"Sponsored: Would you like a…",g:"Get 1 Bronto Burger or Bronto Cheese",ch:5},
-/* org - travel */
- {s:"org",f:"travel",n:"Access: ICC → Newland",g:"30 stand 30s in Newland City, 30 at ICC HQ",u:"ICC–Newland whompah",crew:"30 each end"},
- {s:"org",f:"travel",n:"Access: ICC → Tir",g:"30 in Tir City, 30 at ICC HQ",u:"ICC–Tir whompah",crew:"30 each end"},
- {s:"org",f:"travel",n:"Access: ICC → Omni-Trade",g:"30 at ICC HQ, 30 in Trade District",u:"ICC–Omni-Trade whompah",crew:"30 each end"},
- {s:"org",f:"travel",n:"Access: Neutral Whompah Network",g:"10 each at Borealis, East Last Ditch, Ernest Wastelands, Stolt's Trading Outpost, Newland City",u:"Neutral ring",crew:"10 × 5"},
- {s:"org",f:"travel",n:"Access: Omni-Tek Whompah Network",g:"30 each at Omni-1 Entertainment East, Trade District, Rome Park, Galway Castle; 10 each at Infestation and 2HO Outpost",u:"Omni ring",crew:"30 & 10"},
- {s:"org",f:"travel",n:"Access: Clan Whompah Network",g:"30 each at Tir City, Varmint Woods Swampland, Duhndur Wastes, Old Athen West; 10 at Bliss and others",u:"Clan ring",crew:"30 & 10"},
- {s:"org",f:"travel",n:"Access: ICC → Jobe",g:"10 at ICC HQ, 10 on Jobe Platform",u:"Jobe access",crew:"10 each end"},
- {s:"org",f:"travel",n:"Access: Rome → Jobe",g:"10 on Jobe Platform, 10 at Rome Park",u:"Jobe access",crew:"10 each end"},
- {s:"org",f:"travel",n:"Access: Old Athens → Jobe",g:"10 on Jobe Platform, 10 at Old Athen East",u:"Jobe access",crew:"10 each end"},
- {s:"org",f:"travel",n:"Access: The Grid — Floor 1",g:"24 each at ICC HQ, Borealis, Old Athen East, Newland City, Tir City, Trade District",u:"Grid floor 1",crew:"24 × 6"},
- {s:"org",f:"travel",n:"Access: The Grid — Floor 2",g:"30 each at Meetmedere, West Athen, 4Holes, 2HO Outpost, Harry's, Area Y and one more",u:"Grid floor 2",crew:"30 × 7"},
- {s:"org",f:"travel",n:"Access: The Grid — Floor 3",g:"30 each at Omni-1 HQ, Camelot, Mort Crater; kill a Cyborg Techwrecker",u:"Grid floor 3",crew:"30 × 3"},
- {s:"org",f:"travel",n:"Logistics: Pub Crawl",g:"Requirements not yet published",u:"Newland city whompah",crew:"org"},
-/* org - terminals */
- {s:"org",f:"terminal",n:"Logistics: Commerce Grid",g:"Loot 100 “Take me to the shops”",u:"Commerce terminals + a vote",crew:"org"},
- {s:"org",f:"terminal",n:"Logistics: Carbon Capture",g:"Needs Commerce Grid first. Get 100 Carbon Rich Rocks",u:"Profession nano terminals",crew:"org"},
- {s:"org",f:"terminal",n:"Logistics: Chipping In",g:"Needs Commerce Grid first. Loot 100 Blank Implants",u:"Pre-made implant terminals",crew:"org"},
- {s:"org",f:"terminal",n:"Logistics: Mission Grid",g:"Target 50 Backyard Mission Booths, get 50 Simple First-Aid Kits",u:"Mission terminals — unlocks shop rolling",crew:"org"},
- {s:"org",f:"terminal",n:"Logistics: Mission Support",g:"Get 20 of each Composite nano crystal — Attribute Boost, Martial Prowess, Melee, Nano, Physical Special, Ranged, Ranged Special, Tradeskill",u:"Buff bots",crew:"org"},
- {s:"org",f:"terminal",n:"Access: Freelancer Offices",g:"Get 50 Lockpicks and 50 Mission Key Duplicators, then 20 hold each of two points",u:"Freelancer offices",crew:"20 × 2"},
- {s:"org",f:"terminal",n:"Access: Jobe DOJA Offices",g:"Get 20 Nascence Doja Chips and 20 Elysium Doja Chips, then stand at the office",u:"Doja offices",crew:"org"},
-/* org - zones */
- {s:"org",f:"zone",n:"ACCESS: Battle Station",g:"Kill a General and a Fighter Pilot within 7 minutes of each other",u:"Battle Station",crew:"org"},
- {s:"org",f:"zone",n:"Access: Elysium",g:"Get 30 Insipid Rings",u:"Elysium",crew:"org"},
- {s:"org",f:"zone",n:"Access: Scheol",g:"Get 30 Caliginous Rings, kill Aztur the Immortal five times",u:"Scheol",crew:"org"},
-/* org - tradeskill */
- {s:"org",f:"tradeskill",n:"Requisition: Scrap Metal",g:"Kill 50 each Buckethead tech-scavenger, 34-I Helper, Waste disposer; loot 500 Robot Junk",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Tools",g:"Kill 25 Fresh Engineers",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Solvents",g:"Kill 10 Bartenders",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Coolant",g:"Kill 500 Icy Shadows",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Debugging",g:"Kill 50 each Leets, Shadowleets, Fleas, Discarded Pets, Reets, Hai-Tempestus, Tempestus",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Hardened Bio-Templates",g:"Loot 1000 Monster Parts",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Raw Notum",g:"Get 1000 Notum Fragments or Chips",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Tissue Regeneration Data",g:"Kill 25 each Biofreak Carcass, Clawfinger Ruffian, Reborn Soldier, Alpha and Beta Bio Construct, Eclipsers",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Nano Servos and Controllers",g:"Kill 500 Robot Dogs",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Self-Replicating Nano Filament",g:"Get 200 pieces of living cyber armor",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Geo-Quantum Positioning Data",g:"Kill Geo Survey Dogs — 50 Nascence, 50 Elysium, 10 each Scheol, Adonis, Penumbra, Inferno",u:"+100 tradeskill",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Alien Tools",g:"Get 20 each Bazzit's Alien Library, Body Heat Pattern Analyzer, Kyr'ozch Atomic Restructuralizing Tool, Kyr'ozch Structural Analyzer",u:"Alien armor crafting",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: MRR",g:"Kill The Iron Reet or loot Shape Soft Program",u:"Soft armor crafting",crew:"org"},
- {s:"org",f:"tradeskill",n:"Requisition: Interdimensional Flux",g:"Loot 2000 Pattern Pieces or get an Ancient Novictum Refiner",u:"Pocket boss crafting",crew:"org"},
- {s:"org",f:"tradeskill",n:"Cross-Training: Drug Dealer I",g:"Loot 1000 Unpolluted Crystals",u:"QL150 crystal privileges",crew:"org"},
- {s:"org",f:"tradeskill",n:"Cross-Training: Drug Dealer II",g:"Needs Drug Dealer I. Loot 5000 Unpolluted Crystals",u:"QL250 crystal privileges",crew:"org"},
-/* org - shop / privilege */
- {s:"org",f:"shop",n:"Sponsored: Scrubbed",g:"Kill Cuty, Ding, George, Joo, Morty, Polly, Powa, Oscar, Ownz, Stumpy",u:"Omni-Med Suit privileges",crew:"org"},
- {s:"org",f:"shop",n:"Sponsored: Quantum Threading Samples",g:"Kill 5 Neleb, 30 each The Curator, Lien the Memory Stalker, Guardian of Tomorrow; loot 20 Dark Memories, 20 Dark Dreams, 3 of each Notum Ring of Three",u:"Vote: Nano Yalm or Aban Bracers",crew:"org"},
- {s:"org",f:"shop",n:"Sponsored: Bling",g:"Get gold rings with a perfectly cut diamond, star ruby and sapphire",u:"Gem rings in the shop",crew:"org"},
- {s:"org",f:"shop",n:"Sponsored: Mining Geo-Data",g:"Loot 50 Canister of Pure Liquid Notum and 50 notum chips, fragments or nuggets; target 30 each Omni, Clan and Neutral control towers",u:"Vote: city notum mining or land control",crew:"org"},
- {s:"org",f:"shop",n:"Cross-Training: Barista",g:"Coffee machines and 10 cups of enhanced coffee",u:"Coffee ×20 in the shop",crew:"org"},
- {s:"org",f:"shop",n:"Cross-Training: Confectioner",g:"Get an Extruder and 5 Extruder Nutrition Bars",u:"Extruder Bars in the shop",crew:"org"},
- {s:"org",f:"shop",n:"Sephirah: Kingdom I",g:"Kill Abmouth in 15 seconds",u:"Special slot 1",crew:"org"},
- {s:"org",f:"shop",n:"Sephirah: Foundation II",g:"Kill Aztur the Immortal in 15 seconds",u:"Special slot 2",crew:"org"},
- {s:"org",f:"zone",n:"Cap-Raiser: Morgan Le Fey",g:"Kill Morgan Le Fey. Twist: No Tired Limbs",u:"Unlocks Cap 2",crew:"raid"}
-];
-
-var EQUIP=["Alien Augmentation Device — Damage","Alien Augmentation Device — Insight","Alien Augmentation Device — Nano Technology","ALL Alien Armor","ALL Predator Armor","Ultralight Missile Pistol Raid 9-X (all QLs)","Augmented Master Engineer Pistol","Chiroptera","Crispy Chiroptera","Communications Relay","Customized Desert Reet","Dark Pistol","Dark Pistol of the Revoked","Dog of War","Dreadloch Balanced Freedom Arms","Dreadloch Sniper's Friend","Ethereal Implant of Berserker Rage","Ethereal Spirit of Berserker Rage","Extreme Low Light Targeting Scope","Gaily Painted Hood","Notum Imbued Gaily Painted Hood","Globe of Clarity","Imbued Globe of Clarity","Hacked Medi-Blade","Improved Hacked Medi-Blade","Howlet","Hungry Howlet","Infused Dust Brigade Engineer Pistol","Infused Viral Compiler","Living Dragonclaw Gloves","Living DragonFlesh Body Armor","Modified Notucomm Mesh Trench coat","Neleb's Nano Master Robe","Neleb's Nightmare Battle Rod","Nippy John Stiletto","Panther","Pained Panther","Perfected Alien Tank Armor","Robust Backpack","Sandy Piece of Goo","Silken Leg Chopper Gloves","Sinew of the Tarasque","Viral Memory Storage Unit (Damage)","Viral Memory Storage Unit (XP)"];
-
-var SHOP=[[10,"Coffee ×20",1],[40,"Aban Fala's Bracers — Apprehension, Brute Force, Dexterity, Endurance, Mental Strength, Logic",1],[40,"Platinum Filigree Rings QL250 — sapphire, diamond, star ruby",1],[50,"Extruder Bar ×5",1],[100,"Sealed Yalmaha 29500 — The Stiletto",1],[100,"Advanced Scent Sensor",1],[100,"Shades of Lucubration",1],[60,"64 NCU Memory QL200",2],[100,"Kyr'ozch Viralbots QL100",2],[120,"Viral Memory Storage Unit — Damage / XP",2],[150,"Silken Legchopper Gloves",2],[150,"Virral Triumvirate Egg",3],[200,"Spirit Infused Yuttos Modified NCU QL160",3],[200,"Extreme Low Light Targeting Scope",3],[300,"Infused Viral Compiler",3],[100,"Hold Hell at Bay",4],[100,"Lava Protection Boots and Skin Galvanizer",4],[200,"Visible Light Remodulation Device",4],[200,"Energy Redistribution Unit",4],[200,"Dynamic Gas Redistribution Valves",4],[200,"Kyr'ozch Viralbots QL200",4],[300,"Syndicate Messenger Gun",4],[300,"Sparkling Scimitar of Spetses",4],[300,"Exact Copy of The Excalibur",4],[300,"Sword of Wonder",4],[300,"Piercing Evil",4],[300,"Massive Bolt Charger",4],[300,"Kyr'ozch Viralbots QL300",5],[500,"Alien Matrix Alpha Box",6],[500,"Alien Matrix Beta Box",6]];
+/* ---------- data ----------
+   All content lives in data/*.json so it can be edited without touching this file.
+   Add or change a mission, roll, quest, shop row or status line there and the page picks it up.
+*/
+var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,sigCount={};
 
 /* ---------- storage ---------- */
 var KEY="aoim-s12-v1";
@@ -907,10 +720,64 @@ function setLevel(v){
   state.level=v;save(state);
   var rollNow=ROLLS.filter(function(r){return r.lv.indexOf(v)>=0}).length;
   var questNow=QUESTS.filter(function(x){return x.l<=v}).length;
-  var cap=v>=40?"at or over the Cap 1 ceiling":"under the Cap 1 ceiling of 40";
+  var ceil=STATUS?STATUS.capCeiling:40;
+  var cap=v>=ceil?("at or over the Cap "+(STATUS?STATUS.currentCap:1)+" ceiling"):("under the Cap "+(STATUS?STATUS.currentCap:1)+" ceiling of "+ceil);
   document.getElementById("lvlhint").innerHTML=
     "<b>"+rollNow+"</b> item"+(rollNow===1?"":"s")+" rollable now &middot; <b>"+questNow+"</b> quest"+(questNow===1?"":"s")+" open &middot; "+cap;
   renderRolls();renderQuests();
+}
+
+/* ---------- status board + caps, rendered from data/status.json ---------- */
+function renderStatus(){
+  if(!STATUS)return;
+  var LBL={offline:"Offline",error:"Error",open:"Open"},CLS={offline:"off",error:"err",open:"ok"};
+  document.getElementById("board").innerHTML=STATUS.groups.map(function(g){
+    return '<div class="grp">'+esc(g.name)+'</div>'+g.rows.map(function(r){
+      var k=CLS[r.state]||"off";
+      return '<div class="r"><span class="n2">'+esc(r.label)+'</span><span class="st '+k+'">'+(LBL[r.state]||r.state)+'</span></div>';
+    }).join("");
+  }).join("");
+  document.getElementById("boardDate").textContent=STATUS.updated;
+  document.getElementById("tsCap").textContent=STATUS.tradeskillCap;
+
+  document.getElementById("capbody").innerHTML=STATUS.caps.map(function(c){
+    var tbc=c.opensTBC?' <span style="color:var(--rust)">TBC</span>':'';
+    var now=c.cap===STATUS.currentCap?' class="hit"':'';
+    return '<tr'+now+'><td>Cap '+c.cap+'</td><td class="n">'+c.ceiling+'</td><td class="n">'+esc(c.opens)+tbc+
+      '</td><td class="n">'+esc(c.raid)+'</td><td>'+esc(c.target)+'</td></tr>';
+  }).join("");
+
+  var cur=STATUS.caps.filter(function(c){return c.cap===STATUS.currentCap})[0];
+  if(cur){
+    document.getElementById("hudCapK").textContent="Cap "+cur.cap+" ceiling";
+    document.getElementById("hudCap").innerHTML="Level "+cur.ceiling+"<small>raise raid "+esc(cur.raid)+"</small>";
+  }
+}
+
+/* ---------- boot: load data/*.json ---------- */
+var FILES=["rolls","quests","missions","equipment","shop","status"];
+function loadFail(err){
+  var msg='<div class="note" style="border-left-color:var(--crit);background:var(--crit-bg)">'+
+    '<p><b>Couldn\'t load the season data.</b> '+esc(String(err && err.message || err))+'</p>'+
+    '<p>This page reads its content from the <code>data/</code> folder next to it. If you opened the file directly from your computer, '+
+    'your browser blocks that read &mdash; use the hosted page instead.</p></div>';
+  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist"].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.innerHTML=(el.tagName==="TBODY"?'<tr><td colspan="5">':'')+msg;
+  });
+}
+function boot(){
+  Promise.all(FILES.map(function(n){
+    return fetch("data/"+n+".json",{cache:"no-cache"}).then(function(r){
+      if(!r.ok)throw new Error("data/"+n+".json returned "+r.status);
+      return r.json();
+    });
+  })).then(function(res){
+    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];
+    ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
+    renderStatus();
+    setLevel(state.level);
+    renderMissions();updateProgress();renderEquip();renderShop();
+  }).catch(loadFail);
 }
 
 /* ---------- wire up ---------- */
@@ -937,6 +804,5 @@ document.querySelectorAll('.chip[data-f]').forEach(function(c){
   });
 });
 
-setLevel(state.level);
-renderMissions();updateProgress();renderEquip();renderShop();
+boot();
 </script>
