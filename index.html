@@ -1,0 +1,942 @@
+<title>Ironman S12 Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+/* Dark is the base: Rubi-Ka after dark, notum-lit. */
+:root{
+  --void:#070d14;
+  --paper:#0a121b;
+  --card:#111d29;
+  --card-2:#16242f;
+  --sunk:#050a11;
+  --ink:#d2e4f0;
+  --ink-2:#8aa4b8;
+  --ink-3:#5f7687;
+  --rule:#1d3043;
+  --rule-soft:#142331;
+  --notum:#36c7e6;
+  --notum-dim:#1d6b7e;
+  --rust:#d98b3a;
+  --rust-bg:#2a1b0b;
+  --go:#3fd0a4;
+  --go-bg:#07271e;
+  --crit:#e2604c;
+  --crit-bg:#2c110c;
+  --glow:rgba(54,199,230,.22);
+  --shadow:rgba(0,0,0,.45);
+
+  --f-d:'Chakra Petch','Helvetica Neue',Arial,sans-serif;
+  --f-b:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --f-m:'IBM Plex Mono','SF Mono',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --void:#dde4ec;
+    --paper:#e9eef3;
+    --card:#f7f9fb;
+    --card-2:#eef3f7;
+    --sunk:#dce4eb;
+    --ink:#0a1620;
+    --ink-2:#3d5566;
+    --ink-3:#5f778a;
+    --rule:#bbc9d5;
+    --rule-soft:#d3dde5;
+    --notum:#0a7189;
+    --notum-dim:#8fc2ce;
+    --rust:#8c5409;
+    --rust-bg:#f3e6d0;
+    --go:#0a6e51;
+    --go-bg:#d5ebe2;
+    --crit:#a3352a;
+    --crit-bg:#f4dbd6;
+    --glow:rgba(10,113,137,.16);
+    --shadow:rgba(20,40,60,.12);
+  }
+}
+:root[data-theme="light"]{
+  --void:#dde4ec;
+  --paper:#e9eef3;
+  --card:#f7f9fb;
+  --card-2:#eef3f7;
+  --sunk:#dce4eb;
+  --ink:#0a1620;
+  --ink-2:#3d5566;
+  --ink-3:#5f778a;
+  --rule:#bbc9d5;
+  --rule-soft:#d3dde5;
+  --notum:#0a7189;
+  --notum-dim:#8fc2ce;
+  --rust:#8c5409;
+  --rust-bg:#f3e6d0;
+  --go:#0a6e51;
+  --go-bg:#d5ebe2;
+  --crit:#a3352a;
+  --crit-bg:#f4dbd6;
+  --glow:rgba(10,113,137,.16);
+  --shadow:rgba(20,40,60,.12);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--f-b);font-size:15.5px;line-height:1.6;
+  margin:0;padding-block:0 70px;padding-left:18px;padding-right:18px;
+}
+.wrap{max-width:1180px;margin:0 auto}
+h2,h3,h4{text-wrap:balance}
+p{margin:0 0 13px;max-width:70ch}
+a{color:var(--notum)}
+a:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--notum);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===== masthead ===== */
+.mast{padding-block:34px 0}
+.eyebrow{
+  font-family:var(--f-m);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--notum);margin:0 0 10px;display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--notum);flex:none}
+.mast h1{
+  font-family:var(--f-d);font-weight:700;
+  font-size:clamp(30px,7vw,52px);line-height:1.02;letter-spacing:.01em;
+  margin:0 0 6px;
+}
+.mast .tag{color:var(--ink-2);margin:0 0 22px;font-size:16px;max-width:60ch}
+
+.hud{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);
+  border-top:2px solid var(--notum);
+  box-shadow:0 10px 30px -22px var(--glow);
+  margin-bottom:26px;
+}
+.hud .cell{background:var(--card);padding:13px 15px}
+.hud .k{
+  font-family:var(--f-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);display:block;margin-bottom:4px;
+}
+.hud .v{font-family:var(--f-d);font-size:19px;font-weight:600;line-height:1.15;display:block}
+.hud .v small{font-family:var(--f-m);font-size:11px;font-weight:400;color:var(--ink-2);display:block;margin-top:3px;letter-spacing:.02em}
+.hud .v.cy{color:var(--notum)}
+.hud .v.ru{color:var(--rust)}
+
+/* ===== sticky level bar ===== */
+.levelbar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:var(--void);border-bottom:1px solid var(--rule);
+  margin-left:-18px;margin-right:-18px;padding:10px 18px;
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+}
+.levelbar .lbl{
+  font-family:var(--f-m);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+}
+.levelbar input[type=number]{
+  width:76px;background:var(--card);color:var(--ink);border:1px solid var(--rule);
+  font-family:var(--f-m);font-size:16px;font-weight:600;padding:5px 9px;border-radius:2px;
+}
+.levelbar .hint{font-family:var(--f-m);font-size:11.5px;color:var(--ink-2)}
+.levelbar .hint b{color:var(--notum);font-weight:600}
+nav.jump{display:flex;flex-wrap:wrap;gap:0 14px;margin-left:auto}
+nav.jump a{
+  font-family:var(--f-m);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;
+}
+nav.jump a:hover{color:var(--notum);border-bottom-color:var(--notum)}
+
+/* ===== sections ===== */
+section{padding-block:42px;border-top:1px solid var(--rule-soft);scroll-margin-top:62px}
+section h2{
+  font-family:var(--f-d);font-weight:600;font-size:25px;letter-spacing:.01em;
+  margin:0 0 5px;padding-left:14px;border-left:3px solid var(--notum);
+}
+section .deck{color:var(--ink-2);margin:0 0 24px;max-width:68ch}
+h3{
+  font-family:var(--f-m);font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);margin:30px 0 12px;
+}
+h3:first-of-type{margin-top:0}
+
+/* ===== steps ===== */
+ol.steps{
+  list-style:none;margin:0;padding:0;counter-reset:s;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:0 34px;
+}
+ol.steps li{
+  counter-increment:s;
+  display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:14px;row-gap:3px;
+  padding:14px 0;border-top:1px solid var(--rule-soft);align-content:start;
+}
+ol.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  grid-column:1;grid-row:1;
+  font-family:var(--f-m);font-size:12px;font-weight:600;color:var(--notum);padding-top:3px;
+}
+ol.steps b{grid-column:2;font-size:15.5px}
+ol.steps span{grid-column:2;color:var(--ink-2);font-size:14.5px}
+code{font-family:var(--f-m);font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:2px;color:var(--ink)}
+
+/* ===== controls ===== */
+.controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:16px}
+.search{
+  flex:1 1 220px;min-width:0;background:var(--card);color:var(--ink);
+  border:1px solid var(--rule);font-family:var(--f-b);font-size:14px;padding:8px 11px;border-radius:2px;
+}
+.chip{
+  font-family:var(--f-m);font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:500;
+  background:var(--card);color:var(--ink-2);border:1px solid var(--rule);
+  padding:6px 11px;border-radius:2px;cursor:pointer;
+}
+.chip[aria-pressed="true"]{background:var(--notum);color:var(--void);border-color:var(--notum);font-weight:600}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]:hover{color:var(--void)}
+
+/* ===== progress ===== */
+.prog{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin-bottom:18px;
+}
+.prog .p{background:var(--card);padding:11px 14px}
+.prog .p .k{font-family:var(--f-m);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);display:block}
+.prog .p .n{font-family:var(--f-m);font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;display:block;margin-top:2px}
+.prog .p .n.cy{color:var(--notum)}
+.prog .p .n.go{color:var(--go)}
+.bar{height:3px;background:var(--sunk);margin-top:7px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--notum);width:0}
+
+/* ===== mission rows ===== */
+.mrow{
+  display:grid;grid-template-columns:22px 1fr auto;gap:5px 13px;
+  padding:11px 0;border-top:1px solid var(--rule-soft);align-items:start;
+}
+.mrow:last-child{border-bottom:1px solid var(--rule-soft)}
+.mrow input[type=checkbox]{width:15px;height:15px;margin-top:4px;accent-color:var(--notum);cursor:pointer}
+.mrow .nm{font-weight:600;font-size:15px;line-height:1.35}
+.mrow .gl{grid-column:2/-1;color:var(--ink-2);font-size:13px;font-family:var(--f-m);line-height:1.5}
+.mrow.done .nm,.mrow.done .gl{opacity:.42;text-decoration:line-through;text-decoration-thickness:1px}
+.tagp{
+  font-family:var(--f-m);font-size:11px;font-weight:600;white-space:nowrap;
+  padding:3px 8px;border-radius:2px;letter-spacing:.03em;
+}
+.tagp.coin{color:var(--go);background:var(--go-bg)}
+.tagp.chip2{color:var(--notum);background:var(--sunk)}
+.tagp.crew{color:var(--rust);background:var(--rust-bg)}
+.tagp.unlock{color:var(--rust);background:var(--rust-bg)}
+.empty{font-family:var(--f-m);font-size:13px;color:var(--ink-3);padding:22px 0}
+
+/* ===== tables ===== */
+.scroll{overflow-x:auto;margin-bottom:6px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+th,td{text-align:left;padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+th{
+  font-family:var(--f-m);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--paper);
+}
+td.n,th.n{font-family:var(--f-m);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hit td{background:var(--go-bg)}
+tr.hit td:first-child{box-shadow:inset 3px 0 0 var(--go)}
+.lv{font-family:var(--f-m);font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.lv b{color:var(--go);background:var(--go-bg);padding:1px 5px;border-radius:2px;font-weight:600}
+
+/* ===== status board ===== */
+.board{
+  background:var(--sunk);border:1px solid var(--rule);border-top:2px solid var(--rust);
+  font-family:var(--f-m);font-size:13px;padding:5px 0;
+}
+.board .grp{padding:10px 16px 3px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.board .r{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:5px 16px}
+.board .r .n2{color:var(--ink-2)}
+.st{font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap}
+.st.off{background:var(--rust-bg);color:var(--rust)}
+.st.err{background:var(--crit-bg);color:var(--crit)}
+.st.ok{background:var(--go-bg);color:var(--go)}
+
+/* ===== notes / accordion ===== */
+.note{border-left:3px solid var(--rust);background:var(--rust-bg);padding:13px 16px;margin:18px 0;font-size:14.5px}
+.note.cy{border-left-color:var(--notum);background:var(--sunk)}
+.note p{margin:0;max-width:none}
+.note p+p{margin-top:7px}
+details{border-top:1px solid var(--rule-soft)}
+details:last-of-type{border-bottom:1px solid var(--rule-soft)}
+summary{
+  cursor:pointer;padding:13px 0;font-family:var(--f-d);font-weight:600;font-size:16px;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-m);color:var(--notum);font-size:16px;flex:none}
+details[open] summary::after{content:"\2212"}
+details .body{padding-bottom:16px}
+details ul{margin:0 0 12px;padding-left:20px;max-width:70ch}
+details li{margin-bottom:6px;color:var(--ink-2)}
+details li b,details li strong{color:var(--ink)}
+details p{color:var(--ink-2)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
+.tile{background:var(--card);border:1px solid var(--rule-soft);border-top:2px solid var(--notum-dim);padding:15px 17px}
+.tile h4{font-family:var(--f-d);font-size:16px;font-weight:600;margin:0 0 6px;color:var(--notum)}
+.tile p{margin:0;font-size:14px;color:var(--ink-2)}
+.tile ul{margin:8px 0 0;padding-left:17px;font-size:13.5px;color:var(--ink-2)}
+.tile li{margin-bottom:4px}
+ul.plain{margin:0 0 13px;padding-left:20px;max-width:70ch}
+ul.plain li{margin-bottom:6px}
+
+footer{padding-top:32px;margin-top:8px;border-top:1px solid var(--rule);font-family:var(--f-m);font-size:12.5px;color:var(--ink-3);line-height:1.8}
+footer a{color:var(--ink-3)}
+
+@media (max-width:640px){
+  .mrow{grid-template-columns:22px 1fr}
+  .mrow .tagp{grid-column:2;justify-self:start;margin-top:3px}
+  nav.jump{display:none}
+  th{position:static}
+}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">347th Digital Drop Troops &middot; Iron S12 Deficiency</p>
+  <h1>Ironman S12 Field Manual</h1>
+  <p class="tag">Everything a new challenger needs for Anarchy Online Ironman Season 12. Put your level in the bar below and the page filters itself to what you can actually do right now.</p>
+
+  <div class="hud">
+    <div class="cell"><span class="k">Deployment</span><span class="v cy" id="dep">9/19/2026<small>14:00 GMT</small></span></div>
+    <div class="cell"><span class="k">Countdown</span><span class="v" id="cd">&mdash;<small>until drop</small></span></div>
+    <div class="cell"><span class="k">Side</span><span class="v">Neutral<small>RK19 &middot; one char, no alts</small></span></div>
+    <div class="cell"><span class="k">Cap 1 ceiling</span><span class="v">Level 40<small>raise raid 10/3/2026</small></span></div>
+    <div class="cell"><span class="k">Infrastructure</span><span class="v ru">Offline<small>travel, terminals, bots</small></span></div>
+  </div>
+</header>
+
+<div class="levelbar">
+  <span class="lbl">My level</span>
+  <input type="number" id="lvl" min="1" max="220" value="1" aria-label="Your character level">
+  <span class="hint" id="lvlhint">&mdash;</span>
+  <nav class="jump">
+    <a href="#start">Start</a>
+    <a href="#rolls">Rolls</a>
+    <a href="#quests">Quests</a>
+    <a href="#missions">Missions</a>
+    <a href="#locked">Locked</a>
+    <a href="#caps">Caps</a>
+    <a href="#rules">Rules</a>
+    <a href="#ref">Reference</a>
+  </nav>
+</div>
+
+<section id="start">
+  <h2>Before the drop</h2>
+  <p class="deck">Five things, none of them long. Do them before 9/19/2026 so you're not sorting them out while everyone else is moving.</p>
+  <ol class="steps">
+    <li><b>Roll a neutral character.</b><span>Neutral-only season, one character per challenger, no alts. Don't use the Jobe Backyard entry-hall glitch &mdash; it can flip your side and it breaks two of the org challenges.</span></li>
+    <li><b>Read #challenges-rules, then the primer.</b><span>#challenges-rules is the standing ruleset. The primer is the Season 12 layer on top. Nothing is hidden inside the roleplay posts &mdash; those are story and status readouts, not rules.</span></li>
+    <li><b>Install the plugins.</b><span>Get Code's AOSharp all-in-one from Season 12 #information. Unzip it, run <code>aosharp.exe</code>, load AO and your character, then tick <b>ironman plugin</b> and <b>ironquestie</b> and inject.</span></li>
+    <li><b>Set your Discord nickname to your character name.</b><span>Org chat gets loud and leadership asks for this so they can tell who's speaking.</span></li>
+    <li><b>Turn on notifications for #announcements.</b><span>Raids, cap raises and votes get called there, and the population is global &mdash; a cap-raise raid can land at any hour for you.</span></li>
+  </ol>
+</section>
+
+<section id="rolls">
+  <h2>Shop rolls by level</h2>
+  <p class="deck">Tempzz's roll list. Shop terminals reroll their stock against your level, so each item only appears in specific level windows &mdash; miss the window and you wait for the next one. Rows highlighted in green are live at your current level.</p>
+
+  <div class="note">
+    <p><b>You can't roll anything until the org unlocks the Mission Grid.</b> Mission and commerce terminals are offline at season start. Until <i>Logistics: Mission Grid</i> lands, this list is planning material, not a shopping trip.</p>
+  </div>
+
+  <div class="controls">
+    <input class="search" id="rollq" type="search" placeholder="Search item or QL&hellip;" aria-label="Search roll list">
+    <button class="chip" id="rollonly" aria-pressed="false">Only what I can roll now</button>
+  </div>
+  <div class="scroll">
+    <table id="rolltable">
+      <thead><tr><th class="n">QL</th><th>Item</th><th class="n">Qty</th><th>Roll windows</th></tr></thead>
+      <tbody id="rollbody"></tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--ink-3);margin-top:12px">Items sharing an identical set of windows are marked &mdash; those level-ups are worth planning around, since one visit can land several. Tempzz asked people to call out rolls in Discord so the list can be checked off as the org levels.</p>
+</section>
+
+<section id="quests">
+  <h2>Quests by level</h2>
+  <p class="deck">Tempzz's start-level list, plus Code's progression-quest notes. Both were written for earlier seasons, so treat them as a route rather than gospel &mdash; but the level gates and farm targets still hold.</p>
+
+  <div class="controls">
+    <input class="search" id="questq" type="search" placeholder="Search quest, zone or reward&hellip;" aria-label="Search quests">
+    <button class="chip" id="questonly" aria-pressed="false">Only what I can start now</button>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="n">Level</th><th>Quest</th><th>Notes</th></tr></thead>
+      <tbody id="questbody"></tbody>
+    </table>
+  </div>
+
+  <h3>Progression quests &mdash; the keys into each zone</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Zone</th><th>What to farm</th></tr></thead>
+      <tbody>
+        <tr><td class="n">Nascence</td><td>Burnt Out Memory Chip, Circuit Board, Copper Wire, Small Power Supply &mdash; farm from Subway</td></tr>
+        <tr><td class="n">Elysium</td><td>Kill Lost Mortiig, Ermite, Hiathlin and Imp; loot their drops</td></tr>
+        <tr><td class="n">Scheol</td><td>Widget to Gadget, Ravin's Multi-Gyro Component, Navi's Multi-Gyro Component, Antigravitational Metal Sphere, Soul Globe &times;6</td></tr>
+        <tr><td class="n">Adonis</td><td>Palladium Filament &times;2, Deuterium Collector &times;2, Calibrated Palladium Alloy Trace Base, Sunburst CF Electrolyte Base, Curse of the Watcher (per team)</td></tr>
+        <tr><td class="n">Penumbra</td><td>Hyper-Radiation Protection Skin and Glasses &mdash; needed if you're going in under level 160</td></tr>
+        <tr><td class="n">Inferno</td><td>Ice Golem Pattern Quest (Unredeemed) &mdash; get the molar and the faction to progress</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">Guides for all of these are on <a href="https://www.ao-universe.com/guides" target="_blank" rel="noopener">ao-universe.com/guides</a> &mdash; search the quest name. Omni start-up quests are <a href="https://www.ao-universe.com/guides/classic-ao/quests-guides-3/omni-start-up-quests" target="_blank" rel="noopener">here</a>.</p>
+</section>
+
+<section id="missions">
+  <h2>Cap 1 missions</h2>
+  <p class="deck">Everything available in Cap 1. Tick things off as you go &mdash; your progress and coin total are saved in this browser. Personals pay Iron Coins, dailies pay Iron Chips, org missions unlock the infrastructure.</p>
+
+  <div class="prog">
+    <div class="p"><span class="k">Personals done</span><span class="n cy" id="pDone">0 / 29</span><div class="bar"><i id="pBar"></i></div></div>
+    <div class="p"><span class="k">Iron Coins earned</span><span class="n go" id="pCoin">0</span><div class="bar"><i id="cBar"></i></div></div>
+    <div class="p"><span class="k">Dailies today</span><span class="n" id="pDaily">0 / 6</span></div>
+    <div class="p"><span class="k">Org unlocks done</span><span class="n" id="pOrg">0 / 48</span></div>
+  </div>
+
+  <div class="controls">
+    <input class="search" id="mq" type="search" placeholder="Search missions, mobs, items&hellip;" aria-label="Search missions">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" data-f="personal" aria-pressed="false">Personal</button>
+    <button class="chip" data-f="daily" aria-pressed="false">Daily</button>
+    <button class="chip" data-f="travel" aria-pressed="false">Travel</button>
+    <button class="chip" data-f="terminal" aria-pressed="false">Terminals</button>
+    <button class="chip" data-f="tradeskill" aria-pressed="false">Tradeskill</button>
+    <button class="chip" data-f="shop" aria-pressed="false">Shop</button>
+    <button class="chip" data-f="zone" aria-pressed="false">Zones</button>
+    <button class="chip" id="hidedone" aria-pressed="false">Hide done</button>
+  </div>
+  <div id="mlist"></div>
+
+  <div class="note">
+    <p><b>Not all Cap 1 entries are level-40 work.</b> Several reach into Shadowlands zones that are locked at start, or ask for kills well past what a 40 manages solo. Treat the cap as "available from Cap 1", not "finish in Cap 1".</p>
+  </div>
+</section>
+
+<section id="locked">
+  <h2>What's locked at the drop</h2>
+  <p class="deck">The board from #season-information, last updated 9/12/2026. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
+  <div class="board">
+    <div class="grp">Whompah network</div>
+    <div class="r"><span class="n2">ICC &rarr; Newland &middot; Tir &middot; Omni-Trade</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Neutral / Omni-Tek / Clan rings</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Jobe &rarr; ICC &middot; Rome &middot; Old Athens</span><span class="st off">Offline</span></div>
+    <div class="grp">Grid</div>
+    <div class="r"><span class="n2">Floors 1, 2 and 3</span><span class="st off">Offline</span></div>
+    <div class="grp">Shadowlands</div>
+    <div class="r"><span class="n2">Rubi-Ka &rarr; Nascence portal</span><span class="st err">Error</span></div>
+    <div class="r"><span class="n2">Nascence &rarr; Elysium &rarr; Pandemonium</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Sub-orbital Battle Station</span><span class="st off">Offline</span></div>
+    <div class="grp">Commerce &amp; missions</div>
+    <div class="r"><span class="n2">Commerce grid &middot; nano crystal &middot; implant terminals</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Mission grid</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Freelancer offices &middot; Doja offices</span><span class="st err">Error</span></div>
+    <div class="grp">Bots</div>
+    <div class="r"><span class="n2">Buff bots</span><span class="st off">Offline</span></div>
+    <div class="r"><span class="n2">Warp bots</span><span class="st off">Offline</span></div>
+    <div class="grp">Open from the start</div>
+    <div class="r"><span class="n2">All Rubi-Ka zones</span><span class="st ok">Open</span></div>
+    <div class="r"><span class="n2">Nascence</span><span class="st ok">Open</span></div>
+    <div class="r"><span class="n2">NPC traders &mdash; backyard trader, Sundance Smith, tailors, bartenders</span><span class="st ok">Open</span></div>
+  </div>
+  <p style="margin-top:16px"><b>Tradeskills start at 0</b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
+</section>
+
+<section id="caps">
+  <h2>Cap schedule</h2>
+  <p class="deck">Caps run two weeks. A cap only rises when its raise raid succeeds and leadership calls it &mdash; so every date past Cap 1's opening is provisional. Fail a raid and the cap holds until the next attempt lands.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Cap</th><th class="n">Ceiling</th><th class="n">Opens</th><th class="n">Raise raid</th><th>Raid target</th></tr></thead>
+      <tbody>
+        <tr><td>Cap 1</td><td class="n">40</td><td class="n">9/19/2026</td><td class="n">10/3/2026</td><td>Morgan Le Fey &mdash; twist: No Tired Limbs</td></tr>
+        <tr><td>Cap 2</td><td class="n">80</td><td class="n">10/3/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">10/17/2026</td><td>Not announced</td></tr>
+        <tr><td>Cap 3</td><td class="n">140</td><td class="n">10/17/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">10/31/2026</td><td>Not announced</td></tr>
+        <tr><td>Cap 4</td><td class="n">190</td><td class="n">10/31/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">11/14/2026</td><td>Not announced</td></tr>
+        <tr><td>Cap 5</td><td class="n">205</td><td class="n">11/14/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">11/28/2026</td><td>Not announced</td></tr>
+        <tr><td>Cap 6</td><td class="n">220</td><td class="n">11/28/2026 <span style="color:var(--rust)">TBC</span></td><td class="n">12/12/2026</td><td>Not announced</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">Raid dates come from the primer and are fixed. Opening dates are derived from those raids landing on schedule, which is why they carry TBC. The season goes into <b>After Party</b> once Sector 42 is done, or once there aren't the people to finish it &mdash; Ironman rules still apply, but play is free and raids are self-organised. Unlike past seasons it does not start after The Beast.</p>
+</section>
+
+<section id="rules">
+  <h2>The rules</h2>
+  <p class="deck">Full text is in #challenges-rules. Organised here by what you're most likely to trip over. The default position: <b>assume everything is locked until you know otherwise.</b></p>
+
+  <div class="note cy">
+    <p><b>The four that catch people.</b></p>
+    <p><b>1.</b> Screenshot rare loot <i>in the corpse or chest, before you loot it</i>, and post it in #screenshots. Unverifiable items can be taken off you. Org-bot rolls are the exception.</p>
+    <p><b>2.</b> Cancel buffs you didn't earn. Friendly outsiders will buff you; it's on you to drop anything your character can't cast and the org hasn't unlocked.</p>
+    <p><b>3.</b> Nothing comes in from outside. No alts, no mains, no outside friends. You also can't loot a mob or mission no challenger pulled.</p>
+    <p><b>4.</b> Don't out-level the cap. Going over earns a penalty.</p>
+  </div>
+
+  <details><summary>Playing your character</summary><div class="body">
+    <ul>
+      <li>Play your own character yourself, on a standard client. Nobody else plays it, you don't play theirs, and no using another challenger as a pocket.</li>
+      <li>No automation tools. Mission rollers are the exception.</li>
+      <li>No wall hacks, teleport hacks or anything that fundamentally changes the game.</li>
+      <li>Powerleveling only if you're a full cap below the current cap minimum, and only with explicit leadership approval.</li>
+      <li>No political, racist, homophobic or otherwise bigoted character names.</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Gear and credits</summary><div class="body">
+    <ul>
+      <li>Everything must be farmed, earned or given to you by another challenger.</li>
+      <li>You may give and trade gear with other challengers freely.</li>
+      <li>No bugs, exploits or third-party utilities to acquire or duplicate anything.</li>
+      <li>Promo items, Funcom Item Shop items and Daily Reward items are locked unless the season rules unlock them.</li>
+      <li>When a <b>privilege</b> is unlocked, that item may come from anywhere including an alt. Leadership often keeps a supply.</li>
+      <li>Unlocking an item in the Iron Shop lets you buy it there. It does <b>not</b> unlock the privilege for it.</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Buffs</summary><div class="body">
+    <ul>
+      <li>You may only use buffs the challenge has unlocked, or buffs your own character can cast.</li>
+      <li>A buff counts as unlocked when a challenger casts it <b>without</b> a wrangle or umbral wrangler and posts the execution text in #unlocked-buffs.</li>
+      <li>Agents may not unlock other professions' buffs.</li>
+      <li>Only the Borealis buff bots follow challenge restrictions. The OA bots don't &mdash; don't use them.</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Raids</summary><div class="body">
+    <ul>
+      <li>All raids are open to all challengers unless the format is team-limited (12man, ToTW instance).</li>
+      <li>Loot rolls randomly through the org bot, only for people present, and only if they were there more than half the raid.</li>
+      <li>Roll only on what you'll use. No reserved items for anyone or any profession.</li>
+      <li>Announce raids in org chat. Don't run one quietly.</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Season 12 specifics</summary><div class="body">
+    <ul>
+      <li><b>One character, no alts.</b> You can switch and carry earned gear and credits across, but the old character leaves the org. Iron Questie progress survives.</li>
+      <li><b>Tradeskills:</b> outside tradeskillers are limited to the unlocked skill level. Challenger tradeskillers are not.</li>
+      <li><b>Org votes</b> run inside Iron Questie and you must be logged in to vote. The rules post says 24 hours, the primer says about 10 &mdash; watch #announcements.</li>
+      <li><b>Opting out of Questie is allowed</b>, but there's no alternative route to Iron Coins, Chips or shop items.</li>
+      <li><b>OFAB and Serpentine are not restricted this season.</b> If you played a previous season, this is the change most likely to catch you out.</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Violations and penalties</summary><div class="body">
+    <p>Don't accuse anyone publicly or privately. Open a ticket on Discord with as much detail as you can. Penalties range from an uncomfortable conversation up through cap reductions, forced rerolls, item removal, losing buff and warp privileges, or removal from the season and the Discord.</p>
+  </div></details>
+</section>
+
+<section id="ref">
+  <h2>Reference</h2>
+
+  <h3>Special equipment slots</h3>
+  <p>You may equip items from the special list up to the number of unlocked slots. One item is one slot &mdash; two Dogs of War is two slots, twinking included. Two slots unlock per cap; a Cap 6 mission removes the limit. <b>Adventurers, Doctors, Enforcers, Fixers, Nano-Technicians and Soldiers get a permanent +1.</b> Cap 1's two come from <i>Sephirah: Kingdom I</i> (kill Abmouth in 15 seconds) and <i>Sephirah: Foundation II</i> (kill Aztur in 15 seconds).</p>
+  <div class="controls"><input class="search" id="eq" type="search" placeholder="Search the special equipment list&hellip;" aria-label="Search special equipment"></div>
+  <div id="eqlist" class="lv"></div>
+  <div class="note"><p><b>OFAB and Serpentine are not on the restricted list this season</b>, unlike previous ones.</p></div>
+
+  <h3>Iron Coin Shop</h3>
+  <p>Coins buy items, chips buy credits. About 2,500 coins come out of normal missions across the whole season, so budget. Items still have to be unlocked by an org mission before you can buy them.</p>
+  <div class="controls"><input class="search" id="shopq" type="search" placeholder="Search the shop&hellip;" aria-label="Search shop"></div>
+  <div class="scroll"><table><thead><tr><th class="n">Coins</th><th>Item</th><th class="n">Cap</th></tr></thead><tbody id="shopbody"></tbody></table></div>
+
+  <h3>Allowed third-party apps</h3>
+  <p>These are the only ones permitted. Anything else that automates your character is a violation.</p>
+  <ul class="plain">
+    <li>Clicksaver &middot; Mission Buddy &middot; Mali's Mission Roller &middot; Mali's Dungeon Map</li>
+    <li>Code's Ironman Plugin &middot; Ironquestie</li>
+    <li>Anarchy Online Items Assistant (AOIA+)</li>
+  </ul>
+
+  <h3>The bots</h3>
+  <div class="grid2">
+    <div class="tile">
+      <h4>Buff bot &mdash; Enfocode</h4>
+      <p>Offline until the org unlocks it. Once running:</p>
+      <ul>
+        <li><code>/tell Enfocode rebuffcast</code> for the full list</li>
+        <li><code>rebuffon</code> / <code>rebuffoff</code> toggles auto-rebuff near the bot</li>
+      </ul>
+      <p style="margin-top:8px">Borealis bots only. The OA bots don't follow challenge restrictions.</p>
+    </div>
+    <div class="tile">
+      <h4>Craft bot &mdash; Codescrafta</h4>
+      <p>Right of the grid terminal in Borealis.</p>
+      <ul><li><code>/tell Codescrafta help</code></li></ul>
+    </div>
+    <div class="tile">
+      <h4>Bank bot</h4>
+      <p>Shared twink gear and implants. <code>bank list</code> shows items and bags.</p>
+      <ul>
+        <li>Twink items, implants and symbs only &mdash; no junk</li>
+        <li>Take a full bag, leave an empty one</li>
+        <li>Return borrowed bags with everything in them</li>
+      </ul>
+    </div>
+    <div class="tile">
+      <h4>Warp bot</h4>
+      <p>Offline at season start. Unlocked through challenges.</p>
+    </div>
+  </div>
+
+  <h3>Where to look things up</h3>
+  <p>#resources has threads most people never find: <b>Iron Man: Level Cap Mastery Guide (Season 10)</b> by Douk, <b>Levels you can start quests</b> by Tempzz, <b>Better Item rolling list</b>, <b>Nasc. Starting Area</b>, <b>Getting Side on Arrival Hall</b>, <b>Mali's AO Toolkit</b>, <b>Dailies</b>, and a <b>Potential Fix for ICC crashing</b>.</p>
+  <p>External: <a href="https://aoitems.com/home/" target="_blank" rel="noopener">aoitems.com</a> &middot; <a href="https://aosetups.com/" target="_blank" rel="noopener">aosetups.com</a> &middot; <a href="https://auno.org/" target="_blank" rel="noopener">auno.org</a> &middot; <a href="https://www.ao-universe.com/guides" target="_blank" rel="noopener">ao-universe.com</a> &middot; <a href="https://www.aogalaxy.com/nanos" target="_blank" rel="noopener">aogalaxy.com</a> &middot; <a href="https://ao.tinkeringidiot.com/" target="_blank" rel="noopener">tinkeringidiot</a> &middot; <a href="https://arpa3.net/anarchy-online/" target="_blank" rel="noopener">arpa3.net</a></p>
+
+  <h3>Asking for help</h3>
+  <p>Ask in #general. If you think someone's breaking a rule, open a ticket &mdash; don't call it out in chat. And treat the RK19 denizens outside the challenge well; a lot of them quietly make this season work by donating for the buff bots, farming items, moving aside so we can farm Tara, and helping spawn battlestation rounds.</p>
+</section>
+
+<footer>
+  Unofficial. Compiled from #challenges-rules, #season-information, #announcements, the Season 12 primer, and #resources threads by Tempzz, Code and Douk.<br>
+  Mission details are provisional &mdash; Iron Questie is the source of truth once the season opens. Roll and quest lists were written for earlier seasons.<br>
+  Progress ticks are stored in your own browser only. Nothing is shared or uploaded.
+</footer>
+
+</div>
+
+<script>
+/* ---------- data ---------- */
+var L100=[56,67,77,84,91,100,112,118,125,126,134,143,144];
+var L160=[107,134,146,160,178,189,200,201,214];
+var L180=[101,120,139,150,164,180,200,201,212];
+var L200=[112,154,167,182,200];
+var ROLLS=[
+ {ql:5,n:"Second Hand Old English Trading Co.",q:2,lv:[3,4,5,6,7,8]},
+ {ql:10,n:"Concrete Cushion",q:2,lv:[6,7,8,9,10,12,13,14,15]},
+ {ql:22,n:"Windchaser Quartz",q:1,lv:[15,17,19,20,22,25,26,27,28,30,32]},
+ {ql:30,n:"ICC Arms 2Q2C Gun Bag",q:1,lv:[17,20,25,28,30,34,36,38,40,41,43,44]},
+ {ql:40,n:"Tsakachumi PTO-HV.2 Counter-Sniper Rifle",q:1,lv:[27,31,34,37,40,45,48,50,51,54,58]},
+ {ql:40,n:"Manex SD 4004 (Mist Reception Sorrow)",q:1,lv:[27,31,34,37,40,45,48,50,51,54,58]},
+ {ql:44,n:"Galahad Inc T70 Beyer",q:2,lv:[25,34,37,40,44,49,52,55,56,59,63,64]},
+ {ql:77,n:"Galahad Inc T70 Zig Zag",q:2,lv:[43,70,77,86,91,97,103,110,111]},
+ {ql:80,n:"ICC Arms 2Q2C (u) Gun Bag",q:1,lv:[45,62,67,73,80,89,95,100,101,107,115]},
+ {ql:80,n:"Tsakachumi PTO-HV Counter-Sniper Rifle",q:1,lv:[45,62,67,73,80,89,95,100,101,107,115]},
+ {ql:96,n:"Uncle Bazzit Rusty 22mm",q:2,lv:[54,64,74,80,88,96,107,113,114,120,121,128,129,138]},
+ {ql:100,n:"O.E.T. Co. Jess",q:2,lv:L100},
+ {ql:100,n:"BigBurger Inc. Chapman",q:2,lv:L100},
+ {ql:100,n:"HSR Arms N.M.",q:2,lv:L100},
+ {ql:160,n:"MTI VP300 Silver s. Caseless",q:2,lv:L160},
+ {ql:160,n:"Excellent Concrete Cushion",q:2,lv:L160},
+ {ql:180,n:"MTI VP300 Red s. Caseless",q:2,lv:L180},
+ {ql:180,n:"MTI SW500 Geyser",q:2,lv:L180},
+ {ql:180,n:"V-five Breathing Space",q:2,lv:L180},
+ {ql:192,n:"O.E.T Co. Urban Sniper Kaiser",q:2,lv:[128,148,160,175,192,214]},
+ {ql:200,n:"O.E.T. Co. Maharanee",q:2,lv:L200},
+ {ql:200,n:"Master G-Staff",q:1,lv:L200},
+ {ql:200,n:"Augmented Biomech Armor Helmet",q:1,lv:L200},
+ {ql:200,n:"Augmented Biomech Armor Boots",q:1,lv:L200},
+ {ql:200,n:"Augmented Biomech Armor Cloak",q:1,lv:L200}
+];
+
+var QUESTS=[
+ {l:1,n:"Serpentine Helm",d:"Subway"},
+ {l:1,n:"Shoulder Pad quest",d:"Collect all parts twice, early — gets you an Omnifier"},
+ {l:1,n:"Thrak Garden Key Quest",d:"Nascence — farm 4 insignias"},
+ {l:1,n:"Unredeemed Start-up quest",d:"Gives Spec 1"},
+ {l:40,n:"Serpentine Boots",d:"Azzy kill"},
+ {l:41,n:"Foreman's Quest",d:"Levels 41–100"},
+ {l:50,n:"Serpentine Legs",d:"TIM kill"},
+ {l:50,n:"Shere Garden Key Quest",d:"8 of 9 insignias"},
+ {l:50,n:"Shere Sanctuary Garden Key Quest",d:""},
+ {l:60,n:"One Who Has Achieved Glory",d:"About 750k credits"},
+ {l:60,n:"One Who Has Taken Vow of Truth",d:"About 1.5m credits"},
+ {l:60,n:"One Who Overcomes Enemies",d:"Save for the 110–170 cap — each of the 7 missions is worth a daily's XP, so 7 dailies total"},
+ {l:60,n:"The One Loved by the Sun",d:"About 300k credits"},
+ {l:60,n:"Roch Garden Key Quest",d:"Start level not stated in the source",nolvl:1},
+ {l:60,n:"Roch Sanctuary Garden Key Quest",d:"Start level not stated in the source",nolvl:1},
+ {l:80,n:"Knowledge of the Yuttos",d:""},
+ {l:80,n:"Jobe Scientists",d:""},
+ {l:120,n:"Sergeant Marion Sweet",d:"12 treat / 5 intel neck item, TL4 — about 1m credits"},
+ {l:120,n:"Corporal Ashley Winstead",d:"NT absorb — run it alongside Marion Sweet"},
+ {l:125,n:"Serpentine Chest",d:"Hezek kill, IS"},
+ {l:130,n:"Dalja Garden Key Quest",d:"Loot the note early"},
+ {l:130,n:"Xan Civilization Quest (Adonis)",d:"Pull up a guide and pre-farm — gives Spec 3 and the Syndicate brain"},
+ {l:130,n:"Vanya Garden Key Quest",d:"35 soul fragments, 6 insignias — start level not stated",nolvl:1},
+ {l:130,n:"Vanya Sanctuary Garden Key Quest",d:"6 cama insignias — start level not stated",nolvl:1},
+ {l:130,n:"Serpentine Gloves",d:"Mantis Queen"},
+ {l:130,n:"Serpentine Pads",d:"Ian Warr"},
+ {l:150,n:"PvP token board upgrade",d:""},
+ {l:150,n:"Dalja Sanctuary Garden Key Quest",d:"Infernal demon pattern, per team"},
+ {l:150,n:"Dark Ruins solo",d:""},
+ {l:150,n:"Dark Ruins team",d:"Daily"},
+ {l:150,n:"Xan Civilization Quest (Penumbra)",d:"Spec 4 and a nano"}
+];
+
+var M=[
+/* personals */
+ {s:"personal",f:"personal",n:"Orientation I",g:"Stand at the Statue, the Map and the Neutral Door; target the Old Lady and the Geezer",c:5},
+ {s:"personal",f:"personal",n:"Orientation II",g:"Kill 10 each — Contagious Rollerrat, Clawfinger Ruffian, Biofreak Carcass, 34-I Helper, Eleet",c:5},
+ {s:"personal",f:"personal",n:"Logistics: Cogito, Ergo Sum",g:"Loot Copper Wire, Burned Out NCU, Melted Circuit Board, Small Power Supply; get an Insipid Ring",c:5},
+ {s:"personal",f:"personal",n:"Logistics: Required Reading I",g:"Get The Mariner's Father",c:5},
+ {s:"personal",f:"personal",n:"Logistics: Loadout Check I",g:"Equip 7 pieces of OFAB armor",c:5},
+ {s:"personal",f:"personal",n:"Logistics: RAM Rods",g:"Loot Morphing Memory, 5 Dark Memories or Dark Dreams, and a Guardian Circuit Board or Dream Mesh Circuit",c:5},
+ {s:"personal",f:"personal",n:"Objective: Instant Rehab",g:"Kill 20 Violent Vagabond, 10 Looter, 5 Deranged Shopper, 50 Stim Fiend",c:5},
+ {s:"personal",f:"personal",n:"Patrol: Newland Desert",g:"Seven points — Stolt's Trading Outpost, Newland Desert ×3, Rhinoman Valley, Newland Desert, Meetmedere",c:15},
+ {s:"personal",f:"personal",n:"Patrol: Sandboxes and Toasters",g:"The big Mort Crater loop",c:30},
+ {s:"personal",f:"personal",n:"Logistics: Memory Lane",g:"Loot and equip 5 Memory Loop; get and equip Belt Component Platform 6K-X",c:30},
+ {s:"personal",f:"personal",n:"Scout: Jobe Recon",g:"Target nine Jobe NPCs — Yorick Kjarval, IPS Exchange Officer, Prof. Dedlock, Arul Saba, Portal Technician, Christen Thorwaldsen, Ira Atlin, Yasuhiro Yamashita, Lady Keldara",c:5},
+ {s:"personal",f:"personal",n:"Scout: Jobe Recon, Special",g:"Target Drake Rodriguez, Sundance Smith (JAME Depot), Celeth-El, El-Domo; loot a Delicate Metal Device",c:10},
+ {s:"personal",f:"personal",n:"Scout: Nascence",g:"Twelve-point sweep — Frontier Bridge through Misty Dreams",c:25},
+ {s:"personal",f:"personal",n:"Scout: Elysium",g:"Route not yet published",c:25},
+ {s:"personal",f:"personal",n:"Logistics: Pop Psychology",g:"Get Mortiig's Heart, Eremites Vibrissa, Haithilin's Spine, Imp's Wing, Caliginous Ring",c:5},
+ {s:"personal",f:"personal",n:"Logistics: Poison Garden",g:"Get the Key to the Garden of Shere or of Enel",c:5},
+ {s:"personal",f:"personal",n:"Logistics: The Nascence Connection",g:"Get the Keys to the Gardens of Aban and Thrak",c:10},
+ {s:"personal",f:"personal",n:"Logistics: Out of Uniforms",g:"Get at least 2 parts of the Miir Cameo or Camouflage Outfit of 3305 Local",c:10},
+ {s:"personal",f:"personal",n:"Logistics: The Quiet Place",g:"Get the key to either Elysium sanctuary",c:20},
+ {s:"personal",f:"personal",n:"Objective: Take me to Church",g:"Kill 20 Hoathlan, 10 Brisk Hoathlan, 20 Malah, 10 Malah-Ana, Hiathlin Lookout",c:5},
+ {s:"personal",f:"personal",n:"Objective: Nascence Leadership",g:"Kill 15 each Cur-Beat, Or-Jerad, Sun-Len, Calan-Cur plus six named Aban and Thrak",c:10},
+ {s:"personal",f:"personal",n:"Objective: Involuntary Kinetic Deprograming",g:"Kill 50 Cultists",c:10},
+ {s:"personal",f:"personal",n:"Objective: Linear Accelerated Laicization",g:"Kill 25 each Acolytes, Novice, Reverend, Windcaller, Exarch; kill Uklesh the Frozen and Aztur the Immortal",c:10},
+ {s:"personal",f:"personal",n:"Sponsored: Transmolecular Metaphysics",g:"Target Zyvania Bagh; kill 50 Figment of Imagination and 10 each Fragment of Sanity, Suppressed Emotion, Roving Eye, Nebulous Feeling, Guardian of Thought",c:10},
+ {s:"personal",f:"personal",n:"Objective: Elysium Leadership",g:"Kill Ocra Lum, Empath Aurea, Redeemed Enel, Dom Roch, Omega Yuan Chi, Unredeemed Shere",c:20},
+ {s:"personal",f:"personal",n:"Objective: Disrupt Kyr'ozch Communications",g:"Kill 80 Hacker'Uri, 10 General",c:20},
+ {s:"personal",f:"personal",n:"Objective: Disrupt Kyr'ozch Transportation",g:"Kill 15 Fighter Pilot, 15 Fleet Admiral",c:20},
+ {s:"personal",f:"personal",n:"Objective: Know Thy Enemy I",g:"Kill 50 each — Ankari, Xoch, Ilari, Rimah, Cha, Jaax",c:20},
+ {s:"personal",f:"personal",n:"Objective: Big Red",g:"Solo kill Aztur the Immortal",c:30},
+/* dailies */
+ {s:"daily",f:"daily",n:"Objective: Fishing Bait",g:"Kill 8 Hacker'Uri",ch:10},
+ {s:"daily",f:"daily",n:"Objective: Gravel Pit",g:"Kill 8 Heckler of Stone, 8 Heckler of Metal",ch:10},
+ {s:"daily",f:"daily",n:"Patrol: Newland Perimeter",g:"Six points — West Gate, the alien guy, Southern Guard Post, Eastern Guard Post, Divenchy, North Gate",ch:10},
+ {s:"daily",f:"daily",n:"Patrol: Andromeda Settlements",g:"Seven points — ICC Statue, wasteland village and mine, northern village, walled village, northwest farm, Terra, crater tent camp",ch:25},
+ {s:"daily",f:"daily",n:"Logistics: Scrapmetal, Scrapmeat",g:"Loot 20 Robot Junk, 20 Monster Parts",ch:10},
+ {s:"daily",f:"daily",n:"Sponsored: Would you like a…",g:"Get 1 Bronto Burger or Bronto Cheese",ch:5},
+/* org - travel */
+ {s:"org",f:"travel",n:"Access: ICC → Newland",g:"30 stand 30s in Newland City, 30 at ICC HQ",u:"ICC–Newland whompah",crew:"30 each end"},
+ {s:"org",f:"travel",n:"Access: ICC → Tir",g:"30 in Tir City, 30 at ICC HQ",u:"ICC–Tir whompah",crew:"30 each end"},
+ {s:"org",f:"travel",n:"Access: ICC → Omni-Trade",g:"30 at ICC HQ, 30 in Trade District",u:"ICC–Omni-Trade whompah",crew:"30 each end"},
+ {s:"org",f:"travel",n:"Access: Neutral Whompah Network",g:"10 each at Borealis, East Last Ditch, Ernest Wastelands, Stolt's Trading Outpost, Newland City",u:"Neutral ring",crew:"10 × 5"},
+ {s:"org",f:"travel",n:"Access: Omni-Tek Whompah Network",g:"30 each at Omni-1 Entertainment East, Trade District, Rome Park, Galway Castle; 10 each at Infestation and 2HO Outpost",u:"Omni ring",crew:"30 & 10"},
+ {s:"org",f:"travel",n:"Access: Clan Whompah Network",g:"30 each at Tir City, Varmint Woods Swampland, Duhndur Wastes, Old Athen West; 10 at Bliss and others",u:"Clan ring",crew:"30 & 10"},
+ {s:"org",f:"travel",n:"Access: ICC → Jobe",g:"10 at ICC HQ, 10 on Jobe Platform",u:"Jobe access",crew:"10 each end"},
+ {s:"org",f:"travel",n:"Access: Rome → Jobe",g:"10 on Jobe Platform, 10 at Rome Park",u:"Jobe access",crew:"10 each end"},
+ {s:"org",f:"travel",n:"Access: Old Athens → Jobe",g:"10 on Jobe Platform, 10 at Old Athen East",u:"Jobe access",crew:"10 each end"},
+ {s:"org",f:"travel",n:"Access: The Grid — Floor 1",g:"24 each at ICC HQ, Borealis, Old Athen East, Newland City, Tir City, Trade District",u:"Grid floor 1",crew:"24 × 6"},
+ {s:"org",f:"travel",n:"Access: The Grid — Floor 2",g:"30 each at Meetmedere, West Athen, 4Holes, 2HO Outpost, Harry's, Area Y and one more",u:"Grid floor 2",crew:"30 × 7"},
+ {s:"org",f:"travel",n:"Access: The Grid — Floor 3",g:"30 each at Omni-1 HQ, Camelot, Mort Crater; kill a Cyborg Techwrecker",u:"Grid floor 3",crew:"30 × 3"},
+ {s:"org",f:"travel",n:"Logistics: Pub Crawl",g:"Requirements not yet published",u:"Newland city whompah",crew:"org"},
+/* org - terminals */
+ {s:"org",f:"terminal",n:"Logistics: Commerce Grid",g:"Loot 100 “Take me to the shops”",u:"Commerce terminals + a vote",crew:"org"},
+ {s:"org",f:"terminal",n:"Logistics: Carbon Capture",g:"Needs Commerce Grid first. Get 100 Carbon Rich Rocks",u:"Profession nano terminals",crew:"org"},
+ {s:"org",f:"terminal",n:"Logistics: Chipping In",g:"Needs Commerce Grid first. Loot 100 Blank Implants",u:"Pre-made implant terminals",crew:"org"},
+ {s:"org",f:"terminal",n:"Logistics: Mission Grid",g:"Target 50 Backyard Mission Booths, get 50 Simple First-Aid Kits",u:"Mission terminals — unlocks shop rolling",crew:"org"},
+ {s:"org",f:"terminal",n:"Logistics: Mission Support",g:"Get 20 of each Composite nano crystal — Attribute Boost, Martial Prowess, Melee, Nano, Physical Special, Ranged, Ranged Special, Tradeskill",u:"Buff bots",crew:"org"},
+ {s:"org",f:"terminal",n:"Access: Freelancer Offices",g:"Get 50 Lockpicks and 50 Mission Key Duplicators, then 20 hold each of two points",u:"Freelancer offices",crew:"20 × 2"},
+ {s:"org",f:"terminal",n:"Access: Jobe DOJA Offices",g:"Get 20 Nascence Doja Chips and 20 Elysium Doja Chips, then stand at the office",u:"Doja offices",crew:"org"},
+/* org - zones */
+ {s:"org",f:"zone",n:"ACCESS: Battle Station",g:"Kill a General and a Fighter Pilot within 7 minutes of each other",u:"Battle Station",crew:"org"},
+ {s:"org",f:"zone",n:"Access: Elysium",g:"Get 30 Insipid Rings",u:"Elysium",crew:"org"},
+ {s:"org",f:"zone",n:"Access: Scheol",g:"Get 30 Caliginous Rings, kill Aztur the Immortal five times",u:"Scheol",crew:"org"},
+/* org - tradeskill */
+ {s:"org",f:"tradeskill",n:"Requisition: Scrap Metal",g:"Kill 50 each Buckethead tech-scavenger, 34-I Helper, Waste disposer; loot 500 Robot Junk",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Tools",g:"Kill 25 Fresh Engineers",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Solvents",g:"Kill 10 Bartenders",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Coolant",g:"Kill 500 Icy Shadows",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Debugging",g:"Kill 50 each Leets, Shadowleets, Fleas, Discarded Pets, Reets, Hai-Tempestus, Tempestus",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Hardened Bio-Templates",g:"Loot 1000 Monster Parts",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Raw Notum",g:"Get 1000 Notum Fragments or Chips",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Tissue Regeneration Data",g:"Kill 25 each Biofreak Carcass, Clawfinger Ruffian, Reborn Soldier, Alpha and Beta Bio Construct, Eclipsers",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Nano Servos and Controllers",g:"Kill 500 Robot Dogs",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Self-Replicating Nano Filament",g:"Get 200 pieces of living cyber armor",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Geo-Quantum Positioning Data",g:"Kill Geo Survey Dogs — 50 Nascence, 50 Elysium, 10 each Scheol, Adonis, Penumbra, Inferno",u:"+100 tradeskill",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Alien Tools",g:"Get 20 each Bazzit's Alien Library, Body Heat Pattern Analyzer, Kyr'ozch Atomic Restructuralizing Tool, Kyr'ozch Structural Analyzer",u:"Alien armor crafting",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: MRR",g:"Kill The Iron Reet or loot Shape Soft Program",u:"Soft armor crafting",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Requisition: Interdimensional Flux",g:"Loot 2000 Pattern Pieces or get an Ancient Novictum Refiner",u:"Pocket boss crafting",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Cross-Training: Drug Dealer I",g:"Loot 1000 Unpolluted Crystals",u:"QL150 crystal privileges",crew:"org"},
+ {s:"org",f:"tradeskill",n:"Cross-Training: Drug Dealer II",g:"Needs Drug Dealer I. Loot 5000 Unpolluted Crystals",u:"QL250 crystal privileges",crew:"org"},
+/* org - shop / privilege */
+ {s:"org",f:"shop",n:"Sponsored: Scrubbed",g:"Kill Cuty, Ding, George, Joo, Morty, Polly, Powa, Oscar, Ownz, Stumpy",u:"Omni-Med Suit privileges",crew:"org"},
+ {s:"org",f:"shop",n:"Sponsored: Quantum Threading Samples",g:"Kill 5 Neleb, 30 each The Curator, Lien the Memory Stalker, Guardian of Tomorrow; loot 20 Dark Memories, 20 Dark Dreams, 3 of each Notum Ring of Three",u:"Vote: Nano Yalm or Aban Bracers",crew:"org"},
+ {s:"org",f:"shop",n:"Sponsored: Bling",g:"Get gold rings with a perfectly cut diamond, star ruby and sapphire",u:"Gem rings in the shop",crew:"org"},
+ {s:"org",f:"shop",n:"Sponsored: Mining Geo-Data",g:"Loot 50 Canister of Pure Liquid Notum and 50 notum chips, fragments or nuggets; target 30 each Omni, Clan and Neutral control towers",u:"Vote: city notum mining or land control",crew:"org"},
+ {s:"org",f:"shop",n:"Cross-Training: Barista",g:"Coffee machines and 10 cups of enhanced coffee",u:"Coffee ×20 in the shop",crew:"org"},
+ {s:"org",f:"shop",n:"Cross-Training: Confectioner",g:"Get an Extruder and 5 Extruder Nutrition Bars",u:"Extruder Bars in the shop",crew:"org"},
+ {s:"org",f:"shop",n:"Sephirah: Kingdom I",g:"Kill Abmouth in 15 seconds",u:"Special slot 1",crew:"org"},
+ {s:"org",f:"shop",n:"Sephirah: Foundation II",g:"Kill Aztur the Immortal in 15 seconds",u:"Special slot 2",crew:"org"},
+ {s:"org",f:"zone",n:"Cap-Raiser: Morgan Le Fey",g:"Kill Morgan Le Fey. Twist: No Tired Limbs",u:"Unlocks Cap 2",crew:"raid"}
+];
+
+var EQUIP=["Alien Augmentation Device — Damage","Alien Augmentation Device — Insight","Alien Augmentation Device — Nano Technology","ALL Alien Armor","ALL Predator Armor","Ultralight Missile Pistol Raid 9-X (all QLs)","Augmented Master Engineer Pistol","Chiroptera","Crispy Chiroptera","Communications Relay","Customized Desert Reet","Dark Pistol","Dark Pistol of the Revoked","Dog of War","Dreadloch Balanced Freedom Arms","Dreadloch Sniper's Friend","Ethereal Implant of Berserker Rage","Ethereal Spirit of Berserker Rage","Extreme Low Light Targeting Scope","Gaily Painted Hood","Notum Imbued Gaily Painted Hood","Globe of Clarity","Imbued Globe of Clarity","Hacked Medi-Blade","Improved Hacked Medi-Blade","Howlet","Hungry Howlet","Infused Dust Brigade Engineer Pistol","Infused Viral Compiler","Living Dragonclaw Gloves","Living DragonFlesh Body Armor","Modified Notucomm Mesh Trench coat","Neleb's Nano Master Robe","Neleb's Nightmare Battle Rod","Nippy John Stiletto","Panther","Pained Panther","Perfected Alien Tank Armor","Robust Backpack","Sandy Piece of Goo","Silken Leg Chopper Gloves","Sinew of the Tarasque","Viral Memory Storage Unit (Damage)","Viral Memory Storage Unit (XP)"];
+
+var SHOP=[[10,"Coffee ×20",1],[40,"Aban Fala's Bracers — Apprehension, Brute Force, Dexterity, Endurance, Mental Strength, Logic",1],[40,"Platinum Filigree Rings QL250 — sapphire, diamond, star ruby",1],[50,"Extruder Bar ×5",1],[100,"Sealed Yalmaha 29500 — The Stiletto",1],[100,"Advanced Scent Sensor",1],[100,"Shades of Lucubration",1],[60,"64 NCU Memory QL200",2],[100,"Kyr'ozch Viralbots QL100",2],[120,"Viral Memory Storage Unit — Damage / XP",2],[150,"Silken Legchopper Gloves",2],[150,"Virral Triumvirate Egg",3],[200,"Spirit Infused Yuttos Modified NCU QL160",3],[200,"Extreme Low Light Targeting Scope",3],[300,"Infused Viral Compiler",3],[100,"Hold Hell at Bay",4],[100,"Lava Protection Boots and Skin Galvanizer",4],[200,"Visible Light Remodulation Device",4],[200,"Energy Redistribution Unit",4],[200,"Dynamic Gas Redistribution Valves",4],[200,"Kyr'ozch Viralbots QL200",4],[300,"Syndicate Messenger Gun",4],[300,"Sparkling Scimitar of Spetses",4],[300,"Exact Copy of The Excalibur",4],[300,"Sword of Wonder",4],[300,"Piercing Evil",4],[300,"Massive Bolt Charger",4],[300,"Kyr'ozch Viralbots QL300",5],[500,"Alien Matrix Alpha Box",6],[500,"Alien Matrix Beta Box",6]];
+
+/* ---------- storage ---------- */
+var KEY="aoim-s12-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){return{}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+var state=load();
+if(!state.done)state.done={};
+if(!state.level)state.level=1;
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+/* ---------- countdown ---------- */
+var DROP=Date.UTC(2026,8,19,14,0,0);
+function tick(){
+  var el=document.getElementById("cd");if(!el)return;
+  var d=DROP-Date.now();
+  if(d<=0){el.innerHTML='Live<small>season is running</small>';el.className="v cy";return}
+  var day=Math.floor(d/864e5),hr=Math.floor(d/36e5)%24,mi=Math.floor(d/6e4)%60;
+  el.innerHTML=day+'d '+hr+'h '+mi+'m<small>until drop</small>';
+}
+tick();setInterval(tick,30000);
+
+/* ---------- rolls ---------- */
+var sigCount={};
+ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
+function renderRolls(){
+  var q=(document.getElementById("rollq").value||"").toLowerCase();
+  var only=document.getElementById("rollonly").getAttribute("aria-pressed")==="true";
+  var lv=state.level;
+  var rows=ROLLS.filter(function(r){
+    if(only&&r.lv.indexOf(lv)<0)return false;
+    if(!q)return true;
+    return (r.n+" ql"+r.ql+" "+r.ql).toLowerCase().indexOf(q)>=0;
+  });
+  var b=document.getElementById("rollbody");
+  if(!rows.length){b.innerHTML='<tr><td colspan="4" class="empty">Nothing matches.</td></tr>';return}
+  b.innerHTML=rows.map(function(r){
+    var hit=r.lv.indexOf(lv)>=0;
+    var shared=sigCount[r.lv.join(",")]>1;
+    var lvls=r.lv.map(function(n){return n===lv?"<b>"+n+"</b>":n}).join(" ");
+    return '<tr class="'+(hit?"hit":"")+'">'+
+      '<td class="n">'+r.ql+'</td>'+
+      '<td>'+esc(r.n)+(shared?' <span style="color:var(--rust);font-family:var(--f-m);font-size:11px">shared window</span>':'')+'</td>'+
+      '<td class="n">×'+r.q+'</td>'+
+      '<td class="lv">'+lvls+'</td></tr>';
+  }).join("");
+}
+
+/* ---------- quests ---------- */
+function renderQuests(){
+  var q=(document.getElementById("questq").value||"").toLowerCase();
+  var only=document.getElementById("questonly").getAttribute("aria-pressed")==="true";
+  var lv=state.level;
+  var rows=QUESTS.filter(function(x){
+    if(only&&x.l>lv)return false;
+    if(!q)return true;
+    return (x.n+" "+x.d).toLowerCase().indexOf(q)>=0;
+  });
+  var b=document.getElementById("questbody");
+  if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">Nothing matches.</td></tr>';return}
+  b.innerHTML=rows.map(function(x){
+    var open=x.l<=lv;
+    return '<tr class="'+(open?"hit":"")+'">'+
+      '<td class="n">'+(x.nolvl?'&mdash;':x.l+"+")+'</td>'+
+      '<td><b>'+esc(x.n)+'</b></td>'+
+      '<td style="color:var(--ink-2)">'+esc(x.d)+'</td></tr>';
+  }).join("");
+}
+
+/* ---------- missions ---------- */
+var filter="all",hideDone=false;
+function renderMissions(){
+  var q=(document.getElementById("mq").value||"").toLowerCase();
+  var rows=M.filter(function(m,i){
+    if(filter!=="all"&&m.f!==filter)return false;
+    if(hideDone&&state.done[m.n])return false;
+    if(!q)return true;
+    return (m.n+" "+m.g+" "+(m.u||"")).toLowerCase().indexOf(q)>=0;
+  });
+  var host=document.getElementById("mlist");
+  if(!rows.length){host.innerHTML='<div class="empty">Nothing matches that filter.</div>';}
+  else{
+    host.innerHTML=rows.map(function(m){
+      var id="m_"+m.n.replace(/[^a-z0-9]/gi,"");
+      var done=!!state.done[m.n];
+      var tag=m.c?'<span class="tagp coin">'+m.c+' coins</span>'
+        :m.ch?'<span class="tagp chip2">'+m.ch+' chips</span>'
+        :'<span class="tagp crew">'+esc(m.crew||"org")+'</span>';
+      return '<div class="mrow'+(done?" done":"")+'">'+
+        '<input type="checkbox" id="'+id+'" data-n="'+esc(m.n)+'"'+(done?" checked":"")+'>'+
+        '<label class="nm" for="'+id+'">'+esc(m.n)+'</label>'+tag+
+        '<div class="gl">'+esc(m.g)+(m.u?' <span style="color:var(--rust)">→ '+esc(m.u)+'</span>':'')+'</div>'+
+      '</div>';
+    }).join("");
+    host.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+      cb.addEventListener("change",function(){
+        state.done[cb.getAttribute("data-n")]=cb.checked;
+        if(!cb.checked)delete state.done[cb.getAttribute("data-n")];
+        save(state);renderMissions();updateProgress();
+      });
+    });
+  }
+}
+function updateProgress(){
+  var pTot=0,pD=0,coins=0,coinTot=0,dD=0,oD=0,oTot=0;
+  M.forEach(function(m){
+    var d=!!state.done[m.n];
+    if(m.s==="personal"){pTot++;coinTot+=m.c;if(d){pD++;coins+=m.c}}
+    else if(m.s==="daily"){if(d)dD++}
+    else{oTot++;if(d)oD++}
+  });
+  document.getElementById("pDone").textContent=pD+" / "+pTot;
+  document.getElementById("pCoin").textContent=coins;
+  document.getElementById("pDaily").textContent=dD+" / 6";
+  document.getElementById("pOrg").textContent=oD+" / "+oTot;
+  document.getElementById("pBar").style.width=(pTot?pD/pTot*100:0)+"%";
+  document.getElementById("cBar").style.width=(coinTot?coins/coinTot*100:0)+"%";
+}
+
+/* ---------- reference lists ---------- */
+function renderEquip(){
+  var q=(document.getElementById("eq").value||"").toLowerCase();
+  var list=EQUIP.filter(function(x){return !q||x.toLowerCase().indexOf(q)>=0});
+  document.getElementById("eqlist").innerHTML=list.length?list.map(esc).join(" &middot; "):'<span class="empty">Nothing matches.</span>';
+}
+function renderShop(){
+  var q=(document.getElementById("shopq").value||"").toLowerCase();
+  var rows=SHOP.filter(function(r){return !q||(r[1]+" "+r[0]).toLowerCase().indexOf(q)>=0});
+  document.getElementById("shopbody").innerHTML=rows.length?rows.map(function(r){
+    return '<tr><td class="n">'+r[0]+'</td><td>'+esc(r[1])+'</td><td class="n">'+r[2]+'</td></tr>';
+  }).join(""):'<tr><td colspan="3" class="empty">Nothing matches.</td></tr>';
+}
+
+/* ---------- level ---------- */
+function setLevel(v){
+  v=Math.max(1,Math.min(220,parseInt(v,10)||1));
+  state.level=v;save(state);
+  var rollNow=ROLLS.filter(function(r){return r.lv.indexOf(v)>=0}).length;
+  var questNow=QUESTS.filter(function(x){return x.l<=v}).length;
+  var cap=v>=40?"at or over the Cap 1 ceiling":"under the Cap 1 ceiling of 40";
+  document.getElementById("lvlhint").innerHTML=
+    "<b>"+rollNow+"</b> item"+(rollNow===1?"":"s")+" rollable now &middot; <b>"+questNow+"</b> quest"+(questNow===1?"":"s")+" open &middot; "+cap;
+  renderRolls();renderQuests();
+}
+
+/* ---------- wire up ---------- */
+document.getElementById("lvl").value=state.level;
+document.getElementById("lvl").addEventListener("input",function(e){setLevel(e.target.value)});
+document.getElementById("rollq").addEventListener("input",renderRolls);
+document.getElementById("questq").addEventListener("input",renderQuests);
+document.getElementById("mq").addEventListener("input",renderMissions);
+document.getElementById("eq").addEventListener("input",renderEquip);
+document.getElementById("shopq").addEventListener("input",renderShop);
+document.getElementById("rollonly").addEventListener("click",function(){
+  var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderRolls();
+});
+document.getElementById("questonly").addEventListener("click",function(){
+  var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderQuests();
+});
+document.getElementById("hidedone").addEventListener("click",function(){
+  hideDone=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",hideDone);renderMissions();
+});
+document.querySelectorAll('.chip[data-f]').forEach(function(c){
+  c.addEventListener("click",function(){
+    document.querySelectorAll('.chip[data-f]').forEach(function(x){x.setAttribute("aria-pressed","false")});
+    c.setAttribute("aria-pressed","true");filter=c.getAttribute("data-f");renderMissions();
+  });
+});
+
+setLevel(state.level);
+renderMissions();updateProgress();renderEquip();renderShop();
+</script>
