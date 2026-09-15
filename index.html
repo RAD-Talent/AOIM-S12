@@ -380,7 +380,7 @@ footer a{color:var(--ink-3)}
     <a href="#start">Start</a>
     <a href="#rolls">Rolls</a>
     <a href="#quests">Quests</a>
-    <a href="#missions">Missions</a>
+    <a href="#missions">Cap track</a>
     <a href="#pockets">Pocket bosses</a>
     <a href="#locked">Locked</a>
     <a href="#caps">Caps</a>
@@ -406,7 +406,7 @@ footer a{color:var(--ink-3)}
   <p class="deck">Tempzz's roll list. Shop terminals reroll their stock against your level, so each item only appears in specific level windows &mdash; miss the window and you wait for the next one. Rows highlighted in green are live at your current level.</p>
 
   <div class="note">
-    <p><b>You can't roll anything until the org unlocks the Mission Grid.</b> Mission and commerce terminals are offline at season start. Until <i>Logistics: Mission Grid</i> lands, this list is planning material, not a shopping trip.</p>
+    <p><b>You can't roll anything until the org brings the mission and commerce terminals back online.</b> Both are offline at season start. Until then this list is planning material, not a shopping trip.</p>
   </div>
 
   <div class="controls">
@@ -455,33 +455,35 @@ footer a{color:var(--ink-3)}
 </section>
 
 <section id="missions">
-  <h2>Cap 1 missions</h2>
-  <p class="deck">Everything available in Cap 1. Tick things off as you go &mdash; your progress and coin total are saved in this browser. Personals pay Iron Coins, dailies pay Iron Chips, org missions unlock the infrastructure.</p>
+  <h2>The cap track</h2>
+  <p class="deck">Each cap has its own set of missions in Iron Questie. Finishing the org ones is what brings the infrastructure back and what raises the level cap.</p>
 
-  <div class="prog">
-    <div class="p"><span class="k">Personals done</span><span class="n cy" id="pDone">0 / 29</span><div class="bar"><i id="pBar"></i></div></div>
-    <div class="p"><span class="k">Iron Coins earned</span><span class="n go" id="pCoin">0</span><div class="bar"><i id="cBar"></i></div></div>
-    <div class="p"><span class="k">Dailies today</span><span class="n" id="pDaily">0 / 6</span></div>
-    <div class="p"><span class="k">Org unlocks done</span><span class="n" id="pOrg">0 / 48</span></div>
+  <div class="grid2">
+    <div class="tile">
+      <h4>Personal missions</h4>
+      <p>One-time, pay Iron Coins, which buy items from the Iron Shop. Around 2,500 coins are available across the whole season.</p>
+    </div>
+    <div class="tile">
+      <h4>Daily missions</h4>
+      <p>Refresh every day, pay Iron Chips, which trade for credits.</p>
+    </div>
+    <div class="tile">
+      <h4>Org missions</h4>
+      <p>The unlock track. Travel, terminals, bots, zone access, tradeskill caps, special equipment slots, shop stock and the cap raises all come back through these. Some trigger an org-wide vote.</p>
+    </div>
   </div>
-
-  <div class="controls">
-    <input class="search" id="mq" type="search" placeholder="Search missions, mobs, items&hellip;" aria-label="Search missions">
-    <button class="chip" data-f="all" aria-pressed="true">All</button>
-    <button class="chip" data-f="personal" aria-pressed="false">Personal</button>
-    <button class="chip" data-f="daily" aria-pressed="false">Daily</button>
-    <button class="chip" data-f="travel" aria-pressed="false">Travel</button>
-    <button class="chip" data-f="terminal" aria-pressed="false">Terminals</button>
-    <button class="chip" data-f="tradeskill" aria-pressed="false">Tradeskill</button>
-    <button class="chip" data-f="shop" aria-pressed="false">Shop</button>
-    <button class="chip" data-f="zone" aria-pressed="false">Zones</button>
-    <button class="chip" id="hidedone" aria-pressed="false">Hide done</button>
-  </div>
-  <div id="mlist"></div>
 
   <div class="note">
-    <p><b>Not all Cap 1 entries are level-40 work.</b> Several reach into Shadowlands zones that are locked at start, or ask for kills well past what a 40 manages solo. Treat the cap as "available from Cap 1", not "finish in Cap 1".</p>
+    <p><b>What each mission actually requires isn't listed here.</b> That's leadership's to reveal &mdash; open Iron Questie to see what's available to you right now, and watch #announcements for the org pushes.</p>
   </div>
+
+  <h3>Mission types</h3>
+  <ul class="plain">
+    <li><b>Kill</b> &mdash; kill a number of a thing.</li>
+    <li><b>Patrol</b> &mdash; travel to a point and stand there to register it. Pays more than the others.</li>
+    <li><b>Collection</b> &mdash; gather specific items. Usually easier, usually pays less.</li>
+  </ul>
+  <p>Missions have dependencies &mdash; some won't appear until you're the right level or have finished the one before it in the chain, so you'll never see the whole tree at once.</p>
 </section>
 
 <section id="pockets">
@@ -502,7 +504,7 @@ footer a{color:var(--ink-3)}
 
   <div class="note cy">
     <p><b>How pocket bosses work.</b> You don't find them in the world &mdash; you build them. Farm the three pattern pieces from the mobs listed on each boss, tradeskill them together, and use the result to summon the boss wherever you like.</p>
-    <p>Tradeskilling patterns is gated: <b>Requisition: Interdimensional Flux</b> unlocks pocket boss crafting for the org (loot 2000 Pattern Pieces, or get an Ancient Novictum Refiner).</p>
+    <p>Pocket boss crafting is one of the tradeskills the org has to unlock, so nobody is building these on day one.</p>
     <p>Boss data from <a href="https://ao.tinkeringidiot.com/pocket" target="_blank" rel="noopener">TinkerTools</a>. Planning a full build around these? <a href="https://aosetups.com/" target="_blank" rel="noopener">aosetups.com</a> lets you lay out every slot before you farm it.</p>
   </div>
 </section>
@@ -511,7 +513,7 @@ footer a{color:var(--ink-3)}
   <h2>What's locked at the drop</h2>
   <p class="deck">The board from #season-information, last updated <span id="boardDate">9/12/2026</span>. Everything reading Offline is off because no org mission has turned it on yet. Reactivating this infrastructure is the season.</p>
   <div class="board" id="board"></div>
-  <p style="margin-top:16px"><b>Tradeskills are at <span id="tsCap">0</span></b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 at a time through Requisition missions.</p>
+  <p style="margin-top:16px"><b>Tradeskills are at <span id="tsCap">0</span></b> in every category &mdash; Carbonum, Metallic Mantis, Ring of Power, Accelerated NCU, Hacked Grafts, all three implant tiers, both Combined Armor tiers, De'valos Sleeves, Viral Weapon Upgrades, Arul Saba setup, Nano Crystal, Gem Cutting, Blood, Repairing Nano Crystals, Perennium Weapons, Cleaning Implants and Pocket Bosses. VTE and every Arul Saba tier read No. The cap climbs 100 points at a time as the org unlocks it.</p>
 </section>
 
 <section id="caps">
@@ -519,7 +521,7 @@ footer a{color:var(--ink-3)}
   <p class="deck">Caps run two weeks. A cap only rises when its raise raid succeeds and leadership calls it &mdash; so every date past Cap 1's opening is provisional. Fail a raid and the cap holds until the next attempt lands.</p>
   <div class="scroll">
     <table>
-      <thead><tr><th>Cap</th><th class="n">Ceiling</th><th class="n">Opens</th><th class="n">Raise raid</th><th>Raid target</th></tr></thead>
+      <thead><tr><th>Cap</th><th class="n">Ceiling</th><th class="n">Opens</th><th class="n">Raise raid</th></tr></thead>
         <tbody id="capbody"></tbody>
       </table>
   </div>
@@ -596,7 +598,7 @@ footer a{color:var(--ink-3)}
   <h2>Reference</h2>
 
   <h3>Special equipment slots</h3>
-  <p>You may equip items from the special list up to the number of unlocked slots. One item is one slot &mdash; two Dogs of War is two slots, twinking included. Two slots unlock per cap; a Cap 6 mission removes the limit. <b>Adventurers, Doctors, Enforcers, Fixers, Nano-Technicians and Soldiers get a permanent +1.</b> Cap 1's two come from <i>Sephirah: Kingdom I</i> (kill Abmouth in 15 seconds) and <i>Sephirah: Foundation II</i> (kill Aztur in 15 seconds).</p>
+  <p>You may equip items from the special list up to the number of unlocked slots. One item is one slot &mdash; two Dogs of War is two slots, twinking included. Two slots unlock per cap; a Cap 6 mission removes the limit. <b>Adventurers, Doctors, Enforcers, Fixers, Nano-Technicians and Soldiers get a permanent +1.</b></p>
   <div class="controls"><input class="search" id="eq" type="search" placeholder="Search the special equipment list&hellip;" aria-label="Search special equipment"></div>
   <div id="eqlist" class="lv"></div>
   <div class="note"><p><b>OFAB and Serpentine are not on the restricted list this season</b>, unlike previous ones.</p></div>
@@ -666,7 +668,7 @@ footer a{color:var(--ink-3)}
    All content lives in data/*.json so it can be edited without touching this file.
    Add or change a mission, roll, quest, shop row or status line there and the page picks it up.
 */
-var ROLLS=[],QUESTS=[],M=[],EQUIP=[],SHOP=[],STATUS=null,PB=[],sigCount={};
+var ROLLS=[],QUESTS=[],EQUIP=[],SHOP=[],STATUS=null,PB=[],sigCount={};
 
 /* ---------- storage ---------- */
 var KEY="aoim-s12-v1";
@@ -736,56 +738,6 @@ function renderQuests(){
   }).join("");
 }
 
-/* ---------- missions ---------- */
-var filter="all",hideDone=false;
-function renderMissions(){
-  var q=(document.getElementById("mq").value||"").toLowerCase();
-  var rows=M.filter(function(m,i){
-    if(filter!=="all"&&m.f!==filter)return false;
-    if(hideDone&&state.done[m.n])return false;
-    if(!q)return true;
-    return (m.n+" "+m.g+" "+(m.u||"")).toLowerCase().indexOf(q)>=0;
-  });
-  var host=document.getElementById("mlist");
-  if(!rows.length){host.innerHTML='<div class="empty">Nothing matches that filter.</div>';}
-  else{
-    host.innerHTML=rows.map(function(m){
-      var id="m_"+m.n.replace(/[^a-z0-9]/gi,"");
-      var done=!!state.done[m.n];
-      var tag=m.c?'<span class="tagp coin">'+m.c+' coins</span>'
-        :m.ch?'<span class="tagp chip2">'+m.ch+' chips</span>'
-        :'<span class="tagp crew">'+esc(m.crew||"org")+'</span>';
-      return '<div class="mrow'+(done?" done":"")+'">'+
-        '<input type="checkbox" id="'+id+'" data-n="'+esc(m.n)+'"'+(done?" checked":"")+'>'+
-        '<label class="nm" for="'+id+'">'+esc(m.n)+'</label>'+tag+
-        '<div class="gl">'+esc(m.g)+(m.u?' <span style="color:var(--rust)">→ '+esc(m.u)+'</span>':'')+'</div>'+
-      '</div>';
-    }).join("");
-    host.querySelectorAll('input[type=checkbox]').forEach(function(cb){
-      cb.addEventListener("change",function(){
-        state.done[cb.getAttribute("data-n")]=cb.checked;
-        if(!cb.checked)delete state.done[cb.getAttribute("data-n")];
-        save(state);renderMissions();updateProgress();
-      });
-    });
-  }
-}
-function updateProgress(){
-  var pTot=0,pD=0,coins=0,coinTot=0,dD=0,oD=0,oTot=0;
-  M.forEach(function(m){
-    var d=!!state.done[m.n];
-    if(m.s==="personal"){pTot++;coinTot+=m.c;if(d){pD++;coins+=m.c}}
-    else if(m.s==="daily"){if(d)dD++}
-    else{oTot++;if(d)oD++}
-  });
-  document.getElementById("pDone").textContent=pD+" / "+pTot;
-  document.getElementById("pCoin").textContent=coins;
-  document.getElementById("pDaily").textContent=dD+" / 6";
-  document.getElementById("pOrg").textContent=oD+" / "+oTot;
-  document.getElementById("pBar").style.width=(pTot?pD/pTot*100:0)+"%";
-  document.getElementById("cBar").style.width=(coinTot?coins/coinTot*100:0)+"%";
-}
-
 /* ---------- reference lists ---------- */
 function renderEquip(){
   var q=(document.getElementById("eq").value||"").toLowerCase();
@@ -830,7 +782,7 @@ function renderStatus(){
     var tbc=c.opensTBC?' <span style="color:var(--rust)">TBC</span>':'';
     var now=c.cap===STATUS.currentCap?' class="hit"':'';
     return '<tr'+now+'><td>Cap '+c.cap+'</td><td class="n">'+c.ceiling+'</td><td class="n">'+esc(c.opens)+tbc+
-      '</td><td class="n">'+esc(c.raid)+'</td><td>'+esc(c.target)+'</td></tr>';
+      '</td><td class="n">'+esc(c.raid)+'</td></tr>';
   }).join("");
 
   var cur=STATUS.caps.filter(function(c){return c.cap===STATUS.currentCap})[0];
@@ -884,13 +836,13 @@ function renderPB(){
 }
 
 /* ---------- boot: load data/*.json ---------- */
-var FILES=["rolls","quests","missions","equipment","shop","status","pocketbosses"];
+var FILES=["rolls","quests","equipment","shop","status","pocketbosses"];
 function loadFail(err){
   var msg='<div class="note" style="border-left-color:var(--crit);background:var(--crit-bg)">'+
     '<p><b>Couldn\'t load the season data.</b> '+esc(String(err && err.message || err))+'</p>'+
     '<p>This page reads its content from the <code>data/</code> folder next to it. If you opened the file directly from your computer, '+
     'your browser blocks that read &mdash; use the hosted page instead.</p></div>';
-  ["rollbody","questbody","mlist","board","capbody","shopbody","eqlist","pblist"].forEach(function(id){
+  ["rollbody","questbody","board","capbody","shopbody","eqlist","pblist"].forEach(function(id){
     var el=document.getElementById(id);if(el)el.innerHTML=(el.tagName==="TBODY"?'<tr><td colspan="5">':'')+msg;
   });
 }
@@ -901,11 +853,11 @@ function boot(){
       return r.json();
     });
   })).then(function(res){
-    ROLLS=res[0];QUESTS=res[1];M=res[2];EQUIP=res[3];SHOP=res[4];STATUS=res[5];PB=(res[6]&&res[6].bosses)||[];
+    ROLLS=res[0];QUESTS=res[1];EQUIP=res[2];SHOP=res[3];STATUS=res[4];PB=(res[5]&&res[5].bosses)||[];
     ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
     renderStatus();renderPB();
     setLevel(state.level);
-    renderMissions();updateProgress();renderEquip();renderShop();
+    renderEquip();renderShop();
   }).catch(loadFail);
 }
 
@@ -914,7 +866,6 @@ document.getElementById("lvl").value=state.level;
 document.getElementById("lvl").addEventListener("input",function(e){setLevel(e.target.value)});
 document.getElementById("rollq").addEventListener("input",renderRolls);
 document.getElementById("questq").addEventListener("input",renderQuests);
-document.getElementById("mq").addEventListener("input",renderMissions);
 document.getElementById("eq").addEventListener("input",renderEquip);
 document.getElementById("shopq").addEventListener("input",renderShop);
 document.getElementById("pbq").addEventListener("input",renderPB);
@@ -929,15 +880,6 @@ document.getElementById("rollonly").addEventListener("click",function(){
 });
 document.getElementById("questonly").addEventListener("click",function(){
   var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderQuests();
-});
-document.getElementById("hidedone").addEventListener("click",function(){
-  hideDone=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",hideDone);renderMissions();
-});
-document.querySelectorAll('.chip[data-f]').forEach(function(c){
-  c.addEventListener("click",function(){
-    document.querySelectorAll('.chip[data-f]').forEach(function(x){x.setAttribute("aria-pressed","false")});
-    c.setAttribute("aria-pressed","true");filter=c.getAttribute("data-f");renderMissions();
-  });
 });
 
 boot();
