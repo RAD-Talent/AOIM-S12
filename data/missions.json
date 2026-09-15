@@ -1,0 +1,631 @@
+[
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Orientation I",
+  "g": "Stand at the Statue, the Map and the Neutral Door; target the Old Lady and the Geezer",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Orientation II",
+  "g": "Kill 10 each — Contagious Rollerrat, Clawfinger Ruffian, Biofreak Carcass, 34-I Helper, Eleet",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Cogito, Ergo Sum",
+  "g": "Loot Copper Wire, Burned Out NCU, Melted Circuit Board, Small Power Supply; get an Insipid Ring",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Required Reading I",
+  "g": "Get The Mariner's Father",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Loadout Check I",
+  "g": "Equip 7 pieces of OFAB armor",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: RAM Rods",
+  "g": "Loot Morphing Memory, 5 Dark Memories or Dark Dreams, and a Guardian Circuit Board or Dream Mesh Circuit",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Instant Rehab",
+  "g": "Kill 20 Violent Vagabond, 10 Looter, 5 Deranged Shopper, 50 Stim Fiend",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Patrol: Newland Desert",
+  "g": "Seven points — Stolt's Trading Outpost, Newland Desert ×3, Rhinoman Valley, Newland Desert, Meetmedere",
+  "c": 15
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Patrol: Sandboxes and Toasters",
+  "g": "The big Mort Crater loop",
+  "c": 30
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Memory Lane",
+  "g": "Loot and equip 5 Memory Loop; get and equip Belt Component Platform 6K-X",
+  "c": 30
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Scout: Jobe Recon",
+  "g": "Target nine Jobe NPCs — Yorick Kjarval, IPS Exchange Officer, Prof. Dedlock, Arul Saba, Portal Technician, Christen Thorwaldsen, Ira Atlin, Yasuhiro Yamashita, Lady Keldara",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Scout: Jobe Recon, Special",
+  "g": "Target Drake Rodriguez, Sundance Smith (JAME Depot), Celeth-El, El-Domo; loot a Delicate Metal Device",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Scout: Nascence",
+  "g": "Twelve-point sweep — Frontier Bridge through Misty Dreams",
+  "c": 25
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Scout: Elysium",
+  "g": "Route not yet published",
+  "c": 25
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Pop Psychology",
+  "g": "Get Mortiig's Heart, Eremites Vibrissa, Haithilin's Spine, Imp's Wing, Caliginous Ring",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Poison Garden",
+  "g": "Get the Key to the Garden of Shere or of Enel",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: The Nascence Connection",
+  "g": "Get the Keys to the Gardens of Aban and Thrak",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: Out of Uniforms",
+  "g": "Get at least 2 parts of the Miir Cameo or Camouflage Outfit of 3305 Local",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Logistics: The Quiet Place",
+  "g": "Get the key to either Elysium sanctuary",
+  "c": 20
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Take me to Church",
+  "g": "Kill 20 Hoathlan, 10 Brisk Hoathlan, 20 Malah, 10 Malah-Ana, Hiathlin Lookout",
+  "c": 5
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Nascence Leadership",
+  "g": "Kill 15 each Cur-Beat, Or-Jerad, Sun-Len, Calan-Cur plus six named Aban and Thrak",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Involuntary Kinetic Deprograming",
+  "g": "Kill 50 Cultists",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Linear Accelerated Laicization",
+  "g": "Kill 25 each Acolytes, Novice, Reverend, Windcaller, Exarch; kill Uklesh the Frozen and Aztur the Immortal",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Sponsored: Transmolecular Metaphysics",
+  "g": "Target Zyvania Bagh; kill 50 Figment of Imagination and 10 each Fragment of Sanity, Suppressed Emotion, Roving Eye, Nebulous Feeling, Guardian of Thought",
+  "c": 10
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Elysium Leadership",
+  "g": "Kill Ocra Lum, Empath Aurea, Redeemed Enel, Dom Roch, Omega Yuan Chi, Unredeemed Shere",
+  "c": 20
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Disrupt Kyr'ozch Communications",
+  "g": "Kill 80 Hacker'Uri, 10 General",
+  "c": 20
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Disrupt Kyr'ozch Transportation",
+  "g": "Kill 15 Fighter Pilot, 15 Fleet Admiral",
+  "c": 20
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Know Thy Enemy I",
+  "g": "Kill 50 each — Ankari, Xoch, Ilari, Rimah, Cha, Jaax",
+  "c": 20
+ },
+ {
+  "s": "personal",
+  "f": "personal",
+  "n": "Objective: Big Red",
+  "g": "Solo kill Aztur the Immortal",
+  "c": 30
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Objective: Fishing Bait",
+  "g": "Kill 8 Hacker'Uri",
+  "ch": 10
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Objective: Gravel Pit",
+  "g": "Kill 8 Heckler of Stone, 8 Heckler of Metal",
+  "ch": 10
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Patrol: Newland Perimeter",
+  "g": "Six points — West Gate, the alien guy, Southern Guard Post, Eastern Guard Post, Divenchy, North Gate",
+  "ch": 10
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Patrol: Andromeda Settlements",
+  "g": "Seven points — ICC Statue, wasteland village and mine, northern village, walled village, northwest farm, Terra, crater tent camp",
+  "ch": 25
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Logistics: Scrapmetal, Scrapmeat",
+  "g": "Loot 20 Robot Junk, 20 Monster Parts",
+  "ch": 10
+ },
+ {
+  "s": "daily",
+  "f": "daily",
+  "n": "Sponsored: Would you like a…",
+  "g": "Get 1 Bronto Burger or Bronto Cheese",
+  "ch": 5
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: ICC → Newland",
+  "g": "30 stand 30s in Newland City, 30 at ICC HQ",
+  "u": "ICC–Newland whompah",
+  "crew": "30 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: ICC → Tir",
+  "g": "30 in Tir City, 30 at ICC HQ",
+  "u": "ICC–Tir whompah",
+  "crew": "30 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: ICC → Omni-Trade",
+  "g": "30 at ICC HQ, 30 in Trade District",
+  "u": "ICC–Omni-Trade whompah",
+  "crew": "30 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: Neutral Whompah Network",
+  "g": "10 each at Borealis, East Last Ditch, Ernest Wastelands, Stolt's Trading Outpost, Newland City",
+  "u": "Neutral ring",
+  "crew": "10 × 5"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: Omni-Tek Whompah Network",
+  "g": "30 each at Omni-1 Entertainment East, Trade District, Rome Park, Galway Castle; 10 each at Infestation and 2HO Outpost",
+  "u": "Omni ring",
+  "crew": "30 & 10"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: Clan Whompah Network",
+  "g": "30 each at Tir City, Varmint Woods Swampland, Duhndur Wastes, Old Athen West; 10 at Bliss and others",
+  "u": "Clan ring",
+  "crew": "30 & 10"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: ICC → Jobe",
+  "g": "10 at ICC HQ, 10 on Jobe Platform",
+  "u": "Jobe access",
+  "crew": "10 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: Rome → Jobe",
+  "g": "10 on Jobe Platform, 10 at Rome Park",
+  "u": "Jobe access",
+  "crew": "10 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: Old Athens → Jobe",
+  "g": "10 on Jobe Platform, 10 at Old Athen East",
+  "u": "Jobe access",
+  "crew": "10 each end"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: The Grid — Floor 1",
+  "g": "24 each at ICC HQ, Borealis, Old Athen East, Newland City, Tir City, Trade District",
+  "u": "Grid floor 1",
+  "crew": "24 × 6"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: The Grid — Floor 2",
+  "g": "30 each at Meetmedere, West Athen, 4Holes, 2HO Outpost, Harry's, Area Y and one more",
+  "u": "Grid floor 2",
+  "crew": "30 × 7"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Access: The Grid — Floor 3",
+  "g": "30 each at Omni-1 HQ, Camelot, Mort Crater; kill a Cyborg Techwrecker",
+  "u": "Grid floor 3",
+  "crew": "30 × 3"
+ },
+ {
+  "s": "org",
+  "f": "travel",
+  "n": "Logistics: Pub Crawl",
+  "g": "Requirements not yet published",
+  "u": "Newland city whompah",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Logistics: Commerce Grid",
+  "g": "Loot 100 “Take me to the shops”",
+  "u": "Commerce terminals + a vote",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Logistics: Carbon Capture",
+  "g": "Needs Commerce Grid first. Get 100 Carbon Rich Rocks",
+  "u": "Profession nano terminals",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Logistics: Chipping In",
+  "g": "Needs Commerce Grid first. Loot 100 Blank Implants",
+  "u": "Pre-made implant terminals",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Logistics: Mission Grid",
+  "g": "Target 50 Backyard Mission Booths, get 50 Simple First-Aid Kits",
+  "u": "Mission terminals — unlocks shop rolling",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Logistics: Mission Support",
+  "g": "Get 20 of each Composite nano crystal — Attribute Boost, Martial Prowess, Melee, Nano, Physical Special, Ranged, Ranged Special, Tradeskill",
+  "u": "Buff bots",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Access: Freelancer Offices",
+  "g": "Get 50 Lockpicks and 50 Mission Key Duplicators, then 20 hold each of two points",
+  "u": "Freelancer offices",
+  "crew": "20 × 2"
+ },
+ {
+  "s": "org",
+  "f": "terminal",
+  "n": "Access: Jobe DOJA Offices",
+  "g": "Get 20 Nascence Doja Chips and 20 Elysium Doja Chips, then stand at the office",
+  "u": "Doja offices",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "zone",
+  "n": "ACCESS: Battle Station",
+  "g": "Kill a General and a Fighter Pilot within 7 minutes of each other",
+  "u": "Battle Station",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "zone",
+  "n": "Access: Elysium",
+  "g": "Get 30 Insipid Rings",
+  "u": "Elysium",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "zone",
+  "n": "Access: Scheol",
+  "g": "Get 30 Caliginous Rings, kill Aztur the Immortal five times",
+  "u": "Scheol",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Scrap Metal",
+  "g": "Kill 50 each Buckethead tech-scavenger, 34-I Helper, Waste disposer; loot 500 Robot Junk",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Tools",
+  "g": "Kill 25 Fresh Engineers",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Solvents",
+  "g": "Kill 10 Bartenders",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Coolant",
+  "g": "Kill 500 Icy Shadows",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Debugging",
+  "g": "Kill 50 each Leets, Shadowleets, Fleas, Discarded Pets, Reets, Hai-Tempestus, Tempestus",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Hardened Bio-Templates",
+  "g": "Loot 1000 Monster Parts",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Raw Notum",
+  "g": "Get 1000 Notum Fragments or Chips",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Tissue Regeneration Data",
+  "g": "Kill 25 each Biofreak Carcass, Clawfinger Ruffian, Reborn Soldier, Alpha and Beta Bio Construct, Eclipsers",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Nano Servos and Controllers",
+  "g": "Kill 500 Robot Dogs",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Self-Replicating Nano Filament",
+  "g": "Get 200 pieces of living cyber armor",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Geo-Quantum Positioning Data",
+  "g": "Kill Geo Survey Dogs — 50 Nascence, 50 Elysium, 10 each Scheol, Adonis, Penumbra, Inferno",
+  "u": "+100 tradeskill",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Alien Tools",
+  "g": "Get 20 each Bazzit's Alien Library, Body Heat Pattern Analyzer, Kyr'ozch Atomic Restructuralizing Tool, Kyr'ozch Structural Analyzer",
+  "u": "Alien armor crafting",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: MRR",
+  "g": "Kill The Iron Reet or loot Shape Soft Program",
+  "u": "Soft armor crafting",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Requisition: Interdimensional Flux",
+  "g": "Loot 2000 Pattern Pieces or get an Ancient Novictum Refiner",
+  "u": "Pocket boss crafting",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Cross-Training: Drug Dealer I",
+  "g": "Loot 1000 Unpolluted Crystals",
+  "u": "QL150 crystal privileges",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "tradeskill",
+  "n": "Cross-Training: Drug Dealer II",
+  "g": "Needs Drug Dealer I. Loot 5000 Unpolluted Crystals",
+  "u": "QL250 crystal privileges",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sponsored: Scrubbed",
+  "g": "Kill Cuty, Ding, George, Joo, Morty, Polly, Powa, Oscar, Ownz, Stumpy",
+  "u": "Omni-Med Suit privileges",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sponsored: Quantum Threading Samples",
+  "g": "Kill 5 Neleb, 30 each The Curator, Lien the Memory Stalker, Guardian of Tomorrow; loot 20 Dark Memories, 20 Dark Dreams, 3 of each Notum Ring of Three",
+  "u": "Vote: Nano Yalm or Aban Bracers",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sponsored: Bling",
+  "g": "Get gold rings with a perfectly cut diamond, star ruby and sapphire",
+  "u": "Gem rings in the shop",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sponsored: Mining Geo-Data",
+  "g": "Loot 50 Canister of Pure Liquid Notum and 50 notum chips, fragments or nuggets; target 30 each Omni, Clan and Neutral control towers",
+  "u": "Vote: city notum mining or land control",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Cross-Training: Barista",
+  "g": "Coffee machines and 10 cups of enhanced coffee",
+  "u": "Coffee ×20 in the shop",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Cross-Training: Confectioner",
+  "g": "Get an Extruder and 5 Extruder Nutrition Bars",
+  "u": "Extruder Bars in the shop",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sephirah: Kingdom I",
+  "g": "Kill Abmouth in 15 seconds",
+  "u": "Special slot 1",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "shop",
+  "n": "Sephirah: Foundation II",
+  "g": "Kill Aztur the Immortal in 15 seconds",
+  "u": "Special slot 2",
+  "crew": "org"
+ },
+ {
+  "s": "org",
+  "f": "zone",
+  "n": "Cap-Raiser: Morgan Le Fey",
+  "g": "Kill Morgan Le Fey. Twist: No Tired Limbs",
+  "u": "Unlocks Cap 2",
+  "crew": "raid"
+ }
+]
