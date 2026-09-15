@@ -1,0 +1,132 @@
+{
+ "_comment": "Neutral neck-item progression 1-220. Neutrals cannot redeem tokens, so the whole Clan/Omni Merit Board tree is off-limits - these are the replacements. 'l' is the level you can first use it, 'band' is the useful window, 'get' is the level you should actually go farm it.",
+ "rule": "Neutrals pick up tokens but can never redeem them, so every Clan and Omni-Tek Merit Board is permanently off-limits to us. The items below are the neutral substitutes. Two of them are neutral-only and better than anything a sided character can wear.",
+ "items": [
+  {
+   "l": 20,
+   "band": "20–100",
+   "n": "All-Match Augmented Bow Tie",
+   "req": "High Psychology",
+   "src": "Tradeskilled — Biomare",
+   "d": "Variable QL. More health and nano than the SoltoyZ, but the Psychology requirement means it's realistic only for Engineer, Trader, Bureaucrat, Soldier and Enforcer.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"
+  },
+  {
+   "l": 40,
+   "band": "40–100",
+   "n": "SoltoyZ Intimate Helper",
+   "req": "Level 40 · Stamina 151",
+   "src": "Fair Trade shop — Borealis, Stolt's Trading Post, ICC",
+   "d": "QL1. +40 health, +40 nano, +3% XP. Fair Trade is the neutral shop chain, so this is the one neck item you can just buy. Expensive but worth it early for the XP alone — once commerce terminals are unlocked.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/xp-boosters-4"
+  },
+  {
+   "l": 41,
+   "band": "80–120",
+   "n": "Collar of Amplification",
+   "req": "Computer Literacy 400",
+   "src": "Biomare / Foreman's quest chain — The Longest Road",
+   "d": "QL100. +15 Max NCU, +7 Treatment, +7 First Aid, and one nano skill +10 that you right-click to swap between all six. Neutrals may start with either Ace Starr (Clan, open Longest Road) or Dr. Hercules Lincoln (Omni, Outpost 10-3) — both paths end in the collar. Ace Starr is the easier approach for us. Quest range 41–100, +125k XP.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"
+  },
+  {
+   "l": 50,
+   "band": "50–200",
+   "n": "Collar Casero de la Cripta — the COH collar",
+   "req": "Biological Metamorphosis 470",
+   "src": "Crypt of Home — Broken Shores, 355 x 2215",
+   "d": "QL100, +30 to thirteen stats including NCU, all four inits, all three evades, Run Speed and Nano Pool. Carries a lot of characters all the way to 200. FARM IT BEFORE LEVEL 111 — the doors hard-lock above 110 and there is no solo way back in. It's a common drop off Dark Cenobites, Dark Sanitaries, Dark Summoners and Eclipsers in the first rooms, so you don't need to clear the dungeon. Loot it early, equip it later when your BM is high enough.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/encounter-guides-3/mid-level-encounter/the-crypt-of-home"
+  },
+  {
+   "l": 100,
+   "band": "150–190",
+   "n": "Stripped Merit Board",
+   "req": "Title Level 4 (100+) · Intelligence 450",
+   "src": "The Reck — Port New Thera, 1520 x 794",
+   "d": "QL150. +10 to all eight damage types, +30 AAD, +20 AAO, +750 health, +750 nano, +150 Computer Literacy, +150 Run Speed, +5% XP. The Entwined General (level 210) drops one of these or an Experimental Optic Enhancer 100% of the time; any Entvined soldier 130–210 in the same spot can drop it at lower odds. The Reck itself is a 90–170 zone, whompah from Tir or Omni-1 Trade. Grab it as soon as you can hit Int 450.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/location-guides-5/the-reck"
+  },
+  {
+   "l": 120,
+   "band": "120–190",
+   "n": "Prototype Cyborg Token Board",
+   "req": "Title Level 4 (100+) · Sense 250 · quest is 120+",
+   "src": "Sergeant Marion Sweet — Bronto Burger, Holes in the Wall",
+   "d": "QL100. +12 AAD, +100 health, +100 nano, +100 Run Speed, +100 Computer Literacy, +12 Treatment. Three missions, 200k XP each: 5 Banished Con Men, 5 Derelict Gunmen, 5 Exiled Raiders — all level 150–175 in Milky Way, so team it if you're near the floor. Finishing pays 1,050,000 XP and 1,050,000 credits. Weaker than the Stripped Merit Board but a much lower ability bar. Stack it with Corporal Ashley Winstead's cyborg missions — same area.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/bronto-burger-crowd"
+  },
+  {
+   "l": 150,
+   "band": "150–220",
+   "n": "Profiteer's Helper",
+   "req": "—",
+   "src": "Hollow Island Weed raid",
+   "d": "NEUTRAL ONLY — sided characters can't wear it at all. The best tradeskill neck in the game. Raid item, so it needs the org.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/encounter-guides-3/high-level-encounter-2"
+  },
+  {
+   "l": 190,
+   "band": "190–210",
+   "n": "Experimental Cyborg Token Board",
+   "req": "Title Level 6 (190+) · Sense 500",
+   "src": "Random cyborg drop — Perpetual Wastelands, 3880 x 2745",
+   "d": "QL200. +25 AAD, +200 health, +200 nano, +200 Run Speed, +200 Nano Programming, +200 Computer Literacy, +25 Treatment. No quest, no tokens — it was added specifically for neutrals who can't earn tokens. Uncommon drop off cyborgs level 195–250 at the mining outpost. There's a second camp at 3645 x 2400 with a notum field in the middle of it; as neutrals we have no tower alignment problem there, which is a real advantage.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/encounter-guides-3/high-level-encounter-2/cyborg-strongholds"
+  },
+  {
+   "l": 190,
+   "band": "190–220",
+   "n": "Smuggled Combat Merit Board Base",
+   "req": "Title Level 6 (190+)",
+   "src": "Random drop — Meched Dreadloch bosses",
+   "d": "No tokens needed. Big health, nano, damage add, AAD/AAO and an XP bonus — but it adds no Projectile or Melee damage, so it's a poor fit for most weapon setups. Check your damage type first.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/encounter-guides-3/high-level-encounter-2"
+  },
+  {
+   "l": 190,
+   "band": "190–220",
+   "n": "Smuggled Nanite Merit Board Base",
+   "req": "Title Level 6 (190+)",
+   "src": "Random drop — Meched Dreadloch bosses",
+   "d": "Same source as the Combat version, but adds nano damage and healing enhancement. This is the healer and nuker pick.",
+   "u": "https://www.ao-universe.com/guides/classic-ao/encounter-guides-3/high-level-encounter-2"
+  },
+  {
+   "l": 201,
+   "band": "201–220",
+   "n": "Xan Combat / Defense Merit Board Base",
+   "req": "Level 201+, no tokens",
+   "src": "Deranged Xan, Technomaster Sinuh, Ground Chief Vortexx",
+   "d": "Legacy of the Xan bosses. Upgradeable — see the Awakened version below.",
+   "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2"
+  },
+  {
+   "l": 205,
+   "band": "205–220",
+   "n": "Comfort of the Sagittarius",
+   "req": "Very high Intelligence and Matter Creation",
+   "src": "Sagittarius — Pandemonium",
+   "d": "The most health plus nano of any neck in the game. Raid-gated and the equip requirements are steep.",
+   "u": "https://www.ao-universe.com/guides/shadowlands/encounter-guides-4/pandemonium"
+  },
+  {
+   "l": 210,
+   "band": "210–220",
+   "n": "Sigil of Bahomet",
+   "req": "High Computer Literacy",
+   "src": "The Beast — Pandemonium",
+   "d": "NCU, Treatment, Run Speed and a large health pool. Beo has said she's pushing this season past The Beast to 220, so this one is actually on the table.",
+   "u": "https://www.ao-universe.com/guides/shadowlands/encounter-guides-4/pandemonium"
+  },
+  {
+   "l": 215,
+   "band": "215–220",
+   "n": "Awakened Xan Combat / Defense Merit Board Base",
+   "req": "Level 215+",
+   "src": "Upgrade the Xan board with a Primed Spirit Capsule",
+   "d": "Capsule comes from Pyramid of Home. End of the neutral neck road.",
+   "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2"
+  }
+ ]
+}

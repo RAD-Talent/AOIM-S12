@@ -1,73 +1,439 @@
 [
- {"l":1,"n":"Neutral Start-Up Quest","z":"Borealis / Newland City","d":"Neutral-only delivery chain from Aleksei Innokenti. Opens more follow-on quests than the Clan or Omni versions.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/neutral-start-up-quest"},
- {"l":1,"n":"Shadowlands Start-up Quests","z":"Nascence","d":"All factions. Redeemed spec-1 mobs are in Brawl, Unredeemed in Silence. Either route gives The Mariner's Father ch.1–4 = Spec 1.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/start-up-quests"},
- {"l":1,"n":"Professor Dedlock Specialization 1 Quest","z":"Jobe Harbor → Nascence Frontier","d":"Levels 1–51. Reliable alternative — hands over the completed Spec 1 book.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/professor-dedlock-specialization-1-quest"},
- {"l":1,"n":"Aban Garden Key Quest","z":"Nascence","f":"Redeemed","d":"At least 3 Insignias of Aban plus an Ancient Device from Donna Red; tag 3 Dreaming Silvertails.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/aban-garden-key-quest"},
- {"l":1,"n":"Thrak Garden Key Quest","z":"Nascence","f":"Unredeemed","d":"At least 3 insignias plus an Ancient Device from Veronica Escobar; 3 Dreaming Silvertails. Nascence has no sanctuary quests.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/thrak-garden-key-quest"},
- {"l":1,"n":"Insipid Ring Quest","z":"Nascence","d":"Progression. Reward opens travel to Elysium via the portal behind Ergo.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/progression-quest-3"},
-
- {"l":1,"n":"Serpentine Sneaking Helmet","z":"The Condemned Subway","d":"Level 25 or under. Abmouth Supremus. Part of the RK2019-only Serpentine set — armor self-levels to 220.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
- {"l":25,"n":"Shoulderpads Quests","z":"Lush Fields, Aegean, Athen Shire and others","d":"Collect 8 robot parts ONCE (not twice). The upgrade item is an Omnifier only — it applies to the Omni-Tek Pads of Dedication, so of limited use to us.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/shoulderpads-quests"},
- {"l":40,"n":"Serpentine Sneaking Sleeves","z":"Temple of Three Winds","d":"Levels 40–60. Aztur the Immortal One. (The Azzy kill is the Sleeves, not the Boots.)","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
- {"l":41,"n":"Biomare Quests (Foremans)","z":"The Longest Road","d":"Levels 41–100. Neutrals may take either path, but start with Ace Starr (Clan) or Dr. Hercules Lincoln (Omni) to get the Collar of Amplification. 125k XP.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"},
- {"l":50,"n":"Serpentine Sneaking Boots","z":"Biomare, Longest Road","d":"Level 50+. T.I.M. (The TIM kill is the Boots, not the Legs.)","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
-
- {"l":50,"n":"Enel Garden Key Quest","z":"Elysium","f":"Redeemed","d":"Levels 50–100. Tag 9 Unredeemed mobs — 3 Remnans, 4 Stormshelter, 2 Nero.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/enel-garden-key-quest"},
- {"l":50,"n":"Enel Sanctuary Garden Key Quest","z":"Elysium","f":"Redeemed","d":"Levels 50–100. Kill 9 named Unredeemed (all level 70), loot the Briefing.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/enel-sanctuary-garden-key-quest"},
- {"l":50,"n":"Shere Garden Key Quest","z":"Elysium","f":"Unredeemed","d":"Levels 50–100. Collect up to 8 Shere insignias first, then tag Redeemed mobs with the Ancient Tracking Device.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/shere-garden-key-quest"},
- {"l":50,"n":"Shere Sanctuary Garden Key Quest","z":"Elysium","f":"Unredeemed","d":"Levels 50–100. Needs the Shere garden key first, then 9 sequential elimination missions.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/shere-sanctuary-garden-key-quest"},
- {"l":50,"n":"Trial of Passage — Caliginous Ring","z":"Elysium, Cave of Trials","d":"Progression. 4 body parts, then beat the Challenger. Opens Scheol.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/progression-quest-2"},
- {"l":60,"n":"One Who Has Achieved Glory","z":"Elysium West","d":"Levels 60–150. Three paths; the middle one gives the Eye of the Evening Star plus 100k XP and 250k credits.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-has-achieved-glory"},
- {"l":60,"n":"One Who Has Taken Vow of Truth","z":"Elysium, The Melting Pot","d":"Levels 60–150. Up to 5 missions. One-time only. Sample reward: Wrath of Zeus, 380k XP, 1m credits.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-has-taken-vow-of-truth"},
- {"l":60,"n":"One Who Overcomes Enemies","z":"Elysium North","d":"Levels 60–200. First mission gives a Ring of Computing. The catacomb path is 7 bosses, each worth roughly a daily.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-overcomes-enemies"},
- {"l":60,"n":"The One Loved by the Sun","z":"Elysium","d":"Levels 60–150. Diving for Pearls gives Silver Spider Knuckle Dusters, 200k XP, 250k credits.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/the-one-loved-by-the-sun"},
- {"l":60,"n":"One Who Gives Light","z":"Elysium, The Melting Pot","d":"Levels 60–150. Note: the guide says final completion yields no credits or XP.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-gives-light"},
- {"l":60,"n":"One With a Graceful Neck","z":"Elysium East","d":"Levels 60–150. Gives Spec 2 chapter 3, 20k XP, 50k credits.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-with-a-graceful-neck"},
- {"l":60,"n":"One Who Wins Over Mind","z":"Elysium","d":"Listed as a source of Spec 2 chapter 1.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-wins-over-mind"},
- {"l":60,"n":"Guard — Ulf Reinhart","z":"Elysium","d":"Listed as a source of Spec 2 chapter 2.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/guard---ulf-reinhart"},
-
- {"l":70,"n":"Serpentine Sneaking Legwear","z":"Crypt of Home, Broken Shore","d":"Levels 70–109. Cerubin the Rejected.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
-
- {"l":1,"n":"Jobe Scientists","z":"Scheol, Upper and Lower","d":"Not level locked. Dr. Jones, Frank Jobin, Dr. Hestiya, Dr. Curry, Dr. Darnell. Gives a Tier 1 armor embryo and a QL150 Ring of Computing. Prerequisite for Knowledge of the Yuttos.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/jobe-scientists"},
- {"l":80,"n":"Knowledge of the Yuttos","z":"Scheol, Upper and Lower","d":"Levels 80–220. Requires the Jobe Scientists line first. Beo's tip: pull it at 199 and run it at 201–203.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/knowledge-of-the-yuttos"},
- {"l":1,"n":"Ocra Garden Key Quest","z":"Scheol Upper","f":"Redeemed","d":"All levels, but you need level 95 to spawn the Empath. 4 blueprint pieces plus a Crystal Filled by the Source. Needs 337 Nano Programming and 135 Quantum FT.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/ocra-garden-key-quest"},
- {"l":1,"n":"Ocra Sanctuary Garden Key Quest","z":"Scheol","f":"Redeemed","d":"Redeemed sanctuary counterpart.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/ocra-sanctuary-garden-key-quest"},
- {"l":1,"n":"Roch Garden Key Quest","z":"Scheol","f":"Unredeemed","d":"All levels, but you need level 95 to spawn the boss. 4 blueprint pieces of Weary Empath Min-Ji Liu, a Crystal Filled by the Source and a Subdued Flow of Novictum.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/roch-garden-key-quest"},
- {"l":1,"n":"Roch Sanctuary Garden Key Quest","z":"Scheol, Garden of Roch","f":"Unredeemed","d":"Needs the Roch garden key first. You must do the majority of damage to the Empath for loot rights.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/roch-sanctuary-garden-key-quest"},
- {"l":1,"n":"Achromic Ring Quest","z":"Scheol","d":"Progression, levels 1–129. Opens Adonis. At 130+ you can skip it — Ergo hands over the ring and scuba gear.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/progression-quest"},
-
- {"l":120,"n":"Bronto Burger crowd (Sergeant Marion Sweet)","z":"Milky Way, near Holes in the Wall","d":"Level 120+. This is where the Prototype Cyborg Token Board comes from. 1,050,000 XP and credits.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/bronto-burger-crowd"},
- {"l":60,"n":"Corporal Ashley Winstead","z":"Holes in the Wall","d":"Levels 60–220; 80+ past the first stage, 120+ for Cyborg Valley. Rewards profession nano crystals — no neck item.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/corporal-ashley-winstead"},
- {"l":125,"n":"Serpentine Sneaking Suit","z":"Inner Sanctum","d":"Level 125+. Hezak the Immortal One.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
- {"l":130,"n":"Serpentine Sneaking Gloves","z":"Mantis and Smuggler's Den, S. Foul Hills","d":"Level 130+. Mantis Queen.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
- {"l":150,"n":"Serpentine Sneaking Shoulderplate","z":"Ace Camp / Mercenaries","d":"Level 150+. Ian Warr.","u":"https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"},
-
- {"l":130,"n":"Adonis — How to get there","z":"Scheol → Adonis","d":"Level 130 and 10,000 Guardian faction, saved in the Garden or Sanctuary of Scheol.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/adonis---how-to-get-there"},
- {"l":130,"n":"Dalja Garden Key Quest","z":"Adonis","f":"Unredeemed","d":"Levels 130–200. Loot the Note early — it drops from Sipius Gil Ilad-Ilad and Watcher Gil Hume-Wei. Gives +8 Treatment and First Aid when worn.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dalja-garden-key-quest"},
- {"l":150,"n":"Dalja Sanctuary Garden Key Quest","z":"Adonis City","f":"Unredeemed","d":"Levels 150–200. Infernal Demon blueprint → novictalized crystal → 160+ Incarnator. Only ONE person gets a key per completed blueprint, since the Demon despawns.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dalja-sanctuary-garden-key-quest"},
- {"l":150,"n":"Gilthar Garden Key Quest","z":"Adonis","f":"Redeemed","d":"Levels 150–200. Note drops 100% from Hypnagogic Jorr-Thrak Dal or Fortuitous Urga-Yutt Dal, then 2 Ancient Control Panels.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/gilthar-garden-key-quest"},
- {"l":150,"n":"Gilthar Sanctuary Garden Key Quest","z":"Garden of Gilthar, Adonis","f":"Redeemed","d":"Levels 150–200. Needs 400 NP + 160 FQP, then 900 NP + 675 FQP. Level 170 Incarnator.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/gilthar-sanctuary-garden-key-quest"},
- {"l":130,"n":"Xan Civilization Quest (Adonis)","z":"Adonis","d":"Levels 130–220. Final reward is a profession-specific Syndicate Brain Symbiant. The Specializations guide lists this as a Spec 3 source.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/xan-civilization-quest-adonis"},
- {"l":150,"n":"Dark Ruins — solo","z":"Adonis, The Suburbs","d":"Levels 150–200. Bring a Cultist Outfit to enter without taking damage.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dark-ruins-solo-guide"},
- {"l":150,"n":"Dark Ruins — team","z":"Dark Ruins instance","d":"Levels 150–200. You must have done the solo version first. 7,000,000 XP regardless of your level.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dark-ruins-team-guide"},
- {"l":1,"n":"Adonis to Penumbra Progression Quest","z":"Adonis Abyss","d":"Levels 1–159. Gives the Rimy Ring and the Hyper-Radiation Protection Skin and Glasses. Not needed above level 160.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/adonis-to-penumbra-progression-quest"},
-
- {"l":160,"n":"Cama Garden Key Quest","z":"Penumbra","f":"Redeemed","d":"Levels 160–220. This is the one that needs 35 Fragment of the Source plus 6 Insignia of Vanya — tag 10 mobs, then Omega Carlos Truhillo.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/cama-garden-key-quest"},
- {"l":180,"n":"Cama Sanctuary Garden Key Quest","z":"Penumbra","f":"Redeemed","d":"Levels 180–220. 7 machines, 8 exploiters, Patriarch Prophet Nar Van (185), 6 Insignia of Vanya, then Omega Carlos Truhillo (190) and Unredeemed Vanya (200).","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/cama-sanctuary-garden-key-quest"},
- {"l":160,"n":"Vanya Garden Key Quest","z":"Penumbra","f":"Unredeemed","d":"Levels 160–220. Locate 10 mobs and get 35 Fragments of the Source. The guide lists no insignias for this one.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/vanya-garden-key-quest"},
- {"l":160,"n":"Vanya Sanctuary Quest","z":"Penumbra, Garden of Vanya","f":"Unredeemed","d":"Levels 160–220. This is where you need the 6 insignias of Cama, traded to Ardent Gulu Van to spawn the final bosses.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/vanya-sanctuary-quest"},
- {"l":150,"n":"Xan Civilization Quest (Penumbra)","z":"Penumbra","d":"Levels 150–220. Team needed for the final Alappaa instance. Profession nano crystal from Anticipating Six. The Specializations guide lists this as a Spec 4 source.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/xan-civilization-quest"},
- {"l":150,"n":"Ice Golem Quest (Redeemed)","z":"Penumbra","f":"Redeemed","d":"Gets the sided Ice Golem Molar needed for Inferno.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/ice-golem-quest-redeemed"},
- {"l":150,"n":"Ice Golem Pattern Quest (Unredeemed)","z":"Penumbra","f":"Unredeemed","d":"Gets the sided Ice Golem Molar needed for Inferno.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/ice-golem-pattern-quest-unredeemed"},
-
- {"l":150,"n":"Inferno Boots Quest","z":"Penumbra, Adonis City, Inferno, Scheol","d":"Levels 150–220. 6 items plus Hellion Mirrors, then kill Tchu. Gives the Lava Protection Boots and Skin Galvanizer that stop the 2k fire DoT. Required for Inferno.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/inferno-boots-quest"},
- {"l":160,"n":"Galahad Garden Key Quest","z":"Inferno","f":"Redeemed","d":"Levels 160–220. 9 pocket boss patterns QL220–255, killed in order. Pull the mission early — it allows 10k hours.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/galahad-garden-key-quest"},
- {"l":160,"n":"Galahad Sanctuary Key Quest","z":"Inferno","f":"Redeemed","d":"Redeemed sanctuary counterpart.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/galahad-sanctuary-key-quest"},
- {"l":160,"n":"Lord Mordeth Garden Key","z":"Inferno, NE Unredeemed Temple","f":"Unredeemed","d":"Levels 160–220. 9 pocket boss patterns QL220–255. Mission from Immortal Hypnagogic Yutt-Chi Mord.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/lord-mordeth-garden-key"},
- {"l":160,"n":"Lord Mordeth Sanctuary Key Quest","z":"Inferno","f":"Unredeemed","d":"Unredeemed sanctuary counterpart.","u":"https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/lord-mordeth-sanctuary-key-quest"},
-
- {"l":150,"n":"PvP token board upgrade","z":"Rubi-Ka","d":"Needs 1000 tokens, Title Level 4 and the PvP quest completed. ao-universe only documents Clan and Omni PvP quests — there is no neutral version, so check with leadership before counting on this.","u":"https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/token-boards-explained"},
- {"l":1,"n":"Token Boards Explained","z":"Reference","d":"Prototype Cyborg Board: TL4, 250 Sense, from the Bronto Burger quest at 120+. Stripped Merit Board: TL4, 450 Intelligence, from the Entvined General. Experimental Cyborg Board: TL6, 500 Sense, random Cyborg drop.","u":"https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/token-boards-explained"},
- {"l":40,"n":"Soltoyz Intimate Helper","z":"Fair Trade shop","d":"Not a quest — a vendor item. 3% XP boost at level 40+.","u":"https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/xp-boosters-4"},
- {"l":1,"n":"Travelling through the Shadowlands","z":"Reference","d":"Zone gates: Scheol needs level 80 or the ring quest, Adonis 130 plus 5,001 Guardian, Penumbra 160 plus the radiation protection, Inferno needs the Ice Golem Molar and Inferno Boots plus 18,001 Guardian.","u":"https://www.ao-universe.com/guides/shadowlands/gameplay-guides-5/travelling-through-the-shadowlands"}
+ {
+  "l": 1,
+  "n": "Neutral Start-Up Quest",
+  "z": "Borealis / Newland City",
+  "d": "Neutral-only delivery chain from Aleksei Innokenti. Opens more follow-on quests than the Clan or Omni versions.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/neutral-start-up-quest"
+ },
+ {
+  "l": 1,
+  "n": "Shadowlands Start-up Quests",
+  "z": "Nascence",
+  "d": "All factions. Redeemed spec-1 mobs are in Brawl, Unredeemed in Silence. Either route gives The Mariner's Father ch.1–4 = Spec 1.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/start-up-quests"
+ },
+ {
+  "l": 1,
+  "n": "Professor Dedlock Specialization 1 Quest",
+  "z": "Jobe Harbor → Nascence Frontier",
+  "d": "Levels 1–51. Reliable alternative — hands over the completed Spec 1 book.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/professor-dedlock-specialization-1-quest"
+ },
+ {
+  "l": 1,
+  "n": "Aban Garden Key Quest",
+  "z": "Nascence",
+  "f": "Redeemed",
+  "d": "At least 3 Insignias of Aban plus an Ancient Device from Donna Red; tag 3 Dreaming Silvertails.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/aban-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Thrak Garden Key Quest",
+  "z": "Nascence",
+  "f": "Unredeemed",
+  "d": "At least 3 insignias plus an Ancient Device from Veronica Escobar; 3 Dreaming Silvertails. Nascence has no sanctuary quests.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/thrak-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Insipid Ring Quest",
+  "z": "Nascence",
+  "d": "Progression. Reward opens travel to Elysium via the portal behind Ergo.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/nascence/progression-quest-3"
+ },
+ {
+  "l": 1,
+  "n": "Serpentine Sneaking Helmet",
+  "z": "The Condemned Subway",
+  "d": "Level 25 or under. Abmouth Supremus. Part of the RK2019-only Serpentine set — armor self-levels to 220.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 25,
+  "n": "Shoulderpads Quests",
+  "z": "Lush Fields, Aegean, Athen Shire and others",
+  "d": "Collect 8 robot parts ONCE (not twice). The upgrade item is an Omnifier only — it applies to the Omni-Tek Pads of Dedication, so of limited use to us.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/shoulderpads-quests"
+ },
+ {
+  "l": 40,
+  "n": "Serpentine Sneaking Sleeves",
+  "z": "Temple of Three Winds",
+  "d": "Levels 40–60. Aztur the Immortal One. (The Azzy kill is the Sleeves, not the Boots.)",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 41,
+  "n": "Biomare Quests (Foremans)",
+  "z": "The Longest Road",
+  "d": "Levels 41–100. Neutrals may take either path, but start with Ace Starr (Clan) or Dr. Hercules Lincoln (Omni) to get the Collar of Amplification. 125k XP.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/biomare-quests-foremans"
+ },
+ {
+  "l": 50,
+  "n": "Serpentine Sneaking Boots",
+  "z": "Biomare, Longest Road",
+  "d": "Level 50+. T.I.M. (The TIM kill is the Boots, not the Legs.)",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 50,
+  "n": "Enel Garden Key Quest",
+  "z": "Elysium",
+  "f": "Redeemed",
+  "d": "Levels 50–100. Tag 9 Unredeemed mobs — 3 Remnans, 4 Stormshelter, 2 Nero.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/enel-garden-key-quest"
+ },
+ {
+  "l": 50,
+  "n": "Enel Sanctuary Garden Key Quest",
+  "z": "Elysium",
+  "f": "Redeemed",
+  "d": "Levels 50–100. Kill 9 named Unredeemed (all level 70), loot the Briefing.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/enel-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 50,
+  "n": "Shere Garden Key Quest",
+  "z": "Elysium",
+  "f": "Unredeemed",
+  "d": "Levels 50–100. Collect up to 8 Shere insignias first, then tag Redeemed mobs with the Ancient Tracking Device.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/shere-garden-key-quest"
+ },
+ {
+  "l": 50,
+  "n": "Shere Sanctuary Garden Key Quest",
+  "z": "Elysium",
+  "f": "Unredeemed",
+  "d": "Levels 50–100. Needs the Shere garden key first, then 9 sequential elimination missions.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/shere-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 50,
+  "n": "Trial of Passage — Caliginous Ring",
+  "z": "Elysium, Cave of Trials",
+  "d": "Progression. 4 body parts, then beat the Challenger. Opens Scheol.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/progression-quest-2"
+ },
+ {
+  "l": 60,
+  "n": "One Who Has Achieved Glory",
+  "z": "Elysium West",
+  "d": "Levels 60–150. Three paths; the middle one gives the Eye of the Evening Star plus 100k XP and 250k credits.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-has-achieved-glory"
+ },
+ {
+  "l": 60,
+  "n": "One Who Has Taken Vow of Truth",
+  "z": "Elysium, The Melting Pot",
+  "d": "Levels 60–150. Up to 5 missions. One-time only. Sample reward: Wrath of Zeus, 380k XP, 1m credits.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-has-taken-vow-of-truth"
+ },
+ {
+  "l": 60,
+  "n": "One Who Overcomes Enemies",
+  "z": "Elysium North",
+  "d": "Levels 60–200. First mission gives a Ring of Computing. The catacomb path is 7 bosses, each worth roughly a daily.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-overcomes-enemies"
+ },
+ {
+  "l": 60,
+  "n": "The One Loved by the Sun",
+  "z": "Elysium",
+  "d": "Levels 60–150. Diving for Pearls gives Silver Spider Knuckle Dusters, 200k XP, 250k credits.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/the-one-loved-by-the-sun"
+ },
+ {
+  "l": 60,
+  "n": "One Who Gives Light",
+  "z": "Elysium, The Melting Pot",
+  "d": "Levels 60–150. Note: the guide says final completion yields no credits or XP.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-gives-light"
+ },
+ {
+  "l": 60,
+  "n": "One With a Graceful Neck",
+  "z": "Elysium East",
+  "d": "Levels 60–150. Gives Spec 2 chapter 3, 20k XP, 50k credits.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-with-a-graceful-neck"
+ },
+ {
+  "l": 60,
+  "n": "One Who Wins Over Mind",
+  "z": "Elysium",
+  "d": "Listed as a source of Spec 2 chapter 1.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/one-who-wins-over-mind"
+ },
+ {
+  "l": 60,
+  "n": "Guard — Ulf Reinhart",
+  "z": "Elysium",
+  "d": "Listed as a source of Spec 2 chapter 2.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/elysium/guard---ulf-reinhart"
+ },
+ {
+  "l": 70,
+  "n": "Serpentine Sneaking Legwear",
+  "z": "Crypt of Home, Broken Shore",
+  "d": "Levels 70–109. Cerubin the Rejected.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 1,
+  "n": "Jobe Scientists",
+  "z": "Scheol, Upper and Lower",
+  "d": "Not level locked. Dr. Jones, Frank Jobin, Dr. Hestiya, Dr. Curry, Dr. Darnell. Gives a Tier 1 armor embryo and a QL150 Ring of Computing. Prerequisite for Knowledge of the Yuttos.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/jobe-scientists"
+ },
+ {
+  "l": 80,
+  "n": "Knowledge of the Yuttos",
+  "z": "Scheol, Upper and Lower",
+  "d": "Levels 80–220. Requires the Jobe Scientists line first. Beo's tip: pull it at 199 and run it at 201–203.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/knowledge-of-the-yuttos"
+ },
+ {
+  "l": 1,
+  "n": "Ocra Garden Key Quest",
+  "z": "Scheol Upper",
+  "f": "Redeemed",
+  "d": "All levels, but you need level 95 to spawn the Empath. 4 blueprint pieces plus a Crystal Filled by the Source. Needs 337 Nano Programming and 135 Quantum FT.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/ocra-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Ocra Sanctuary Garden Key Quest",
+  "z": "Scheol",
+  "f": "Redeemed",
+  "d": "Redeemed sanctuary counterpart.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/ocra-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Roch Garden Key Quest",
+  "z": "Scheol",
+  "f": "Unredeemed",
+  "d": "All levels, but you need level 95 to spawn the boss. 4 blueprint pieces of Weary Empath Min-Ji Liu, a Crystal Filled by the Source and a Subdued Flow of Novictum.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/roch-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Roch Sanctuary Garden Key Quest",
+  "z": "Scheol, Garden of Roch",
+  "f": "Unredeemed",
+  "d": "Needs the Roch garden key first. You must do the majority of damage to the Empath for loot rights.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/roch-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Achromic Ring Quest",
+  "z": "Scheol",
+  "d": "Progression, levels 1–129. Opens Adonis. At 130+ you can skip it — Ergo hands over the ring and scuba gear.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/scheol/progression-quest"
+ },
+ {
+  "l": 120,
+  "n": "Bronto Burger crowd (Sergeant Marion Sweet)",
+  "z": "Milky Way, near Holes in the Wall",
+  "d": "Level 120+. This is where the Prototype Cyborg Token Board comes from. 1,050,000 XP and credits.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/bronto-burger-crowd"
+ },
+ {
+  "l": 60,
+  "n": "Corporal Ashley Winstead",
+  "z": "Holes in the Wall",
+  "d": "Levels 60–220; 80+ past the first stage, 120+ for Cyborg Valley. Rewards profession nano crystals — no neck item.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/corporal-ashley-winstead"
+ },
+ {
+  "l": 125,
+  "n": "Serpentine Sneaking Suit",
+  "z": "Inner Sanctum",
+  "d": "Level 125+. Hezak the Immortal One.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 130,
+  "n": "Serpentine Sneaking Gloves",
+  "z": "Mantis and Smuggler's Den, S. Foul Hills",
+  "d": "Level 130+. Mantis Queen.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 150,
+  "n": "Serpentine Sneaking Shoulderplate",
+  "z": "Ace Camp / Mercenaries",
+  "d": "Level 150+. Ian Warr.",
+  "u": "https://www.ao-universe.com/guides/classic-ao/quests-guides-3/serpentine-sneaking-armor-rk2019-3"
+ },
+ {
+  "l": 130,
+  "n": "Adonis — How to get there",
+  "z": "Scheol → Adonis",
+  "d": "Level 130 and 10,000 Guardian faction, saved in the Garden or Sanctuary of Scheol.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/adonis---how-to-get-there"
+ },
+ {
+  "l": 130,
+  "n": "Dalja Garden Key Quest",
+  "z": "Adonis",
+  "f": "Unredeemed",
+  "d": "Levels 130–200. Loot the Note early — it drops from Sipius Gil Ilad-Ilad and Watcher Gil Hume-Wei. Gives +8 Treatment and First Aid when worn.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dalja-garden-key-quest"
+ },
+ {
+  "l": 150,
+  "n": "Dalja Sanctuary Garden Key Quest",
+  "z": "Adonis City",
+  "f": "Unredeemed",
+  "d": "Levels 150–200. Infernal Demon blueprint → novictalized crystal → 160+ Incarnator. Only ONE person gets a key per completed blueprint, since the Demon despawns.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dalja-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 150,
+  "n": "Gilthar Garden Key Quest",
+  "z": "Adonis",
+  "f": "Redeemed",
+  "d": "Levels 150–200. Note drops 100% from Hypnagogic Jorr-Thrak Dal or Fortuitous Urga-Yutt Dal, then 2 Ancient Control Panels.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/gilthar-garden-key-quest"
+ },
+ {
+  "l": 150,
+  "n": "Gilthar Sanctuary Garden Key Quest",
+  "z": "Garden of Gilthar, Adonis",
+  "f": "Redeemed",
+  "d": "Levels 150–200. Needs 400 NP + 160 FQP, then 900 NP + 675 FQP. Level 170 Incarnator.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/gilthar-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 130,
+  "n": "Xan Civilization Quest (Adonis)",
+  "z": "Adonis",
+  "d": "Levels 130–220. Final reward is a profession-specific Syndicate Brain Symbiant. The Specializations guide lists this as a Spec 3 source.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/xan-civilization-quest-adonis"
+ },
+ {
+  "l": 150,
+  "n": "Dark Ruins — solo",
+  "z": "Adonis, The Suburbs",
+  "d": "Levels 150–200. Bring a Cultist Outfit to enter without taking damage.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dark-ruins-solo-guide"
+ },
+ {
+  "l": 150,
+  "n": "Dark Ruins — team",
+  "z": "Dark Ruins instance",
+  "d": "Levels 150–200. You must have done the solo version first. 7,000,000 XP regardless of your level.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/dark-ruins-team-guide"
+ },
+ {
+  "l": 1,
+  "n": "Adonis to Penumbra Progression Quest",
+  "z": "Adonis Abyss",
+  "d": "Levels 1–159. Gives the Rimy Ring and the Hyper-Radiation Protection Skin and Glasses. Not needed above level 160.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/adonis/adonis-to-penumbra-progression-quest"
+ },
+ {
+  "l": 160,
+  "n": "Cama Garden Key Quest",
+  "z": "Penumbra",
+  "f": "Redeemed",
+  "d": "Levels 160–220. This is the one that needs 35 Fragment of the Source plus 6 Insignia of Vanya — tag 10 mobs, then Omega Carlos Truhillo.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/cama-garden-key-quest"
+ },
+ {
+  "l": 180,
+  "n": "Cama Sanctuary Garden Key Quest",
+  "z": "Penumbra",
+  "f": "Redeemed",
+  "d": "Levels 180–220. 7 machines, 8 exploiters, Patriarch Prophet Nar Van (185), 6 Insignia of Vanya, then Omega Carlos Truhillo (190) and Unredeemed Vanya (200).",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/cama-sanctuary-garden-key-quest"
+ },
+ {
+  "l": 160,
+  "n": "Vanya Garden Key Quest",
+  "z": "Penumbra",
+  "f": "Unredeemed",
+  "d": "Levels 160–220. Locate 10 mobs and get 35 Fragments of the Source. The guide lists no insignias for this one.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/vanya-garden-key-quest"
+ },
+ {
+  "l": 160,
+  "n": "Vanya Sanctuary Quest",
+  "z": "Penumbra, Garden of Vanya",
+  "f": "Unredeemed",
+  "d": "Levels 160–220. This is where you need the 6 insignias of Cama, traded to Ardent Gulu Van to spawn the final bosses.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/vanya-sanctuary-quest"
+ },
+ {
+  "l": 150,
+  "n": "Xan Civilization Quest (Penumbra)",
+  "z": "Penumbra",
+  "d": "Levels 150–220. Team needed for the final Alappaa instance. Profession nano crystal from Anticipating Six. The Specializations guide lists this as a Spec 4 source.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/xan-civilization-quest"
+ },
+ {
+  "l": 150,
+  "n": "Ice Golem Quest (Redeemed)",
+  "z": "Penumbra",
+  "f": "Redeemed",
+  "d": "Gets the sided Ice Golem Molar needed for Inferno.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/ice-golem-quest-redeemed"
+ },
+ {
+  "l": 150,
+  "n": "Ice Golem Pattern Quest (Unredeemed)",
+  "z": "Penumbra",
+  "f": "Unredeemed",
+  "d": "Gets the sided Ice Golem Molar needed for Inferno.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/penumbra/ice-golem-pattern-quest-unredeemed"
+ },
+ {
+  "l": 150,
+  "n": "Inferno Boots Quest",
+  "z": "Penumbra, Adonis City, Inferno, Scheol",
+  "d": "Levels 150–220. 6 items plus Hellion Mirrors, then kill Tchu. Gives the Lava Protection Boots and Skin Galvanizer that stop the 2k fire DoT. Required for Inferno.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/inferno-boots-quest"
+ },
+ {
+  "l": 160,
+  "n": "Galahad Garden Key Quest",
+  "z": "Inferno",
+  "f": "Redeemed",
+  "d": "Levels 160–220. 9 pocket boss patterns QL220–255, killed in order. Pull the mission early — it allows 10k hours.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/galahad-garden-key-quest"
+ },
+ {
+  "l": 160,
+  "n": "Galahad Sanctuary Key Quest",
+  "z": "Inferno",
+  "f": "Redeemed",
+  "d": "Redeemed sanctuary counterpart.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/galahad-sanctuary-key-quest"
+ },
+ {
+  "l": 160,
+  "n": "Lord Mordeth Garden Key",
+  "z": "Inferno, NE Unredeemed Temple",
+  "f": "Unredeemed",
+  "d": "Levels 160–220. 9 pocket boss patterns QL220–255. Mission from Immortal Hypnagogic Yutt-Chi Mord.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/lord-mordeth-garden-key"
+ },
+ {
+  "l": 160,
+  "n": "Lord Mordeth Sanctuary Key Quest",
+  "z": "Inferno",
+  "f": "Unredeemed",
+  "d": "Unredeemed sanctuary counterpart.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/quests-guides-2/inferno/lord-mordeth-sanctuary-key-quest"
+ },
+ {
+  "l": 1,
+  "n": "Travelling through the Shadowlands",
+  "z": "Reference",
+  "d": "Zone gates: Scheol needs level 80 or the ring quest, Adonis 130 plus 5,001 Guardian, Penumbra 160 plus the radiation protection, Inferno needs the Ice Golem Molar and Inferno Boots plus 18,001 Guardian.",
+  "u": "https://www.ao-universe.com/guides/shadowlands/gameplay-guides-5/travelling-through-the-shadowlands"
+ }
 ]
