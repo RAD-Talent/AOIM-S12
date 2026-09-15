@@ -386,6 +386,7 @@ footer a{color:var(--ink-3)}
     <a href="#start">Start</a>
     <a href="#rolls">Rolls</a>
     <a href="#quests">Quests</a>
+    <a href="#neck">Neck items</a>
     <a href="#missions">Cap track</a>
     <a href="#pockets">Pocket bosses</a>
     <a href="#locked">Locked</a>
@@ -466,6 +467,26 @@ footer a{color:var(--ink-3)}
     </table>
   </div>
   <p style="margin-top:14px">Guides for all of these are on <a href="https://www.ao-universe.com/guides" target="_blank" rel="noopener">ao-universe.com/guides</a> &mdash; search the quest name.</p>
+</section>
+
+<section id="neck">
+  <h2>Neutral neck items</h2>
+  <p class="deck" id="neckrule"></p>
+
+  <div class="note">
+    <p><b>The one with a deadline: the COH collar.</b> Crypt of Home hard-locks above level 110 and there's no solo way back in. Farm the Collar Casero de la Cripta during Cap 3 &mdash; ceiling 140 &mdash; and make sure you have it before you cross 111. It's a common first-room drop, so it's a short trip, not a dungeon clear.</p>
+  </div>
+
+  <div class="controls">
+    <input class="search" id="neckq" type="search" placeholder="Search item, source or requirement&hellip;" aria-label="Search neck items">
+    <button class="chip" id="neckonly" aria-pressed="false">Only what I can use now</button>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="n">Useful</th><th>Item</th><th>Where it comes from</th><th>Notes</th></tr></thead>
+      <tbody id="neckbody"></tbody>
+    </table>
+  </div>
 </section>
 
 <section id="missions">
@@ -682,7 +703,7 @@ footer a{color:var(--ink-3)}
    All content lives in data/*.json so it can be edited without touching this file.
    Add or change a mission, roll, quest, shop row or status line there and the page picks it up.
 */
-var ROLLS=[],QUESTS=[],EQUIP=[],SHOP=[],STATUS=null,PB=[],sigCount={};
+var ROLLS=[],QUESTS=[],EQUIP=[],SHOP=[],STATUS=null,PB=[],NECK=null,sigCount={};
 
 /* ---------- storage ---------- */
 var KEY="aoim-s12-v1";
@@ -761,6 +782,32 @@ function renderQuests(){
   }).join("");
 }
 
+/* ---------- neutral neck items ---------- */
+function renderNeck(){
+  if(!NECK)return;
+  document.getElementById("neckrule").textContent=NECK.rule;
+  var q=(document.getElementById("neckq").value||"").toLowerCase();
+  var only=document.getElementById("neckonly").getAttribute("aria-pressed")==="true";
+  var lv=state.level;
+  var rows=NECK.items.filter(function(x){
+    if(only&&x.l>lv)return false;
+    if(!q)return true;
+    return (x.n+" "+x.src+" "+x.req+" "+x.d).toLowerCase().indexOf(q)>=0;
+  });
+  var b=document.getElementById("neckbody");
+  if(!rows.length){b.innerHTML='<tr><td colspan="4" class="empty">Nothing matches.</td></tr>';return}
+  b.innerHTML=rows.map(function(x){
+    var open=x.l<=lv;
+    var name=x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.n)+'</a>':esc(x.n);
+    var req=x.req&&x.req!=="—"?'<div class="zone" style="margin-top:3px">'+esc(x.req)+'</div>':'';
+    return '<tr class="'+(open?"hit":"")+'">'+
+      '<td class="n">'+esc(x.band)+'</td>'+
+      '<td><b>'+name+'</b>'+req+'</td>'+
+      '<td class="zone">'+esc(x.src)+'</td>'+
+      '<td style="color:var(--ink-2)">'+esc(x.d)+'</td></tr>';
+  }).join("");
+}
+
 /* ---------- reference lists ---------- */
 function renderEquip(){
   var q=(document.getElementById("eq").value||"").toLowerCase();
@@ -785,7 +832,7 @@ function setLevel(v){
   var cap=v>=ceil?("at or over the Cap "+(STATUS?STATUS.currentCap:1)+" ceiling"):("under the Cap "+(STATUS?STATUS.currentCap:1)+" ceiling of "+ceil);
   document.getElementById("lvlhint").innerHTML=
     "<b>"+rollNow+"</b> item"+(rollNow===1?"":"s")+" rollable now &middot; <b>"+questNow+"</b> quest"+(questNow===1?"":"s")+" open &middot; "+cap;
-  renderRolls();renderQuests();
+  renderRolls();renderQuests();renderNeck();
 }
 
 /* ---------- status board + caps, rendered from data/status.json ---------- */
@@ -859,13 +906,13 @@ function renderPB(){
 }
 
 /* ---------- boot: load data/*.json ---------- */
-var FILES=["rolls","quests","equipment","shop","status","pocketbosses"];
+var FILES=["rolls","quests","equipment","shop","status","pocketbosses","neckitems"];
 function loadFail(err){
   var msg='<div class="note" style="border-left-color:var(--crit);background:var(--crit-bg)">'+
     '<p><b>Couldn\'t load the season data.</b> '+esc(String(err && err.message || err))+'</p>'+
     '<p>This page reads its content from the <code>data/</code> folder next to it. If you opened the file directly from your computer, '+
     'your browser blocks that read &mdash; use the hosted page instead.</p></div>';
-  ["rollbody","questbody","board","capbody","shopbody","eqlist","pblist"].forEach(function(id){
+  ["rollbody","questbody","neckbody","board","capbody","shopbody","eqlist","pblist"].forEach(function(id){
     var el=document.getElementById(id);if(el)el.innerHTML=(el.tagName==="TBODY"?'<tr><td colspan="5">':'')+msg;
   });
 }
@@ -876,7 +923,7 @@ function boot(){
       return r.json();
     });
   })).then(function(res){
-    ROLLS=res[0];QUESTS=res[1];EQUIP=res[2];SHOP=res[3];STATUS=res[4];PB=(res[5]&&res[5].bosses)||[];
+    ROLLS=res[0];QUESTS=res[1];EQUIP=res[2];SHOP=res[3];STATUS=res[4];PB=(res[5]&&res[5].bosses)||[];NECK=res[6];
     ROLLS.forEach(function(r){var k=r.lv.join(",");sigCount[k]=(sigCount[k]||0)+1});
     renderStatus();renderPB();
     setLevel(state.level);
@@ -889,6 +936,7 @@ document.getElementById("lvl").value=state.level;
 document.getElementById("lvl").addEventListener("input",function(e){setLevel(e.target.value)});
 document.getElementById("rollq").addEventListener("input",renderRolls);
 document.getElementById("questq").addEventListener("input",renderQuests);
+document.getElementById("neckq").addEventListener("input",renderNeck);
 document.getElementById("eq").addEventListener("input",renderEquip);
 document.getElementById("shopq").addEventListener("input",renderShop);
 document.getElementById("pbq").addEventListener("input",renderPB);
@@ -903,6 +951,9 @@ document.getElementById("rollonly").addEventListener("click",function(){
 });
 document.getElementById("questonly").addEventListener("click",function(){
   var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderQuests();
+});
+document.getElementById("neckonly").addEventListener("click",function(){
+  var p=this.getAttribute("aria-pressed")==="true";this.setAttribute("aria-pressed",!p);renderNeck();
 });
 document.querySelectorAll('.chip[data-qf]').forEach(function(c){
   c.addEventListener("click",function(){
